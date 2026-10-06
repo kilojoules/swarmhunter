@@ -7,6 +7,7 @@
 - **identity claim:** none
 - **verification:** human-browser-claim
 - **network:** 185.135.214.0/24 (cluster)
+- **network attribution:** app request log
 - **first/last seen:** 2026-10-06T21:04:28+0000 → 2026-10-06T21:04:28+0000
 - **requests:** 1 (1.0/s peak)
 

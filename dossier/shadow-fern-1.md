@@ -6,7 +6,8 @@
 - **user-agent:** `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/[ip] Safari/537.36`
 - **identity claim:** none
 - **verification:** human-browser-claim
-- **network:** unknown(docker-bridge).0/24 (cluster)
+- **network:** 171.22.217.0/24 (cluster)
+- **network attribution:** caddy access.log 19:01:54+19:02:07-14 UTC
 - **first/last seen:** 2026-10-06T19:02:07+0000 → 2026-10-06T19:02:14+0000
 - **requests:** 10 (1.43/s peak)
 

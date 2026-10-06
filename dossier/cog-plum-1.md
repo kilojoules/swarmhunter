@@ -7,6 +7,7 @@
 - **identity claim:** none
 - **verification:** no-claim
 - **network:** 54.147.183.0/24 (cluster)
+- **network attribution:** app request log
 - **first/last seen:** 2026-10-06T19:14:23+0000 → 2026-10-06T19:14:23+0000
 - **requests:** 1 (1.0/s peak)
 

@@ -7,6 +7,7 @@
 - **identity claim:** ClaudeBot
 - **verification:** range-verified
 - **network:** 216.73.217.0/24 (cluster)
+- **network attribution:** app request log
 - **first/last seen:** 2026-10-06T20:08:35+0000 → 2026-10-06T20:08:35+0000
 - **requests:** 2 (2.0/s peak)
 

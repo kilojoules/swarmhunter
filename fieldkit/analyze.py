@@ -43,6 +43,21 @@ def ua_probe(ua):
     return any(p in (ua or "") for p in PROBE_UAS)
 
 
+# True client IPs recovered from the Caddy TLS-edge access log for
+# first-batch events where the app (pre-XFF fix) logged Docker's bridge
+# address. Keyed by analyzer fingerprint (UA+traps+cadence+netblock —
+# stable across re-analyses). Every entry cites how it was verified;
+# adding one requires matching the fingerprint to log lines by hand.
+MANUAL_IPS = {
+    # SHADOW-FERN-1: 10 reqs 19:02:07-19:02:14 UTC, Linux Chrome/130 UA,
+    # 3 T1 canary trips. Caddy log shows same IP one request earlier at
+    # 19:01:54 claiming Macintosh Chrome/131 — dual-OS UA switch, same
+    # host. ERX legacy netblock, no rDNS. Wild, not operator.
+    "8d7905bd1d8d": ("171.22.217.9",
+                     "caddy access.log 19:01:54+19:02:07-14 UTC"),
+}
+
+
 def load_ignore_ips():
     """Operator/verification IPs — our own traffic is never a finding
     (aunt-test rule). One IP or /24 per line; # comments allowed."""
@@ -570,6 +585,16 @@ def main():
         if sighting["ip"] == "172.18.0.1":
             sighting["ip"] = "unknown(docker-bridge)"
             sighting["ip_unknown"] = True
+        # Caddy (TLS edge) saw the true client IP even before the app's
+        # X-Forwarded-For fix. MANUAL_IPS pins verified recoveries from
+        # the Caddy access log so network attribution is real, with
+        # provenance. Never speculative.
+        manual = MANUAL_IPS.get(sighting["fingerprint"])
+        if manual:
+            sighting["ip"] = manual[0]
+            sighting["ip_unknown"] = False
+            sighting["ip_source"] = "caddy-access-log"
+            sighting["ip_source_note"] = manual[1]
         if now - last > timedelta(days=HASH_AFTER_DAYS):
             sighting["ip"] = hash_ip(sighting["ip"], salt)
         sightings.append(sighting)

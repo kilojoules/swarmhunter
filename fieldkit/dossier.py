@@ -177,6 +177,8 @@ def render(sightings_path, out_dir):
                 f"{s.get('claimed_agent') or 'none'}",
                 f"- **verification:** {s['verification']}",
                 f"- **network:** {ip_cluster(s['ip'])} (cluster)",
+                f"- **network attribution:** "
+                f"{s.get('ip_source_note') or 'app request log'}",
                 f"- **first/last seen:** {s['first_seen']} → "
                 f"{s['last_seen']}",
                 f"- **requests:** {s['requests']} "
