@@ -1,0 +1,3737 @@
+{
+  "agents": {
+    "AI2Bot": {
+      "aliases": [],
+      "description": "Explores 'certain domains' to find web content.",
+      "frequency": "No information provided.",
+      "operator": "Allen Institute for AI (Ai2)",
+      "primary_token": "AI2Bot",
+      "purpose": "training",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-string"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference",
+          "source_hint": "https://allenai.org/crawler",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "AI2Bot-DeepResearchEval": {
+      "aliases": [],
+      "description": "Ai2Bot-DeepResearchEval is operated by Ai2, a non-profit AI research institute. It's used to collect and scan resources used in deep research queries performed by Ai2's o\u2026 More info can be found at https://knownagents.com/agents/ai2bot-deepresearcheval",
+      "frequency": "Unclear at this time.",
+      "operator": "Ai2, a non-profit AI research institute",
+      "primary_token": "AI2Bot-DeepResearchEval",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "AIWebIndex": {
+      "aliases": [],
+      "description": "Builds an index of public pages and serves them to AI agents as extracted, readable text with attribution and a link back to the source. Does not train foundation models on crawled content. Identity can be checked three ways: published IP ranges at https://lyrenth.com/bot/ip-ranges.json, forward-confirmed reverse DNS under lyrenth.com, and Web Bot Auth signatures (RFC 9421). Full policy at https://lyrenth.com/crawler-policy",
+      "frequency": "At most one request per domain every 2 seconds, and slower where robots.txt sets a longer Crawl-delay.",
+      "operator": "Lyrenth",
+      "primary_token": "AIWebIndex",
+      "purpose": "AI Search Crawlers",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "AddSearchBot": {
+      "aliases": [],
+      "description": "AddSearchBot is a web crawler that indexes website content for AddSearch's AI-powered site search solution, collecting data to provide fast and accurate search results. More info can be found at https://knownagents.com/agents/addsearchbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "AddSearchBot",
+      "purpose": "AI Search Crawlers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "AgentDataBot": {
+      "aliases": [],
+      "description": "AgentDataBot visits public web pages to identify technology stacks, company details, and team members. The data builds AgentData's company-intelligence database for AI ag\u2026 More info can be found at https://knownagents.com/agents/agentdatabot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "AgentDataBot",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "AgentTimes": {
+      "aliases": [],
+      "description": "Scrapes data for AI news aggregation and republishing.",
+      "frequency": "Requests RSS feed every 5-6 minutes.",
+      "operator": "The Agent Times",
+      "primary_token": "AgentTimes",
+      "purpose": "Data Scraper from RSS Feeds.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Ai2Bot-Dolma": {
+      "aliases": [],
+      "description": "Explores 'certain domains' to find web content.",
+      "frequency": "No information provided.",
+      "operator": "Ai2",
+      "primary_token": "Ai2Bot-Dolma",
+      "purpose": "Content is used to train open language models.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "AmazonBuyForMe": {
+      "aliases": [],
+      "description": "AmazonBuyForMe is an Amazon bot that crawls websites as part of the Amazon Buy For Me service. This bot visits product pages and e-commerce websites to gather product inf\u2026 More info can be found at https://knownagents.com/agents/amazonbuyforme",
+      "frequency": "No information provided.",
+      "operator": "Amazon",
+      "primary_token": "AmazonBuyForMe",
+      "purpose": "AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Amazonbot": {
+      "aliases": [],
+      "description": "Includes references to crawled website when surfacing answers via Alexa; does not clearly outline other uses.",
+      "frequency": "No information provided.",
+      "operator": "Amazon",
+      "primary_token": "Amazonbot",
+      "purpose": "search",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "reverse-DNS"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "Amazon documents reverse-DNS verification (.crawl.amazonbot.amazon) AND publishes an IP-range list; verify the exact range-file URL at build.",
+          "source_hint": "https://developer.amazon.com/amazonbot/ip-addresses/",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": true,
+          "derived_from": "reverse_dns_suffix",
+          "tier": "B",
+          "value": "B \u2014 reverse DNS suffix published"
+        }
+      }
+    },
+    "Amzn-SearchBot": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/amzn-searchbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Amzn-SearchBot",
+      "purpose": "AI Search Crawlers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Amzn-User": {
+      "aliases": [],
+      "description": "Amzn-User is an AI assistant operated by Amazon, used for fetching web content to answer user queries through Alexa and other Amazon AI services. More info can be found at https://knownagents.com/agents/amzn-user",
+      "frequency": "Unclear at this time.",
+      "operator": "Amazon, used for fetching web content to answer user queries through Alexa and other Amazon AI services",
+      "primary_token": "Amzn-User",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Andibot": {
+      "aliases": [],
+      "description": "Scrapes website and provides AI summary.",
+      "frequency": "No information provided.",
+      "operator": "Andi",
+      "primary_token": "Andibot",
+      "purpose": "Search engine using generative AI, AI Search Assistant",
+      "respects_robots": "Unclear at this time",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Anomura": {
+      "aliases": [],
+      "description": "Anomura is Direqt's search crawler, it discovers and indexes pages their customers websites.",
+      "frequency": "No information provided.",
+      "operator": "Direqt",
+      "primary_token": "Anomura",
+      "purpose": "Collects data for AI search",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "ApifyBot": {
+      "aliases": [],
+      "description": "ApifyBot is a web scraping and data extraction crawler by Apify that collects website content for use in AI, LLMs, RAG, and automation workflows. More info can be found at https://knownagents.com/agents/apifybot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "ApifyBot",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "ApifyWebsiteContentCrawler": {
+      "aliases": [],
+      "description": "ApifyWebsiteContentCrawler is a web crawler by Apify that extracts and downloads full website content for use in AI, data analysis, and automation workflows. More info can be found at https://knownagents.com/agents/apifywebsitecontentcrawler",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "ApifyWebsiteContentCrawler",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Applebot": {
+      "aliases": [],
+      "description": "Applebot is a web crawler used by Apple to index search results that allow the Siri AI Assistant to answer user questions. Siri's answers normally contain references to the website. More info can be found at https://knownagents.com/agents/applebot",
+      "frequency": "Unclear at this time.",
+      "operator": "Apple",
+      "primary_token": "Applebot",
+      "purpose": "search",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range",
+          "reverse-DNS"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference",
+          "source_hint": "https://support.apple.com/en-us/119829",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": "verification_methods",
+          "tier": "D",
+          "value": "D \u2014 method named, artifact not published"
+        }
+      }
+    },
+    "Applebot-Extended": {
+      "aliases": [],
+      "description": "Apple has a secondary user agent, Applebot-Extended ... [that is] used to train Apple's foundation models powering generative AI features across Apple products, including Apple Intelligence, Services, and Developer Tools.",
+      "frequency": "Unclear at this time.",
+      "operator": "Apple",
+      "primary_token": "Applebot-Extended",
+      "purpose": "training",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range",
+          "reverse-DNS"
+        ],
+        "range_files": {},
+        "range_url": "https://search.developer.apple.com/applebot.json",
+        "verifiability": {
+          "actionable": false,
+          "derived_from": "bot_type",
+          "tier": "n/a",
+          "value": "policy token \u2014 makes no requests, nothing to verify"
+        }
+      }
+    },
+    "Aranet-SearchBot": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/aranet-searchbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Aranet-SearchBot",
+      "purpose": "Undocumented AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Awario": {
+      "aliases": [],
+      "description": "Awario is an AI data scraper operated by Awario. It's not currently known to be artificially intelligent or AI-related. If you think that's incorrect or can provide more detail about its purpose, please contact us. More info can be found at https://knownagents.com/agents/awario",
+      "frequency": "Unclear at this time.",
+      "operator": "Awario",
+      "primary_token": "Awario",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "AzureAI-SearchBot": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/azureai-searchbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "AzureAI-SearchBot",
+      "purpose": "AI Search Crawlers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Bingbot": {
+      "aliases": [
+        "bingbot"
+      ],
+      "description": "Powers Bing and, by extension, Copilot search grounding.",
+      "frequency": "",
+      "operator": "Microsoft",
+      "primary_token": "Bingbot",
+      "purpose": "search",
+      "respects_robots": true,
+      "sources": [
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range",
+          "reverse-DNS"
+        ],
+        "range_files": {},
+        "range_url": "https://www.bing.com/toolbox/bingbot.json",
+        "verifiability": {
+          "actionable": true,
+          "derived_from": "reverse_dns_suffix",
+          "tier": "B",
+          "value": "B \u2014 reverse DNS suffix published"
+        }
+      }
+    },
+    "BixelBot": {
+      "aliases": [],
+      "description": "BixelBot collects public company and market signals for Bixel's structured company-data platform, which supplies verified business information to AI agents and developers\u2026 More info can be found at https://knownagents.com/agents/bixelbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "BixelBot",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Bravebot": {
+      "aliases": [],
+      "description": "Bravebot is a web crawler by Brave that indexes pages for Brave Search, providing search data and AI-optimized context to power chatbots, agents, and RAG pipelines. More info can be found at https://knownagents.com/agents/bravebot",
+      "frequency": "Unclear at this time.",
+      "operator": "Brave",
+      "primary_token": "Bravebot",
+      "purpose": "search",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-string"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference",
+          "source_hint": "https://search.brave.com/help/brave-search-crawler",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "Brightbot": {
+      "aliases": [],
+      "description": "Brightbot is a web data collection crawler by Bright Data that extracts and structures public website content at scale, providing AI-ready data for model training, RAG pi\u2026 More info can be found at https://knownagents.com/agents/brightbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Brightbot",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Brightbot 1.0": {
+      "aliases": [],
+      "description": "Scrapes data to train LLMs and AI products focused on website customer support, [uses residential IPs and legit-looking user-agents to disguise itself](https://ksol.io/en/blog/posts/brightbot-not-that-bright/).",
+      "frequency": "At least one per minute.",
+      "operator": "https://brightdata.com/brightbot",
+      "primary_token": "Brightbot 1.0",
+      "purpose": "LLM/AI training.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "BuddyBot": {
+      "aliases": [],
+      "description": "BuddyBot is a voice-controlled AI learning companion targeted at childhooded STEM education.",
+      "frequency": "Unclear at this time.",
+      "operator": "BuddyBotLearning",
+      "primary_token": "BuddyBot",
+      "purpose": "AI Learning Companion",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Bytespider": {
+      "aliases": [],
+      "description": "Downloads data to train LLMS, including ChatGPT competitors.",
+      "frequency": "Unclear at this time.",
+      "operator": "ByteDance",
+      "primary_token": "Bytespider",
+      "purpose": "training",
+      "respects_robots": false,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-match"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no authoritative ByteDance-published IP-range file confirmed at primary source",
+          "source_hint": "https://radar.cloudflare.com/bots/directory/bytespider",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "CCBot": {
+      "aliases": [],
+      "description": "Web archive going back to 2008. [Cited in thousands of research papers per year](https://commoncrawl.org/research-papers).",
+      "frequency": "Monthly at present.",
+      "operator": "Common Crawl",
+      "primary_token": "CCBot",
+      "purpose": "training",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range",
+          "reverse-DNS"
+        ],
+        "range_files": {},
+        "range_url": "https://index.commoncrawl.org/ccbot.json",
+        "verifiability": {
+          "actionable": true,
+          "derived_from": "reverse_dns_suffix",
+          "tier": "B",
+          "value": "B \u2014 reverse DNS suffix published"
+        }
+      }
+    },
+    "Channel3Bot": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/channel3bot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Channel3Bot",
+      "purpose": "AI Search Crawlers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "ChatGLM-Spider": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/chatglm-spider",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "ChatGLM-Spider",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "ChatGPT Agent": {
+      "aliases": [],
+      "description": "ChatGPT Agent is an AI agent created by OpenAI that can use a web browser. It can intelligently navigate and interact with websites to complete multi-step tasks on behalf\u2026 More info can be found at https://knownagents.com/agents/chatgpt-agent",
+      "frequency": "Unclear at this time.",
+      "operator": "OpenAI",
+      "primary_token": "ChatGPT Agent",
+      "purpose": "AI Agents",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "ChatGPT Atlas (agent mode)": {
+      "aliases": [],
+      "description": "OpenAI's ChatGPT Atlas browser (launched 2025-10-21) embeds ChatGPT into web navigation; its 'agent mode' takes actions on the user's behalf inside the browser. As a local Chromium-based browser it presents like ordinary browser traffic with no stable AI user-agent token \u2014 included here per the agentic-browser taxonomy, verifiable by IP/signature only.",
+      "frequency": "",
+      "operator": "OpenAI",
+      "primary_token": "ChatGPT Atlas (agent mode)",
+      "purpose": "agentic-browsing",
+      "respects_robots": false,
+      "sources": [
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "IP-signature"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "OpenAI's enterprise docs note 'No IP allowlist' for Atlas; no authoritative AI-bot IP-range file is published for the agentic browser",
+          "source_hint": "https://help.openai.com/en/articles/12603091-chatgpt-atlas-for-enterprise",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "ChatGPT-User": {
+      "aliases": [],
+      "description": "ChatGPT-User is OpenAI's web crawler that visits websites when ChatGPT users request information. This enables ChatGPT to include links in its responses. More info can be found at https://knownagents.com/agents/chatgpt-user",
+      "frequency": "Only when prompted by a user.",
+      "operator": "OpenAI",
+      "primary_token": "ChatGPT-User",
+      "purpose": "inference",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range"
+        ],
+        "range_files": {
+          "ChatGPT-User": "seeds/openai/chatgpt-user.json"
+        },
+        "range_url": "https://openai.com/chatgpt-user.json",
+        "verifiability": "verifiable"
+      }
+    },
+    "Claude-Code": {
+      "aliases": [],
+      "description": "Claude Code is an AI coding agent by Anthropic that can build, debug, and ship code directly from the terminal, handling tasks like codebase onboarding, multi-file edits,\u2026 More info can be found at https://knownagents.com/agents/claude-code",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Claude-Code",
+      "purpose": "AI Coding Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Claude-SearchBot": {
+      "aliases": [],
+      "description": "Claude-SearchBot navigates the web to improve search result quality for users. It analyzes online content specifically to enhance the relevance and accuracy of search responses.",
+      "frequency": "No information provided.",
+      "operator": "Anthropic",
+      "primary_token": "Claude-SearchBot",
+      "purpose": "search",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range",
+          "reverse-DNS"
+        ],
+        "range_files": {
+          "Claude-SearchBot": "seeds/anthropic/bots.json"
+        },
+        "range_url": "https://claude.com/crawling/bots.json",
+        "verifiability": "verifiable"
+      }
+    },
+    "Claude-User": {
+      "aliases": [],
+      "description": "Claude-User is dispatched by Anthropic's Claude AI assistant in response to user prompts, when it needs to fetch content to include in its answers. More info can be found at https://knownagents.com/agents/claude-user",
+      "frequency": "No information provided.",
+      "operator": "Anthropic",
+      "primary_token": "Claude-User",
+      "purpose": "inference",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range",
+          "reverse-DNS"
+        ],
+        "range_files": {
+          "Claude-User": "seeds/anthropic/bots.json"
+        },
+        "range_url": "https://claude.com/crawling/bots.json",
+        "verifiability": "verifiable"
+      }
+    },
+    "Claude-Web": {
+      "aliases": [],
+      "description": "Claude-Web is an AI-related agent operated by Anthropic. It's currently unclear exactly what it's used for, since there's no official documentation. If you can provide more detail, please contact us. More info can be found at https://knownagents.com/agents/claude-web",
+      "frequency": "Unclear at this time.",
+      "operator": "Anthropic",
+      "primary_token": "Claude-Web",
+      "purpose": "Undocumented AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "ClaudeBot": {
+      "aliases": [],
+      "description": "Scrapes data to train LLMs and AI products offered by Anthropic.",
+      "frequency": "No information provided.",
+      "operator": "Anthropic",
+      "primary_token": "ClaudeBot",
+      "purpose": "training",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range",
+          "reverse-DNS"
+        ],
+        "range_files": {
+          "ClaudeBot": "seeds/anthropic/bots.json"
+        },
+        "range_url": "https://claude.com/crawling/bots.json",
+        "verifiability": "verifiable"
+      }
+    },
+    "CloudVertexBot": {
+      "aliases": [],
+      "description": "CloudVertexBot is a Google-operated crawler available to site owners to request targeted crawls of their own sites for AI training purposes on the Vertex AI platform. More info can be found at https://knownagents.com/agents/cloudvertexbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "CloudVertexBot",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Cloudflare-AutoRAG": {
+      "aliases": [],
+      "description": "AutoRAG is an all-in-one AI search solution.",
+      "frequency": "Unclear at this time.",
+      "operator": "Cloudflare",
+      "primary_token": "Cloudflare-AutoRAG",
+      "purpose": "Collects data for AI search",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "CloudflareBrowserRenderingCrawler": {
+      "aliases": [],
+      "description": "CloudflareBrowserRenderingCrawler is a web crawler operated by Cloudflare that returns rendered website content for research, monitoring, and AI data workflows. More info can be found at https://knownagents.com/agents/cloudflarebrowserrenderingcrawler",
+      "frequency": "Unclear at this time.",
+      "operator": "Cloudflare that returns rendered website content for research, monitoring, and AI data workflows",
+      "primary_token": "CloudflareBrowserRenderingCrawler",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Code": {
+      "aliases": [],
+      "description": "Code (GitHub Copilot) is an AI coding agent that can autonomously plan, build, and execute development tasks, functioning as a collaborative AI pair programmer. More info can be found at https://knownagents.com/agents/code",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Code",
+      "purpose": "AI Coding Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Cotoyogi": {
+      "aliases": [],
+      "description": "Scrapes data for AI training in Japanese language.",
+      "frequency": "No information provided.",
+      "operator": "ROIS",
+      "primary_token": "Cotoyogi",
+      "purpose": "AI LLM Scraper.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "CragCrawler": {
+      "aliases": [],
+      "description": "CragCrawler is a web scraping bot operated by CragSoftware, a Brazil-based software company specializing in data engineering and AI web scraping services. The bot is used\u2026 More info can be found at https://knownagents.com/agents/cragcrawler",
+      "frequency": "Unclear at this time.",
+      "operator": "CragSoftware, a Brazil-based software company specializing in data engineering and AI web scraping services",
+      "primary_token": "CragCrawler",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Crawl4AI": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/crawl4ai",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Crawl4AI",
+      "purpose": "Undocumented AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Crawlspace": {
+      "aliases": [],
+      "description": "Crawlspace is a web crawler platform that fetches and extracts website content for AI agents, RAG applications, and structured data workflows. More info can be found at https://knownagents.com/agents/crawlspace",
+      "frequency": "Unclear at this time.",
+      "operator": "Crawlspace",
+      "primary_token": "Crawlspace",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Cursor": {
+      "aliases": [],
+      "description": "Cursor is an AI coding agent that helps write, edit, and understand code. More info can be found at https://knownagents.com/agents/cursor",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Cursor",
+      "purpose": "AI Coding Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Datenbank Crawler": {
+      "aliases": [],
+      "description": "Datenbank Crawler is an AI data scraper operated by Datenbank. It's not currently known to be artificially intelligent or AI-related. If you think that's incorrect or can provide more detail about its purpose, please contact us. More info can be found at https://knownagents.com/agents/datenbank-crawler",
+      "frequency": "Unclear at this time.",
+      "operator": "Datenbank",
+      "primary_token": "Datenbank Crawler",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "DeepSeekBot": {
+      "aliases": [],
+      "description": "DeepSeekBot is a web crawler used by DeepSeek to train its language models and improve its AI products.",
+      "frequency": "Unclear at this time.",
+      "operator": "DeepSeek",
+      "primary_token": "DeepSeekBot",
+      "purpose": "Training language models and improving AI products",
+      "respects_robots": "No",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Devin": {
+      "aliases": [],
+      "description": "Devin is a software engineering AI assistant that can browse websites and perform web-based tasks, functioning as a collaborative AI teammate for engineering teams. More info can be found at https://knownagents.com/agents/devin",
+      "frequency": "Unclear at this time.",
+      "operator": "Devin AI",
+      "primary_token": "Devin",
+      "purpose": "AI Coding Agents",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Diffbot": {
+      "aliases": [],
+      "description": "Diffbot is a web crawler that extracts and structures website content using AI-powered visual understanding, providing knowledge graph data for applications like market i\u2026 More info can be found at https://knownagents.com/agents/diffbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Diffbot",
+      "primary_token": "Diffbot",
+      "purpose": "data-aggregation",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-match"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no authoritative Diffbot-published IP-range JSON confirmed at primary source",
+          "source_hint": "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "Diffbot-User": {
+      "aliases": [],
+      "description": "Diffbot-User is used by requests originating on behalf of a human user browsing a URL using Diffbot software, in response to their input. Documented by Diffbot at https://docs.diffbot.com/docs/does-crawl-respect-robotstxt",
+      "frequency": "Only when prompted by a user.",
+      "operator": "Diffbot",
+      "primary_token": "Diffbot-User",
+      "purpose": "inference",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-match"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no authoritative Diffbot-published IP-range JSON confirmed at primary source",
+          "source_hint": "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "DoubaoBot": {
+      "aliases": [],
+      "description": "DoubaoBot is a crawler operated by ByteDance to collect web content for its Doubao AI assistant. Distinct from Bytespider (general/training) and TikTokSpider (video).",
+      "frequency": "Unclear at this time.",
+      "operator": "ByteDance",
+      "primary_token": "DoubaoBot",
+      "purpose": "AI crawler for ByteDance's Doubao AI assistant.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "DuckAssistBot": {
+      "aliases": [],
+      "description": "DuckAssistBot is a web crawler that scans websites to collect content for DuckDuckGo's AI-assisted answers feature, which generates brief responses to search queries usin\u2026 More info can be found at https://knownagents.com/agents/duckassistbot",
+      "frequency": "Unclear at this time.",
+      "operator": "DuckDuckGo",
+      "primary_token": "DuckAssistBot",
+      "purpose": "inference",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range"
+        ],
+        "range_files": {},
+        "range_url": "https://duckduckgo.com/duckassistbot.json",
+        "verifiability": {
+          "actionable": true,
+          "derived_from": "published_ip_range_url",
+          "tier": "C",
+          "value": "C \u2014 IP-range file published"
+        }
+      }
+    },
+    "DuckDuckBot": {
+      "aliases": [
+        "DuckDuckBot"
+      ],
+      "description": "DuckDuckGo's traditional search crawler. The separate DuckAssistBot token serves its AI-assist features.",
+      "frequency": "",
+      "operator": "DuckDuckGo",
+      "primary_token": "DuckDuckBot",
+      "purpose": "search",
+      "respects_robots": true,
+      "sources": [
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range",
+          "user-agent-string"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference",
+          "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": "verification_methods",
+          "tier": "D",
+          "value": "D \u2014 method named, artifact not published"
+        }
+      }
+    },
+    "ERNIEBot": {
+      "aliases": [],
+      "description": "ERNIEBot is a crawler operated by Baidu to collect public web content used for its ERNIE (Wenxin) large language models.",
+      "frequency": "Unclear at this time.",
+      "operator": "Baidu",
+      "primary_token": "ERNIEBot",
+      "purpose": "Collects public web content for Baidu's ERNIE large language models.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Echobot Bot": {
+      "aliases": [],
+      "description": "Echobot Bot is an AI data scraper operated by Echobox. It's not currently known to be artificially intelligent or AI-related. If you think that's incorrect or can provide more detail about its purpose, please contact us. More info can be found at https://knownagents.com/agents/echobot-bot",
+      "frequency": "Unclear at this time.",
+      "operator": "Echobox",
+      "primary_token": "Echobot Bot",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "EchoboxBot": {
+      "aliases": [],
+      "description": "Supports company's AI-powered social and email management products.",
+      "frequency": "Unclear at this time.",
+      "operator": "Echobox",
+      "primary_token": "EchoboxBot",
+      "purpose": "Data collection to support AI-powered products.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "ExaBot": {
+      "aliases": [],
+      "description": "ExaBot is a web crawler that indexes web content to power Exa's AI search engine and semantic search APIs for AI applications. More info can be found at https://knownagents.com/agents/exabot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "ExaBot",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "ExaSearchBot": {
+      "aliases": [],
+      "description": "ExaSearchBot is a web crawler operated by Exa that discovers and indexes public web pages so their content can be found, retrieved, and cited through Exa. More info can be found at https://knownagents.com/agents/exasearchbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Exa",
+      "primary_token": "ExaSearchBot",
+      "purpose": "AI Search Crawlers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "FacebookBot": {
+      "aliases": [],
+      "description": "Officially used for training Meta \"speech recognition technology,\" unknown if used to train Meta AI specifically.",
+      "frequency": "Up to 1 page per second",
+      "operator": "Meta/Facebook",
+      "primary_token": "FacebookBot",
+      "purpose": "Training language models",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Factset_spyderbot": {
+      "aliases": [],
+      "description": "Scrapes data for AI training.",
+      "frequency": "No information provided.",
+      "operator": "Factset",
+      "primary_token": "Factset_spyderbot",
+      "purpose": "AI model training.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "FirecrawlAgent": {
+      "aliases": [],
+      "description": "FirecrawlAgent is a web crawler operated by Firecrawl that extracts web content and converts it into structured data for use in LLM and AI applications. More info can be found at https://knownagents.com/agents/firecrawlagent",
+      "frequency": "No information provided.",
+      "operator": "Firecrawl that extracts web content and converts it into structured data for use in LLM and AI applications",
+      "primary_token": "FirecrawlAgent",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "FriendlyCrawler": {
+      "aliases": [],
+      "description": "Unclear who the operator is; but data is used for training/machine learning.",
+      "frequency": "Unclear at this time.",
+      "operator": "Unknown",
+      "primary_token": "FriendlyCrawler",
+      "purpose": "We are using the data from the crawler to build datasets for machine learning experiments.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "GPTBot": {
+      "aliases": [],
+      "description": "Data is used to train current and future models, removed paywalled data, PII and data that violates the company's policies.",
+      "frequency": "No information.",
+      "operator": "OpenAI",
+      "primary_token": "GPTBot",
+      "purpose": "training",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range"
+        ],
+        "range_files": {
+          "GPTBot": "seeds/openai/gptbot.json"
+        },
+        "range_url": "https://openai.com/gptbot.json",
+        "verifiability": "verifiable"
+      }
+    },
+    "GeistHaus-PageFetcher": {
+      "aliases": [],
+      "description": "GeistHaus-PageFetcher is a web crawler operated by GeistHaus, a company developing AI systems for therapy and psychological assessment. This bot fetches web pages as part\u2026 More info can be found at https://knownagents.com/agents/geisthaus-pagefetcher",
+      "frequency": "Unclear at this time.",
+      "operator": "GeistHaus, a company developing AI systems for therapy and psychological assessment",
+      "primary_token": "GeistHaus-PageFetcher",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Gemini-Deep-Research": {
+      "aliases": [],
+      "description": "Gemini-Deep-Research is the agent responsible for collecting and scanning resources used in Google Gemini's Deep Research feature, which acts as a personal research assis\u2026 More info can be found at https://knownagents.com/agents/gemini-deep-research",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Gemini-Deep-Research",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Google-Agent": {
+      "aliases": [],
+      "description": "Google-Agent is used by agents hosted on Google infrastructure to navigate the web and perform actions upon user request. More info can be found at https://knownagents.com/agents/google-agent",
+      "frequency": "Unclear at this time.",
+      "operator": "Google",
+      "primary_token": "Google-Agent",
+      "purpose": "inference",
+      "respects_robots": false,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range",
+          "reverse-DNS"
+        ],
+        "range_files": {
+          "Google-Agent": "seeds/google/googlebot.json"
+        },
+        "range_url": "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json",
+        "verifiability": "verifiable"
+      }
+    },
+    "Google-CloudVertexBot": {
+      "aliases": [],
+      "description": "Google-CloudVertexBot crawls sites on the site owners' request when building Vertex AI Agents.",
+      "frequency": "No information.",
+      "operator": "Google",
+      "primary_token": "Google-CloudVertexBot",
+      "purpose": "inference",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range",
+          "reverse-DNS"
+        ],
+        "range_files": {
+          "Google-CloudVertexBot": "seeds/google/googlebot.json"
+        },
+        "range_url": "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json",
+        "verifiability": "verifiable"
+      }
+    },
+    "Google-Extended": {
+      "aliases": [],
+      "description": "Used to train Gemini and Vertex AI generative APIs. Does not impact a site's inclusion or ranking in Google Search.",
+      "frequency": "No information.",
+      "operator": "Google",
+      "primary_token": "Google-Extended",
+      "purpose": "training",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range"
+        ],
+        "range_files": {
+          "Google-Extended": "seeds/google/googlebot.json"
+        },
+        "range_url": {
+          "note": "no IP range \u2014 makes no requests",
+          "value": null,
+          "verify_status": "not-applicable"
+        },
+        "verifiability": "verifiable"
+      }
+    },
+    "Google-Firebase": {
+      "aliases": [],
+      "description": "Supports Google's Firebase AI products.",
+      "frequency": "Unclear at this time.",
+      "operator": "Google",
+      "primary_token": "Google-Firebase",
+      "purpose": "Used as part of AI apps developed by users of Google's Firebase AI products.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Google-Gemini-CLI": {
+      "aliases": [],
+      "description": "Gemini CLI is an AI coding agent by Google that can query and edit large codebases, generate apps from images or PDFs, and automate complex workflows directly from the te\u2026 More info can be found at https://knownagents.com/agents/google-gemini-cli",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Google-Gemini-CLI",
+      "purpose": "AI Coding Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Google-NotebookLM": {
+      "aliases": [],
+      "description": "Google-NotebookLM is an AI-powered research and note-taking assistant that helps users synthesize information from uploaded sources like documents, transcripts, or web co\u2026 More info can be found at https://knownagents.com/agents/google-notebooklm",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Google-NotebookLM",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "GoogleAgent-Mariner": {
+      "aliases": [],
+      "description": "GoogleAgent-Mariner is an AI agent created by Google that can use a web browser. It can intelligently navigate and interact with websites to complete multi-step tasks on \u2026 More info can be found at https://knownagents.com/agents/googleagent-mariner",
+      "frequency": "Unclear at this time.",
+      "operator": "Google",
+      "primary_token": "GoogleAgent-Mariner",
+      "purpose": "AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "GoogleAgent-URLContext": {
+      "aliases": [],
+      "description": "GoogleAgent-URLContext is a web fetcher operated by Google that retrieves web content on behalf of Gemini API users. When a developer provides a URL as context in a Gemin\u2026 More info can be found at https://knownagents.com/agents/googleagent-urlcontext",
+      "frequency": "Unclear at this time.",
+      "operator": "Google that retrieves web content on behalf of Gemini API users",
+      "primary_token": "GoogleAgent-URLContext",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "GoogleOther": {
+      "aliases": [],
+      "description": "\"Used by various product teams for fetching publicly accessible content from sites. For example, it may be used for one-off crawls for internal research and development.\"",
+      "frequency": "No information.",
+      "operator": "Google",
+      "primary_token": "GoogleOther",
+      "purpose": "search",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range",
+          "reverse-DNS"
+        ],
+        "range_files": {
+          "GoogleOther": "seeds/google/googlebot.json"
+        },
+        "range_url": "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
+        "verifiability": "verifiable"
+      }
+    },
+    "GoogleOther-Image": {
+      "aliases": [],
+      "description": "\"Used by various product teams for fetching publicly accessible content from sites. For example, it may be used for one-off crawls for internal research and development.\"",
+      "frequency": "No information.",
+      "operator": "Google",
+      "primary_token": "GoogleOther-Image",
+      "purpose": "Scrapes data.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range"
+        ],
+        "range_files": {
+          "GoogleOther-Image": "seeds/google/googlebot.json"
+        },
+        "verifiability": "unverifiable"
+      }
+    },
+    "GoogleOther-Video": {
+      "aliases": [],
+      "description": "\"Used by various product teams for fetching publicly accessible content from sites. For example, it may be used for one-off crawls for internal research and development.\"",
+      "frequency": "No information.",
+      "operator": "Google",
+      "primary_token": "GoogleOther-Video",
+      "purpose": "Scrapes data.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range"
+        ],
+        "range_files": {
+          "GoogleOther-Video": "seeds/google/googlebot.json"
+        },
+        "verifiability": "unverifiable"
+      }
+    },
+    "HenkBot": {
+      "aliases": [],
+      "description": "Henkbot crawls the web on behalf of Valyu, an AI search infrastructure provider that indexes content for use in AI-powered retrieval pipelines. More info can be found at https://knownagents.com/agents/henkbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "HenkBot",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "ICC-Crawler": {
+      "aliases": [],
+      "description": "Use the collected data for artificial intelligence technologies; provide data to third parties, including commercial companies; those companies can use the data for their own business.",
+      "frequency": "No information.",
+      "operator": "NICT (National Institute of Information and Communications Technology)",
+      "primary_token": "ICC-Crawler",
+      "purpose": "training",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-match"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no authoritative NICT-published IP-range JSON confirmed at primary source",
+          "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "ISSCyberRiskCrawler": {
+      "aliases": [],
+      "description": "Used to train machine learning based models to quantify cyber risk.",
+      "frequency": "No information.",
+      "operator": "ISS-Corporate",
+      "primary_token": "ISSCyberRiskCrawler",
+      "purpose": "Scrapes data to train machine learning models.",
+      "respects_robots": "No",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "ImagesiftBot": {
+      "aliases": [],
+      "description": "Once images and text are downloaded from a webpage, ImageSift analyzes this data from the page and stores the information in an index. Their web intelligence products use this index to enable search and retrieval of similar images.",
+      "frequency": "No information.",
+      "operator": "ImageSift (Hive)",
+      "primary_token": "ImagesiftBot",
+      "purpose": "data-aggregation",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-match"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no authoritative ImageSift-published IP-range JSON confirmed at primary source",
+          "source_hint": "https://imagesift.com/about",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "Kangaroo Bot": {
+      "aliases": [],
+      "description": "Kangaroo Bot is used by the company Kangaroo LLM to download data to train AI models tailored to Australian language and culture. More info can be found at https://knownagents.com/agents/kangaroo-bot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Kangaroo Bot",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "KeenableBot": {
+      "aliases": [],
+      "description": "KeenableBot is a web crawler operated by Keenable for indexing web content for AI search.",
+      "frequency": "Unclear at this time.",
+      "operator": "Keenable",
+      "primary_token": "KeenableBot",
+      "purpose": "AI Search Crawlers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Kimi-Agent": {
+      "aliases": [],
+      "description": "Kimi-Agent is a browser-enabled AI agent operated by Moonshot AI that browses websites while carrying out user-directed research and other tasks. More info can be found at https://knownagents.com/agents/kimi-agent",
+      "frequency": "Unclear at this time.",
+      "operator": "Moonshot AI that browses websites while carrying out user-directed research and other tasks",
+      "primary_token": "Kimi-Agent",
+      "purpose": "AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Kimi-SearchBot": {
+      "aliases": [],
+      "description": "Kimi-SearchBot powers Kimi's search features: it analyzes pages for relevance and builds the search index. Documented by Moonshot AI at https://www.kimi.ai/policies/kimi-crawlers",
+      "frequency": "No information provided.",
+      "operator": "Moonshot AI",
+      "primary_token": "Kimi-SearchBot",
+      "purpose": "AI Search Crawlers",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Kimi-User": {
+      "aliases": [],
+      "description": "Kimi-User is a web crawler operated by Moonshot AI that fetches web content on behalf of users interacting with Kimi. When a user asks Kimi to summarize an article or ans\u2026 More info can be found at https://knownagents.com/agents/kimi-user",
+      "frequency": "Unclear at this time.",
+      "operator": "Moonshot AI that fetches web content on behalf of users interacting with Kimi",
+      "primary_token": "Kimi-User",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "KimiBot": {
+      "aliases": [],
+      "description": "KimiBot crawls content potentially used to train Kimi's foundation models. Documented by Moonshot AI at https://www.kimi.ai/policies/kimi-crawlers",
+      "frequency": "No information provided.",
+      "operator": "Moonshot AI",
+      "primary_token": "KimiBot",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "KlaviyoAIBot": {
+      "aliases": [],
+      "description": "KlaviyoAIBot is Klaviyo's web crawler that fetches publicly available pages from domains explicitly connected to user accounts to power the Kai Customer Agent feature. Th\u2026 More info can be found at https://knownagents.com/agents/klaviyoaibot",
+      "frequency": "Indexes based on 'change signals' and user configuration.",
+      "operator": "Klaviyo",
+      "primary_token": "KlaviyoAIBot",
+      "purpose": "AI Assistants",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "KunatoCrawler": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/kunatocrawler",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "KunatoCrawler",
+      "purpose": "Undocumented AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "LAIONDownloader": {
+      "aliases": [],
+      "description": "LAIONDownloader is a bot by LAION, a non-profit organization that provides datasets, tools and models to liberate machine learning research.",
+      "frequency": "Unclear at this time.",
+      "operator": "Large-scale Artificial Intelligence Open Network",
+      "primary_token": "LAIONDownloader",
+      "purpose": "AI tools and models for machine learning research.",
+      "respects_robots": "No",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "LCC": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/lcc",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "LCC",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Lightpanda": {
+      "aliases": [],
+      "description": "Lightpanda is a custom-built headless browser designed for AI and automation.",
+      "frequency": "Defined per-user.",
+      "operator": "Anyone who downloads the Lightpanda client. Possibly being used by a Grok-adjacent organization's botnet.",
+      "primary_token": "Lightpanda",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "At the discretion of Lightpanda users.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "LinerBot": {
+      "aliases": [],
+      "description": "LinerBot is the web crawler used by Liner AI assistant to gather information from academic sources and websites to provide accurate answers with line-by-line source citat\u2026 More info can be found at https://knownagents.com/agents/linerbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "LinerBot",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Linguee Bot": {
+      "aliases": [],
+      "description": "Linguee Bot is a web crawler used by Linguee to gather training data for its AI powered translation service.",
+      "frequency": "Unclear at this time.",
+      "operator": "Linguee",
+      "primary_token": "Linguee Bot",
+      "purpose": "AI powered translation service",
+      "respects_robots": "No",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "LinkupBot": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/linkupbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "LinkupBot",
+      "purpose": "AI Search Crawlers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Manus-User": {
+      "aliases": [],
+      "description": "Manus-User is a browser-enabled AI agent operated by Butterfly Effect, a company based in China. It autonomously navigates websites, interprets content, and carries out m\u2026 More info can be found at https://knownagents.com/agents/manus-user",
+      "frequency": "Unclear at this time.",
+      "operator": "Butterfly Effect, a company based in China",
+      "primary_token": "Manus-User",
+      "purpose": "AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Meta-ExternalAgent": {
+      "aliases": [],
+      "description": "Meta-ExternalAgent is a web crawler used by Meta to download training data for its AI models and improve its products by indexing content directly. More info can be found at https://knownagents.com/agents/meta-externalagent",
+      "frequency": "Unclear at this time.",
+      "operator": "Meta",
+      "primary_token": "Meta-ExternalAgent",
+      "purpose": "training",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-match"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "Meta documents the crawler but no dedicated authoritative IP-range JSON file was confirmed at primary source; requests come from Meta/Facebook IP space",
+          "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/crawler",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "Meta-ExternalFetcher": {
+      "aliases": [],
+      "description": "Meta-ExternalFetcher is dispatched by Meta AI products in response to user prompts, when they need to fetch an individual links. More info can be found at https://knownagents.com/agents/meta-externalfetcher",
+      "frequency": "Unclear at this time.",
+      "operator": "Meta",
+      "primary_token": "Meta-ExternalFetcher",
+      "purpose": "inference",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-string"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference",
+          "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "Meta-WebIndexer": {
+      "aliases": [
+        "Meta-WebIndexer"
+      ],
+      "description": "Per Meta's documentation, the Meta-WebIndexer crawler navigates the web to improve Meta AI search result quality; allowing it in robots.txt helps Meta AI cite and link your content in its responses. Token and operator-doc reference recorded in the ai.robots.txt machine-readable registry.",
+      "frequency": "",
+      "operator": "Meta",
+      "primary_token": "Meta-WebIndexer",
+      "purpose": "search",
+      "respects_robots": null,
+      "sources": [
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "Meta documents its crawlers; confirm the exact authoritative IP-range source for Meta-WebIndexer at build",
+          "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": "verification_methods",
+          "tier": "D",
+          "value": "D \u2014 method named, artifact not published"
+        }
+      }
+    },
+    "MistralAI-Index": {
+      "aliases": [],
+      "description": "MistralAI-Index is Mistral AI's indexing crawler. It collects web content for Mistral's search index (the source behind Le Chat's answers). Mistral states the content is not used for generative AI training. Documented at https://docs.mistral.ai/robots",
+      "frequency": "Unclear at this time.",
+      "operator": "Mistral AI",
+      "primary_token": "MistralAI-Index",
+      "purpose": "Indexes web content for Mistral AI's search, used to answer questions in Le Chat. Per Mistral, not used for model training.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "MistralAI-Training": {
+      "aliases": [],
+      "description": "MistralAI-Training crawls web content to build training datasets. Documented by Mistral at https://docs.mistral.ai/robots/",
+      "frequency": "No information provided.",
+      "operator": "Mistral AI",
+      "primary_token": "MistralAI-Training",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "MistralAI-User": {
+      "aliases": [],
+      "description": "MistralAI-User is Mistral's AI assistant bot that performs web browsing and data gathering tasks for users in Le Chat, including opening web pages and retrieving informat\u2026 More info can be found at https://knownagents.com/agents/mistralai-user",
+      "frequency": "Unclear at this time.",
+      "operator": "Mistral AI",
+      "primary_token": "MistralAI-User",
+      "purpose": "inference",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range"
+        ],
+        "range_files": {},
+        "range_url": "https://mistral.ai/mistralai-user-ips.json",
+        "verifiability": {
+          "actionable": true,
+          "derived_from": "published_ip_range_url",
+          "tier": "C",
+          "value": "C \u2014 IP-range file published"
+        }
+      }
+    },
+    "MistralAI-User/1.0": {
+      "aliases": [],
+      "description": "MistralAI-User is for user actions in LeChat. When users ask LeChat a question, it may visit a web page to help answer and include a link to the source in its response.",
+      "frequency": "Only when prompted by a user.",
+      "operator": "Mistral AI",
+      "primary_token": "MistralAI-User/1.0",
+      "purpose": "Takes action based on user prompts.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Mozilla-Tabstack": {
+      "aliases": [],
+      "description": "Mozilla-Tabstack is an AI agent operated by Mozilla that performs programmatic, AI-driven interactions with web content through Tabstack. More info can be found at https://knownagents.com/agents/mozilla-tabstack",
+      "frequency": "On demand via API.",
+      "operator": "Mozilla that performs programmatic, AI-driven interactions with web content through Tabstack",
+      "primary_token": "Mozilla-Tabstack",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "MyCentralAIScraperBot": {
+      "aliases": [],
+      "description": "Operator and data use is unclear at this time.",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "MyCentralAIScraperBot",
+      "purpose": "AI data scraper",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "NagetBot": {
+      "aliases": [],
+      "description": "'Naget revolutionizes content discovery through an AI-powered ecosystem that transforms how we generate, organize, share, and discover valuable content.' (https://naget.com/) User-agent string links https://naget.ai/bot which yields 404.",
+      "frequency": "Unclear at this time.",
+      "operator": "Naget Inc (founded by Chris Samarinas, headquarter in Amherst, Massachusetts)",
+      "primary_token": "NagetBot",
+      "purpose": "AI data scraper",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "NotebookLM": {
+      "aliases": [],
+      "description": "NotebookLM is an AI-powered research and note-taking assistant that helps users synthesize information from their own uploaded sources, such as documents, transcripts, or web content. It can generate summaries, answer questions, and highlight key themes from the materials you provide, acting like a personalized research companion built on Google's Gemini model. NotebookLM fetches source URLs when users add them to their notebooks, enabling the AI to access and analyze those pages for context and insights. More info can be found at https://knownagents.com/agents/google-notebooklm",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "NotebookLM",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "NovaAct": {
+      "aliases": [],
+      "description": "Nova Act is an AI agent created by Amazon that can use a web browser. It can intelligently navigate and interact with websites to complete multi-step tasks on behalf of a\u2026 More info can be found at https://knownagents.com/agents/novaact",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "NovaAct",
+      "purpose": "AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "OAI-AdsBot": {
+      "aliases": [],
+      "description": "OAI-AdsBot visits the landing page of a page submitted as an ad on ChatGPT, to check it against OpenAI's policies and, per OpenAI, to \"determine when it's most relevant to show the ad to users\". OpenAI states it only visits pages submitted as ads and that the data is not used to train foundation models. Documented at https://developers.openai.com/api/docs/bots",
+      "frequency": "Only when a page is submitted as an ad.",
+      "operator": "OpenAI",
+      "primary_token": "OAI-AdsBot",
+      "purpose": "ad-verification",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range"
+        ],
+        "range_files": {
+          "OAI-AdsBot": "seeds/openai/adsbot.json"
+        },
+        "range_url": {
+          "note": "OpenAI publishes per-bot IP-range JSON files (gptbot.json, searchbot.json, chatgpt-user.json); confirm the exact OAI-AdsBot range-file URL at build",
+          "source_hint": "https://developers.openai.com/api/docs/bots",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": "verifiable"
+      }
+    },
+    "OAI-SearchBot": {
+      "aliases": [],
+      "description": "Crawls sites to surface as results in SearchGPT.",
+      "frequency": "No information.",
+      "operator": "OpenAI",
+      "primary_token": "OAI-SearchBot",
+      "purpose": "search",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range"
+        ],
+        "range_files": {
+          "OAI-SearchBot": "seeds/openai/searchbot.json"
+        },
+        "range_url": "https://openai.com/searchbot.json",
+        "verifiability": "verifiable"
+      }
+    },
+    "OpenAI": {
+      "aliases": [],
+      "description": "The purpose of this bot is unclear at this time but it is a member of OpenAI's suite of crawlers.",
+      "frequency": "Unclear at this time.",
+      "operator": "OpenAI",
+      "primary_token": "OpenAI",
+      "purpose": "Unclear at this time.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "OpenAI Operator (Computer-Using Agent)": {
+      "aliases": [],
+      "description": "OpenAI's Operator (released 2025-01-23) was a browsing agent powered by the Computer-Using Agent (CUA) model that performed online tasks in a browser on the user's behalf. It was deprecated after the release of ChatGPT agent and shut down on 2025-08-31. Retained here as a deprecated agentic-browser record for history/freshness.",
+      "frequency": "",
+      "operator": "OpenAI",
+      "primary_token": "OpenAI Operator (Computer-Using Agent)",
+      "purpose": "agentic-browsing",
+      "respects_robots": false,
+      "sources": [
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "IP-signature"
+        ],
+        "range_files": {},
+        "range_url": {
+          "source_hint": "https://openai.com/index/introducing-operator/",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "Operator": {
+      "aliases": [],
+      "description": "Operator is an AI agent created by OpenAI that can use a web browser. It can intelligently navigate and interact with websites to complete multi-step tasks on behalf of a human user. More info can be found at https://knownagents.com/agents/operator",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Operator",
+      "purpose": "AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "PanguBot": {
+      "aliases": [],
+      "description": "PanguBot is a web crawler operated by the Chinese company Huawei. It's used to download training data for its multimodal LLM (Large Language Model) called PanGu. More info can be found at https://knownagents.com/agents/pangubot",
+      "frequency": "Unclear at this time.",
+      "operator": "the Chinese company Huawei",
+      "primary_token": "PanguBot",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Panscient": {
+      "aliases": [],
+      "description": "Compiles data on businesses and business professionals that is structured using AI and machine learning.",
+      "frequency": "The Panscient web crawler will request a page at most once every second from the same domain name or the same IP address.",
+      "operator": "Panscient",
+      "primary_token": "Panscient",
+      "purpose": "Data collection and analysis using machine learning and AI.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Perplexity Comet (assistant/agent)": {
+      "aliases": [],
+      "description": "Perplexity's Comet is a Chromium-based browser fork that runs locally and performs multi-tab agentic actions inside the user's session. Unlike Perplexity's cloud crawlers, it has no verifiable identity layer at the network level \u2014 included here per the agentic-browser taxonomy, verifiable by IP/signature only.",
+      "frequency": "",
+      "operator": "Perplexity",
+      "primary_token": "Perplexity Comet (assistant/agent)",
+      "purpose": "agentic-browsing",
+      "respects_robots": false,
+      "sources": [
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "IP-signature"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "runs from the user's network; no operator-published IP-range file applies to the local browser (cf. Perplexity's separate perplexitybot.json / perplexity-user.json for its cloud bots)",
+          "value": null,
+          "verify_status": "not-applicable"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "Perplexity-User": {
+      "aliases": [],
+      "description": "Perplexity-User supports user actions within Perplexity. When users ask Perplexity a question, it might visit a web page to help provide an accurate answer and include a \u2026 More info can be found at https://knownagents.com/agents/perplexity-user",
+      "frequency": "Only when prompted by a user.",
+      "operator": "Perplexity",
+      "primary_token": "Perplexity-User",
+      "purpose": "inference",
+      "respects_robots": false,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range"
+        ],
+        "range_files": {},
+        "range_url": "https://www.perplexity.com/perplexity-user.json",
+        "verifiability": {
+          "actionable": true,
+          "derived_from": "published_ip_range_url",
+          "tier": "C",
+          "value": "C \u2014 IP-range file published"
+        }
+      }
+    },
+    "PerplexityBot": {
+      "aliases": [],
+      "description": "Crawls sites to surface as results in Perplexity.",
+      "frequency": "No information.",
+      "operator": "Perplexity",
+      "primary_token": "PerplexityBot",
+      "purpose": "search",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range"
+        ],
+        "range_files": {},
+        "range_url": "https://www.perplexity.com/perplexitybot.json",
+        "verifiability": {
+          "actionable": true,
+          "derived_from": "published_ip_range_url",
+          "tier": "C",
+          "value": "C \u2014 IP-range file published"
+        }
+      }
+    },
+    "PetalBot": {
+      "aliases": [],
+      "description": "Operated by Huawei to provide search and AI assistant services.",
+      "frequency": "No explicit frequency provided.",
+      "operator": "Huawei",
+      "primary_token": "PetalBot",
+      "purpose": "Used to provide recommendations in Hauwei assistant and AI search services.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "PhindBot": {
+      "aliases": [],
+      "description": "Phind is an AI-powered answer engine designed for developers, offering technical answers and code examples. It uses real-time web search and specialized AI models to prov\u2026 More info can be found at https://knownagents.com/agents/phindbot",
+      "frequency": "No explicit frequency provided.",
+      "operator": "phind",
+      "primary_token": "PhindBot",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Poggio-Citations": {
+      "aliases": [],
+      "description": "Poggio-Citations is a web crawler operated by Poggio, a company that provides AI sales enablement tools for creating tailored narratives, business cases, and account plan\u2026 More info can be found at https://knownagents.com/agents/poggio-citations",
+      "frequency": "Unclear at this time.",
+      "operator": "Poggio, a company that provides AI sales enablement tools for creating tailored narratives, business cases, and account plan\u2026",
+      "primary_token": "Poggio-Citations",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Poseidon Research Crawler": {
+      "aliases": [],
+      "description": "Lab focused on scaling the interpretability research necessary to make better AI systems possible.",
+      "frequency": "No explicit frequency provided.",
+      "operator": "Poseidon Research",
+      "primary_token": "Poseidon Research Crawler",
+      "purpose": "AI research crawler",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Project Mariner": {
+      "aliases": [],
+      "description": "Google's Project Mariner (introduced Dec 2024 with Gemini 2.0) was an experimental web-browsing agent that navigated pages and took actions on a user's behalf via a Chrome extension. Google shut it down as a standalone product on 2026-05-04; its features moved into the Gemini API and Gemini Agent (see the Google-Agent record). Retained here as a deprecated agentic-browser record for history/freshness.",
+      "frequency": "",
+      "operator": "Google",
+      "primary_token": "Project Mariner",
+      "purpose": "agentic-browsing",
+      "respects_robots": false,
+      "sources": [
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "IP-signature"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "the successor Google-Agent fetcher verifies against user-triggered-agents.json; the standalone Mariner product had no published AI-bot IP-range file",
+          "source_hint": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "QualifiedBot": {
+      "aliases": [],
+      "description": "QualifiedBot is Qualified's web crawler that analyzes customer websites to provide contextual information for their AI-powered chatbots and conversational marketing platf\u2026 More info can be found at https://knownagents.com/agents/qualifiedbot",
+      "frequency": "No explicit frequency provided.",
+      "operator": "Qualified",
+      "primary_token": "QualifiedBot",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Querit-SearchBot": {
+      "aliases": [],
+      "description": "Querit-SearchBot is a web crawler operated by Querit that indexes web content for their search API service, which is designed to provide real-time search results for larg\u2026 More info can be found at https://knownagents.com/agents/querit-searchbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Querit that indexes web content for their search API service, which is designed to provide real-time search results for larg\u2026",
+      "primary_token": "Querit-SearchBot",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "QueritBot": {
+      "aliases": [],
+      "description": "QueritBot is a web crawler operated by Querit, a company providing a search API for large language model integration. This bot indexes web content to power the real-time \u2026 More info can be found at https://knownagents.com/agents/queritbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Querit, a company providing a search API for large language model integration",
+      "primary_token": "QueritBot",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "QuillBot": {
+      "aliases": [],
+      "description": "Operated by QuillBot as part of their suite of AI product offerings.",
+      "frequency": "No explicit frequency provided.",
+      "operator": "Quillbot",
+      "primary_token": "QuillBot",
+      "purpose": "Company offers AI detection, writing tools and other services.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "QwenBot": {
+      "aliases": [],
+      "description": "QwenBot is a crawler operated by Alibaba to collect public web content for its Qwen (Tongyi Qianwen) large language models. Alibaba also operates TongyiBot.",
+      "frequency": "Unclear at this time.",
+      "operator": "Alibaba",
+      "primary_token": "QwenBot",
+      "purpose": "Collects public web content for Alibaba's Qwen (Tongyi Qianwen) large language models.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Reflectionbot": {
+      "aliases": [],
+      "description": "An undocumented crawler whose user agent links to Reflection, a company that builds AI models.",
+      "frequency": "Unclear at this time.",
+      "operator": "Reflection",
+      "primary_token": "Reflectionbot",
+      "purpose": "Undocumented AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "SBIntuitionsBot": {
+      "aliases": [],
+      "description": "AI development and information analysis",
+      "frequency": "No information.",
+      "operator": "SB Intuitions",
+      "primary_token": "SBIntuitionsBot",
+      "purpose": "Uses data gathered in AI development and information analysis.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Scrapy": {
+      "aliases": [],
+      "description": "\"AI and machine learning applications often need large amounts of quality data, and web data extraction is a fast, efficient way to build structured data sets.\"",
+      "frequency": "No information.",
+      "operator": "Zyte",
+      "primary_token": "Scrapy",
+      "purpose": "Scrapes data for a variety of uses including training AI.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "SemrushBot-OCOB": {
+      "aliases": [],
+      "description": "Data collected is used for the ContentShake AI tool reports.",
+      "frequency": "Roughly once every 10 seconds.",
+      "operator": "Semrush",
+      "primary_token": "SemrushBot-OCOB",
+      "purpose": "Crawls your site for ContentShake AI tool.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "SemrushBot-SWA": {
+      "aliases": [],
+      "description": "Data collected is used for the SEO Writing Assistant tool to check if URL is accessible.",
+      "frequency": "Roughly once every 10 seconds.",
+      "operator": "Semrush",
+      "primary_token": "SemrushBot-SWA",
+      "purpose": "Checks URLs on your site for SEO Writing Assistant.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Shap-User": {
+      "aliases": [],
+      "description": "Shap-User accesses web content on behalf of users of Parallel Web Systems products. It identifies user-initiated requests rather than automatic web crawling. More info can be found at https://knownagents.com/agents/shap-user",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Shap-User",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "ShapBot": {
+      "aliases": [],
+      "description": "ShapBot is a web crawler by Parallel that collects and structures web content to power its search, extraction, and deep research APIs, providing AI agents with high-accur\u2026 More info can be found at https://knownagents.com/agents/shapbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Parallel",
+      "primary_token": "ShapBot",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Sidetrade indexer bot": {
+      "aliases": [],
+      "description": "AI product training.",
+      "frequency": "No information.",
+      "operator": "Sidetrade",
+      "primary_token": "Sidetrade indexer bot",
+      "purpose": "Extracts data for a variety of uses including training AI.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Spider": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/spider",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Spider",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "TavilyBot": {
+      "aliases": [],
+      "description": "TavilyBot is a web crawler by Tavily that indexes and extracts content from billions of pages, providing real-time search, extraction, and research data to ground AI agen\u2026 More info can be found at https://knownagents.com/agents/tavilybot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "TavilyBot",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Terra Cotta": {
+      "aliases": [],
+      "description": "Terra Cotta is Ceramic's web crawler that indexes public content to power their web-scale search API for AI and LLMs. More info can be found at https://knownagents.com/agents/terra-cotta",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Terra Cotta",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "TerraCotta": {
+      "aliases": [],
+      "description": "TerraCotta is Ceramic's web crawler that indexes public content to power their web-scale search API for AI and LLMs. More info can be found at https://knownagents.com/agents/terracotta",
+      "frequency": "Unclear at this time.",
+      "operator": "Ceramic AI",
+      "primary_token": "TerraCotta",
+      "purpose": "AI Data Providers",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Thinkbot": {
+      "aliases": [],
+      "description": "Collects data for analysis on AI usage and automation.",
+      "frequency": "Unclear at this time.",
+      "operator": "Thinkbot",
+      "primary_token": "Thinkbot",
+      "purpose": "Insights on AI integration and automation.",
+      "respects_robots": "No",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "TikTokSpider": {
+      "aliases": [],
+      "description": "Downloads data to train LLMS, as per Bytespider.",
+      "frequency": "Unclear at this time.",
+      "operator": "ByteDance",
+      "primary_token": "TikTokSpider",
+      "purpose": "LLM training.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Timpibot": {
+      "aliases": [],
+      "description": "Makes data available for training AI models.",
+      "frequency": "No information.",
+      "operator": "Timpi",
+      "primary_token": "Timpibot",
+      "purpose": "Scrapes data for use in training LLMs.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "TongyiBot": {
+      "aliases": [],
+      "description": "TongyiBot is a web crawler operated by Alibaba that fetches web content for the Tongyi Qianwen assistant and related Qwen-generated answers. More info can be found at https://knownagents.com/agents/tongyibot",
+      "frequency": "Unclear at this time.",
+      "operator": "Alibaba that fetches web content for the Tongyi Qianwen assistant and related Qwen-generated answers",
+      "primary_token": "TongyiBot",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Trae": {
+      "aliases": [],
+      "description": "Trae is an AI-powered coding agent developed by ByteDance that can understand codebases, fetch web content, and generate code. More info can be found at https://knownagents.com/agents/trae",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Trae",
+      "purpose": "AI Coding Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "TwinAgent": {
+      "aliases": [],
+      "description": "TwinAgent is operated by Twin, a platform that creates automated workers to perform tasks by integrating with APIs and controlling web applications through browser automa\u2026 More info can be found at https://knownagents.com/agents/twinagent",
+      "frequency": "Unclear at this time.",
+      "operator": "Twin, a platform that creates automated workers to perform tasks by integrating with APIs and controlling web applications through browser automa\u2026",
+      "primary_token": "TwinAgent",
+      "purpose": "AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "UseAI": {
+      "aliases": [],
+      "description": "UseAI is a web crawler associated with Use AI, a platform that provides an AI workspace where users can chat with AI models, research the web, and perform various tasks. \u2026 More info can be found at https://knownagents.com/agents/useai",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "UseAI",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "VelenPublicWebCrawler": {
+      "aliases": [],
+      "description": "\"Our goal with this crawler is to build business datasets and machine learning models to better understand the web.\"",
+      "frequency": "No information.",
+      "operator": "Velen Crawler",
+      "primary_token": "VelenPublicWebCrawler",
+      "purpose": "Scrapes data for business data sets and machine learning models.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "WARDBot": {
+      "aliases": [],
+      "description": "WARDBot is an AI data scraper operated by WEBSPARK. It's not currently known to be artificially intelligent or AI-related. If you think that's incorrect or can provide more detail about its purpose, please contact us. More info can be found at https://knownagents.com/agents/wardbot",
+      "frequency": "Unclear at this time.",
+      "operator": "WEBSPARK",
+      "primary_token": "WARDBot",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "WRTNBot": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/wrtnbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "WRTNBot",
+      "purpose": "Undocumented AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "Webzio-Extended": {
+      "aliases": [],
+      "description": "Webzio-Extended is a web crawler used by Webz.io to maintain a repository of web crawl data that it sells to other companies, including those using it to train AI models. More info can be found at https://knownagents.com/agents/webzio-extended",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "Webzio-Extended",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "YaK": {
+      "aliases": [],
+      "description": "Retrieves data used for Meltwater's AI enabled consumer intelligence suite",
+      "frequency": "Unclear at this time.",
+      "operator": "Meltwater",
+      "primary_token": "YaK",
+      "purpose": "According to the [Meltwater Consumer Intelligence page](https://www.meltwater.com/en/suite/consumer-intelligence) 'By applying AI, data science, and market research expertise to a live feed of global data sources, we transform unstructured data into actionable insights allowing better decision-making'.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "YandexAdditional": {
+      "aliases": [],
+      "description": "Retrieves data used for YandexGPT quick answers features.",
+      "frequency": "No information.",
+      "operator": "Yandex",
+      "primary_token": "YandexAdditional",
+      "purpose": "Scrapes/analyzes data for the YandexGPT LLM.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "YandexAdditionalBot": {
+      "aliases": [],
+      "description": "Retrieves data used for YandexGPT quick answers features.",
+      "frequency": "No information.",
+      "operator": "Yandex",
+      "primary_token": "YandexAdditionalBot",
+      "purpose": "Scrapes/analyzes data for the YandexGPT LLM.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "YiyanBot": {
+      "aliases": [],
+      "description": "YiyanBot is a web crawler operated by Baidu that fetches web content for the yiyan.baidu.com assistant and related ERNIE-generated answers. More info can be found at https://knownagents.com/agents/yiyanbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Baidu that fetches web content for the yiyan",
+      "primary_token": "YiyanBot",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "YouBot": {
+      "aliases": [],
+      "description": "Retrieves data used for You.com web search engine and LLMs.",
+      "frequency": "No information.",
+      "operator": "You",
+      "primary_token": "YouBot",
+      "purpose": "Scrapes data for search engine and LLMs.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "ZanistaBot": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/zanistabot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "ZanistaBot",
+      "purpose": "AI Search Crawlers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "aiHitBot": {
+      "aliases": [],
+      "description": "Scrapes data for AI systems.",
+      "frequency": "No information provided.",
+      "operator": "aiHit",
+      "primary_token": "aiHitBot",
+      "purpose": "A massive, artificial intelligence/machine learning, automated system.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "amazon-QBusiness": {
+      "aliases": [],
+      "description": "amazon-QBusiness is an Amazon Q Business web crawler that fetches and indexes web content for Amazon Q Business applications. More info can be found at https://knownagents.com/agents/amazon-qbusiness",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "amazon-QBusiness",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "amazon-kendra": {
+      "aliases": [],
+      "description": "Amazon Kendra is a highly accurate intelligent search service that enables your users to search unstructured data using natural language. It returns specific answers to questions, giving users an experience that's close to interacting with a human expert. It is highly scalable and capable of meeting performance demands, tightly integrated with other AWS services such as Amazon S3 and Amazon Lex, and offers enterprise-grade security.",
+      "frequency": "No information provided.",
+      "operator": "Amazon",
+      "primary_token": "amazon-kendra",
+      "purpose": "Collects data for AI natural language search",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "anthropic-ai": {
+      "aliases": [],
+      "description": "Scrapes data to train LLMs and AI products offered by Anthropic.",
+      "frequency": "No information provided.",
+      "operator": "Anthropic",
+      "primary_token": "anthropic-ai",
+      "purpose": "training",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-string"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference",
+          "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "atlassian-bot": {
+      "aliases": [],
+      "description": "atlassian-bot is a web crawler used to index website content for its AI search, assistants and agents available in its Rovo GenAI product.",
+      "frequency": "No information provided.",
+      "operator": "Atlassian",
+      "primary_token": "atlassian-bot",
+      "purpose": "AI search, assistants and agents",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "bedrockbot": {
+      "aliases": [],
+      "description": "Connects to and crawls URLs that have been selected for use in a user's AWS bedrock application.",
+      "frequency": "Unclear at this time.",
+      "operator": "Amazon",
+      "primary_token": "bedrockbot",
+      "purpose": "inference",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-string"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference",
+          "source_hint": "https://docs.aws.amazon.com/bedrock/",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "bigsur.ai": {
+      "aliases": [],
+      "description": "bigsur.ai is a web crawler operated by Big Sur AI that fetches website content to enable AI-powered web agents, sales assistants, and content marketing solutions for busi\u2026 More info can be found at https://knownagents.com/agents/bigsur-ai",
+      "frequency": "Unclear at this time.",
+      "operator": "Big Sur AI that fetches website content to enable AI-powered web agents, sales assistants, and content marketing solutions for busi\u2026",
+      "primary_token": "bigsur.ai",
+      "purpose": "AI Assistants",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "cohere-ai": {
+      "aliases": [],
+      "description": "Retrieves data based on user prompts.",
+      "frequency": "Takes action based on user prompts.",
+      "operator": "Cohere",
+      "primary_token": "cohere-ai",
+      "purpose": "inference",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-match"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no authoritative Cohere-published IP-range JSON confirmed at primary source",
+          "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "cohere-training-data-crawler": {
+      "aliases": [],
+      "description": "cohere-training-data-crawler is a web crawler operated by Cohere to download training data for its LLMs (Large Language Models) that power its enterprise AI products. More info can be found at https://knownagents.com/agents/cohere-training-data-crawler",
+      "frequency": "Unclear at this time.",
+      "operator": "Cohere",
+      "primary_token": "cohere-training-data-crawler",
+      "purpose": "training",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-string"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference",
+          "source_hint": "https://cohere.com/",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "facebookexternalhit": {
+      "aliases": [],
+      "description": "Note that excluding FacebookExternalHit will block incorporating OpenGraph data when sharing in social media, including rich links in Apple's Messages app. [According to Meta](https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/), its purpose is \"to crawl the content of an app or website that was shared on one of Meta\u2019s family of apps\u2026\". However, see discussions [here](https://github.com/ai-robots-txt/ai.robots.txt/pull/21) and [here](https://github.com/ai-robots-txt/ai.robots.txt/issues/40#issuecomment-2524591313) for evidence to the contrary.",
+      "frequency": "Unclear at this time.",
+      "operator": "Meta/Facebook",
+      "primary_token": "facebookexternalhit",
+      "purpose": "Ostensibly only for sharing, but likely used as an AI crawler as well",
+      "respects_robots": "No",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "iAskBot": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/iaskbot",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "iAskBot",
+      "purpose": "Undocumented AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "iaskspider": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/iaskspider",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "iaskspider",
+      "purpose": "Undocumented AI Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "iaskspider/2.0": {
+      "aliases": [],
+      "description": "Used to provide answers to user queries.",
+      "frequency": "Unclear at this time.",
+      "operator": "iAsk",
+      "primary_token": "iaskspider/2.0",
+      "purpose": "Crawls sites to provide answers to user queries.",
+      "respects_robots": "No",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "imageSpider": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/imagespider",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "imageSpider",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "img2dataset": {
+      "aliases": [],
+      "description": "Downloads large sets of images into datasets for LLM training or other purposes.",
+      "frequency": "At the discretion of img2dataset users.",
+      "operator": "img2dataset",
+      "primary_token": "img2dataset",
+      "purpose": "Scrapes images for use in LLMs.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "kagi-fetcher": {
+      "aliases": [],
+      "description": "kagi-fetcher is an AI Assistant operated by Kagi that fetches web content to answer user queries through Kagi AI, their suite of AI-powered tools including Assistant, Res\u2026 More info can be found at https://knownagents.com/agents/kagi-fetcher",
+      "frequency": "Unclear at this time.",
+      "operator": "Kagi",
+      "primary_token": "kagi-fetcher",
+      "purpose": "inference",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-string"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference",
+          "source_hint": "https://kagi.com/bot",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "laion-huggingface-processor": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/laion-huggingface-processor",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "laion-huggingface-processor",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "meta-externalads": {
+      "aliases": [
+        "meta-externalads"
+      ],
+      "description": "Crawls the web to improve Meta's advertising and other business products.",
+      "frequency": "",
+      "operator": "Meta",
+      "primary_token": "meta-externalads",
+      "purpose": "ad-verification",
+      "respects_robots": true,
+      "sources": [
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-string"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference",
+          "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "meta-externalagent": {
+      "aliases": [],
+      "description": "\"The Meta-ExternalAgent crawler crawls the web for use cases such as training AI models or improving products by indexing content directly.\"",
+      "frequency": "No information.",
+      "operator": "Meta",
+      "primary_token": "meta-externalagent",
+      "purpose": "training",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-match"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "Meta documents the crawler but no dedicated authoritative IP-range JSON file was confirmed at primary source; requests come from Meta/Facebook IP space",
+          "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/crawler",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "meta-externalfetcher": {
+      "aliases": [],
+      "description": "meta-externalfetcher is used by Meta to perform user-initiated fetches of individual links from AI assistant product functions. More info can be found at https://knownagents.com/agents/meta-externalfetcher",
+      "frequency": "Unclear at this time.",
+      "operator": "Meta",
+      "primary_token": "meta-externalfetcher",
+      "purpose": "inference",
+      "respects_robots": true,
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "user-agent-string"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference",
+          "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": null,
+          "tier": "E",
+          "value": "E \u2014 nothing to check against"
+        }
+      }
+    },
+    "meta-webindexer": {
+      "aliases": [],
+      "description": "As per their documentation, \"The Meta-WebIndexer crawler navigates the web to improve Meta AI search result quality for users. In doing so, Meta analyzes online content to enhance the relevance and accuracy of Meta AI. Allowing Meta-WebIndexer in your robots.txt file helps us cite and link to your content in Meta AI's responses.\"",
+      "frequency": "Unhinged, more than 1 per second.",
+      "operator": "Meta",
+      "primary_token": "meta-webindexer",
+      "purpose": "search",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots",
+        "agentswelcome"
+      ],
+      "verification": {
+        "methods": [
+          "published-IP-range"
+        ],
+        "range_files": {},
+        "range_url": {
+          "note": "Meta documents its crawlers; confirm the exact authoritative IP-range source for Meta-WebIndexer at build",
+          "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+          "value": null,
+          "verify_status": "verify-against-primary-at-build"
+        },
+        "verifiability": {
+          "actionable": false,
+          "derived_from": "verification_methods",
+          "tier": "D",
+          "value": "D \u2014 method named, artifact not published"
+        }
+      }
+    },
+    "netEstate Imprint Crawler": {
+      "aliases": [],
+      "description": "netEstate Imprint Crawler is an AI data scraper operated by netEstate. If you think this is incorrect or can provide additional detail about its purpose, please contact us. More info can be found at https://knownagents.com/agents/netestate-imprint-crawler",
+      "frequency": "Unclear at this time.",
+      "operator": "netEstate",
+      "primary_token": "netEstate Imprint Crawler",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "newsai": {
+      "aliases": [],
+      "description": "User-agent string doen't contain an URL and there multiple sites using the newsai brand.",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "newsai",
+      "purpose": "AI data scraper",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "omgili": {
+      "aliases": [],
+      "description": "Crawls sites for APIs used by Hootsuite, Sprinklr, NetBase, and other companies. Data also sold for research purposes or LLM training.",
+      "frequency": "No information.",
+      "operator": "Webz.io",
+      "primary_token": "omgili",
+      "purpose": "Data is sold.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "omgilibot": {
+      "aliases": [],
+      "description": "Legacy user agent initially used for Omgili search engine. Unknown if still used, `omgili` agent still used by Webz.io.",
+      "frequency": "No information.",
+      "operator": "Webz.io",
+      "primary_token": "omgilibot",
+      "purpose": "Data is sold.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "opencode": {
+      "aliases": [],
+      "description": "OpenCode is an open-source AI coding agent that helps developers write code from the terminal, IDE, or desktop, supporting multiple LLM providers and local models. More info can be found at https://knownagents.com/agents/opencode",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "opencode",
+      "purpose": "AI Coding Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "panscient.com": {
+      "aliases": [],
+      "description": "Compiles data on businesses and business professionals that is structured using AI and machine learning.",
+      "frequency": "The Panscient web crawler will request a page at most once every second from the same domain name or the same IP address.",
+      "operator": "Panscient",
+      "primary_token": "panscient.com",
+      "purpose": "Data collection and analysis using machine learning and AI.",
+      "respects_robots": "Yes",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "qodercli": {
+      "aliases": [],
+      "description": "qodercli is a command-line AI coding agent operated by Qoder that helps developers build, debug, and modify software from the terminal. More info can be found at https://knownagents.com/agents/qodercli",
+      "frequency": "Unclear at this time.",
+      "operator": "Qoder that helps developers build, debug, and modify software from the terminal",
+      "primary_token": "qodercli",
+      "purpose": "AI Coding Agents",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "quillbot.com": {
+      "aliases": [],
+      "description": "Operated by QuillBot as part of their suite of AI product offerings.",
+      "frequency": "No explicit frequency provided.",
+      "operator": "Quillbot",
+      "primary_token": "quillbot.com",
+      "purpose": "Company offers AI detection, writing tools and other services.",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "webzio-extended": {
+      "aliases": [],
+      "description": "Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/webzio-extended",
+      "frequency": "Unclear at this time.",
+      "operator": "Unclear at this time.",
+      "primary_token": "webzio-extended",
+      "purpose": "AI Data Scrapers",
+      "respects_robots": "Unclear at this time.",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    },
+    "wpbot": {
+      "aliases": [],
+      "description": "wpbot is a used to support the functionality of the AI Chatbot for WordPress plugin. It supports the use of customer models, data collection and customer support.",
+      "frequency": "Unclear at this time.",
+      "operator": "QuantumCloud",
+      "primary_token": "wpbot",
+      "purpose": "Live chat support and lead generation.",
+      "respects_robots": "Unclear at this time; opt out provided via Google Form",
+      "sources": [
+        "airobots"
+      ],
+      "verification": {
+        "methods": [],
+        "range_files": {},
+        "verifiability": "unverifiable"
+      }
+    }
+  },
+  "version": 1
+}

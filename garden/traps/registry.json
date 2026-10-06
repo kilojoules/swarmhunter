@@ -1,0 +1,105 @@
+{
+  "generated_by": "garden/traps/generate_traps.py",
+  "inertness_rule": "Trap payloads may only induce fetching a URL on this site or sending a header. No instructions that could cause harm, no exfiltration, nothing we would not show a human.",
+  "traps": {
+    "/agents/hello/": {
+      "id": "t5-gate",
+      "note": "visible note to automated readers; landing page asks for voluntary identification",
+      "placed_on": "/about/",
+      "robots_disallowed": true,
+      "type": "T5"
+    },
+    "/archive/2026/compost-log/": {
+      "id": "t2-notes-compost-log",
+      "note": "invisible text in the compost article naming its log archive",
+      "placed_on": "/notes/compost-timeline/",
+      "robots_disallowed": true,
+      "type": "T2"
+    },
+    "/archive/2026/correspondence/": {
+      "id": "t2-about-correspondence",
+      "note": "invisible text on the about page naming the correspondence archive",
+      "placed_on": "/about/",
+      "robots_disallowed": true,
+      "type": "T2"
+    },
+    "/archive/2026/ferns-log/": {
+      "id": "t2-notes-ferns-log",
+      "note": "invisible text in the ferns article naming its log archive",
+      "placed_on": "/notes/overwintering-ferns/",
+      "robots_disallowed": true,
+      "type": "T2"
+    },
+    "/archive/2026/plot-index/": {
+      "id": "t2-home-index",
+      "note": "invisible text on the notes listing naming the plot index",
+      "placed_on": "/",
+      "robots_disallowed": true,
+      "type": "T2"
+    },
+    "/archive/2026/pruning-log/": {
+      "id": "t2-notes-pruning-log",
+      "note": "invisible text in the pruning article naming its log archive",
+      "placed_on": "/notes/pruning-the-plum-tree/",
+      "robots_disallowed": true,
+      "type": "T2"
+    },
+    "/archive/2026/tomato-log/": {
+      "id": "t2-notes-tomatoes",
+      "note": "invisible text in the tomato article naming its log archive",
+      "placed_on": "/notes/tomato-troubles/",
+      "robots_disallowed": true,
+      "type": "T2"
+    },
+    "/archive/2026/watering-log/": {
+      "id": "t2-notes-watering-log",
+      "note": "invisible text in the flagship article naming the raw watering notebook archive",
+      "placed_on": "/notes/watering-mornings/",
+      "robots_disallowed": true,
+      "type": "T2"
+    },
+    "/changelog/v3-maintenance/": {
+      "id": "t3-about-comment",
+      "note": "HTML comment naming a changelog path",
+      "placed_on": "/about/",
+      "robots_disallowed": true,
+      "type": "T3"
+    },
+    "/guestbook/": {
+      "id": "t6-guestbook",
+      "note": "visible guestbook page; submission endpoint parks verses for review",
+      "placed_on": "/",
+      "robots_disallowed": false,
+      "type": "T6"
+    },
+    "/notes/compost-thermometer/": {
+      "id": "t1-notes-compost",
+      "note": "hidden link inside the compost article",
+      "placed_on": "/notes/compost-timeline/",
+      "robots_disallowed": false,
+      "type": "T1"
+    },
+    "/notes/ferns-field-log/": {
+      "id": "t1-home-fern",
+      "note": "hidden link on the notes listing, labeled a draft",
+      "placed_on": "/",
+      "robots_disallowed": false,
+      "type": "T1"
+    },
+    "/notes/pruning-calendar/": {
+      "id": "t1-notes-pruning",
+      "note": "hidden link inside the pruning article",
+      "placed_on": "/notes/pruning-the-plum-tree/",
+      "robots_disallowed": false,
+      "type": "T1"
+    },
+    "/riddle/": {
+      "id": "t7-game",
+      "note": "visible riddle page; answer endpoint validates a word found only by reading",
+      "placed_on": "/",
+      "robots_disallowed": false,
+      "type": "T7"
+    }
+  },
+  "version": 1
+}

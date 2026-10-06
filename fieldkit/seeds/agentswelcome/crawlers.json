@@ -1,0 +1,4876 @@
+{
+  "title": "The AI Crawler Registry",
+  "description": "Canonical reference of the AI crawlers and agent user-agents on the web (June 2026). 'purpose' is what the operator says the bot does. 'verify' is how to confirm a request claiming this UA is genuine — user-agent strings are trivially spoofed, so verification is by published IP ranges or reverse DNS. No IP addresses are listed here; we link to each operator's authoritative range file instead. This enriched edition backfills the 18 existing records to the full 25-attribute EAV depth defined in research/briefs/crawlers.md, plus S-P-O relationship triples. Every sourced value carries its primary 'source' URL and 'last_verified'; any value not confirmable from a primary source is recorded as a structured placeholder ({value:null, verify_status:'verify-against-primary-at-build', source_hint:<url>}) rather than fabricated. Bot-type enum = the cited 6-type set {training, search-index, user-action-fetcher, opt-out-token, agentic-browser, undocumented} + the Agents Welcome 'data-provider' extension (flagged as such).",
+  "updated": "2026-07-06",
+  "fields": [
+    "id",
+    "name",
+    "operator",
+    "purpose",
+    "ua_substring",
+    "robots_token",
+    "respects_robots",
+    "verify",
+    "notes",
+    "canonical_name",
+    "user_agent_token",
+    "ua_full",
+    "bot_type",
+    "bot_type_extension",
+    "opt_out_mechanism",
+    "published_ip_range_url",
+    "asn",
+    "reverse_dns_suffix",
+    "supports_web_bot_auth",
+    "signature_agent_domain",
+    "jwks_url",
+    "verification_methods",
+    "crawl_traffic_share",
+    "targeted_content_type",
+    "documentation_url",
+    "first_seen_date",
+    "last_verified_date",
+    "block_vs_allow_recommendation",
+    "citation_referral_value",
+    "cloudflare_verified_category",
+    "status",
+    "triples",
+    "attribute_sources"
+  ],
+  "records": [
+    {
+      "id": "claudebot",
+      "name": "ClaudeBot",
+      "operator": "Anthropic",
+      "purpose": "training",
+      "ua_substring": "ClaudeBot",
+      "robots_token": "ClaudeBot",
+      "respects_robots": true,
+      "verify": "reverse DNS (Anthropic does not publish an IP-range file; confirm the PTR resolves to an Anthropic-controlled host)",
+      "notes": "Crawls content used to train Claude. Honors robots.txt and crawl-delay.",
+      "canonical_name": "ClaudeBot",
+      "user_agent_token": "ClaudeBot",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+        "note": "token confirmed in Anthropic support doc; exact full UA string with version/URL suffix not quoted in the article"
+      },
+      "bot_type": "training",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: ClaudeBot)",
+      "published_ip_range_url": "https://claude.com/crawling/bots.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://claude.com/crawling/bots.json"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+        "note": "Anthropic documents an IP allowlist file as the authoritative check; a specific PTR suffix is not published in the support article"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "verification_methods": [
+        "published-IP-range",
+        "reverse-DNS"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots",
+        "note": "ClaudeBot not among the four Cloudflare Radar May 2026 figures supplied in research (GPTBot/Bytespider/Applebot/Claude-SearchBot)"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — training crawler; allow if you want your content represented in Claude, block via robots.txt to opt out of training. No direct referral traffic.",
+      "citation_referral_value": "low (training; does not itself cite or refer)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/claudebot"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "ClaudeBot",
+          "operated_by",
+          "Anthropic"
+        ],
+        [
+          "ClaudeBot",
+          "has_bot_type",
+          "training"
+        ],
+        [
+          "ClaudeBot",
+          "verified_via",
+          "published-IP-range"
+        ],
+        [
+          "ClaudeBot",
+          "verified_via",
+          "reverse-DNS"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token",
+            "published_ip_range_url",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "C — IP-range file published",
+        "tier": "C",
+        "actionable": true,
+        "derived_from": "published_ip_range_url"
+      }
+    },
+    {
+      "id": "claude-user",
+      "name": "Claude-User",
+      "operator": "Anthropic",
+      "purpose": "inference",
+      "ua_substring": "Claude-User",
+      "robots_token": "Claude-User",
+      "respects_robots": true,
+      "verify": "reverse DNS to an Anthropic host",
+      "notes": "Fetches a page in real time when a Claude user's prompt references it. User-initiated, not bulk crawling.",
+      "canonical_name": "Claude-User",
+      "user_agent_token": "Claude-User",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "bot_type": "user-action-fetcher",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: Claude-User)",
+      "published_ip_range_url": "https://claude.com/crawling/bots.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://claude.com/crawling/bots.json"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "verification_methods": [
+        "published-IP-range",
+        "reverse-DNS"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "allow (default) — user-initiated fetch on behalf of a real Claude user; blocking degrades that user's experience without protecting against training.",
+      "citation_referral_value": "medium (fetches in response to a user; can surface your page to that user)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/claude-user"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Claude-User",
+          "operated_by",
+          "Anthropic"
+        ],
+        [
+          "Claude-User",
+          "has_bot_type",
+          "user-action-fetcher"
+        ],
+        [
+          "Claude-User",
+          "verified_via",
+          "published-IP-range"
+        ],
+        [
+          "Claude-User",
+          "verified_via",
+          "reverse-DNS"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token",
+            "published_ip_range_url",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "C — IP-range file published",
+        "tier": "C",
+        "actionable": true,
+        "derived_from": "published_ip_range_url"
+      }
+    },
+    {
+      "id": "claude-searchbot",
+      "name": "Claude-SearchBot",
+      "operator": "Anthropic",
+      "purpose": "search",
+      "ua_substring": "Claude-SearchBot",
+      "robots_token": "Claude-SearchBot",
+      "respects_robots": true,
+      "verify": "reverse DNS to an Anthropic host",
+      "notes": "Indexes pages to power Claude's search results.",
+      "canonical_name": "Claude-SearchBot",
+      "user_agent_token": "Claude-SearchBot",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "bot_type": "search-index",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: Claude-SearchBot)",
+      "published_ip_range_url": "https://claude.com/crawling/bots.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://claude.com/crawling/bots.json"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "verification_methods": [
+        "published-IP-range",
+        "reverse-DNS"
+      ],
+      "crawl_traffic_share": {
+        "value": "2.22%",
+        "unit": "% of AI crawler requests",
+        "as_of": "2026-05",
+        "source": "https://radar.cloudflare.com/bots",
+        "source_label": "Cloudflare Radar (May 2026), via research/competitive-research-2026-06.md §1",
+        "last_verified": "2026-06-15",
+        "note": "new tracked entry in Radar May 2026; signals the rise of dedicated AI-search crawlers"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots",
+        "note": "appeared as a NEW Cloudflare Radar tracked entry in the May 2026 snapshot"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "allow — search-index crawler that can cite and link your pages in Claude search; blocking forfeits that visibility.",
+      "citation_referral_value": "high (powers Claude search results; cites and links sources)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/claude-searchbot",
+        "note": "research describes it as an AI-search crawler; exact Cloudflare category label to confirm"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Claude-SearchBot",
+          "operated_by",
+          "Anthropic"
+        ],
+        [
+          "Claude-SearchBot",
+          "has_bot_type",
+          "search-index"
+        ],
+        [
+          "Claude-SearchBot",
+          "verified_via",
+          "published-IP-range"
+        ],
+        [
+          "Claude-SearchBot",
+          "has_crawl_share",
+          "2.22% (Radar 2026-05)"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token",
+            "published_ip_range_url",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+          "last_verified": "2026-06-15"
+        },
+        {
+          "claims": [
+            "crawl_traffic_share"
+          ],
+          "source": "https://radar.cloudflare.com/bots",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "C — IP-range file published",
+        "tier": "C",
+        "actionable": true,
+        "derived_from": "published_ip_range_url"
+      }
+    },
+    {
+      "id": "gptbot",
+      "name": "GPTBot",
+      "operator": "OpenAI",
+      "purpose": "training",
+      "ua_substring": "GPTBot",
+      "robots_token": "GPTBot",
+      "respects_robots": true,
+      "verify": "published IP ranges at openai.com/gptbot-ranges.json",
+      "notes": "Crawls content that may be used to train OpenAI models.",
+      "canonical_name": "GPTBot",
+      "user_agent_token": "GPTBot",
+      "ua_full": {
+        "value": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.3; +https://openai.com/gptbot",
+        "source": "https://developers.openai.com/api/docs/bots",
+        "last_verified": "2026-06-15"
+      },
+      "bot_type": "training",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: GPTBot)",
+      "published_ip_range_url": "https://openai.com/gptbot.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://openai.com/gptbot.json"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots",
+        "note": "OpenAI documents IP-range JSON files as the canonical check; a PTR suffix is not the documented method"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "verification_methods": [
+        "published-IP-range"
+      ],
+      "crawl_traffic_share": {
+        "value": "11.48%",
+        "unit": "% of AI crawler requests",
+        "as_of": "2026-05",
+        "source": "https://radar.cloudflare.com/bots",
+        "source_label": "Cloudflare Radar (May 2026), via research/competitive-research-2026-06.md §1",
+        "last_verified": "2026-06-15",
+        "note": "leads AI crawl traffic in the Radar May 2026 snapshot"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://developers.openai.com/api/docs/bots",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://openai.com/index/gptbot/",
+        "note": "GPTBot was publicly announced Aug 2023; confirm exact date against OpenAI's announcement at build"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — training crawler; allow to be represented in OpenAI model knowledge, block via robots.txt to opt out of training. No direct referral.",
+      "citation_referral_value": "low (training; does not itself cite or refer)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/gptbot"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "GPTBot",
+          "operated_by",
+          "OpenAI"
+        ],
+        [
+          "GPTBot",
+          "has_bot_type",
+          "training"
+        ],
+        [
+          "GPTBot",
+          "verified_via",
+          "published-IP-range"
+        ],
+        [
+          "GPTBot",
+          "has_crawl_share",
+          "11.48% (Radar 2026-05)"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "ua_full",
+            "user_agent_token",
+            "robots_token",
+            "published_ip_range_url",
+            "documentation_url"
+          ],
+          "source": "https://developers.openai.com/api/docs/bots",
+          "last_verified": "2026-06-15"
+        },
+        {
+          "claims": [
+            "crawl_traffic_share"
+          ],
+          "source": "https://radar.cloudflare.com/bots",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "C — IP-range file published",
+        "tier": "C",
+        "actionable": true,
+        "derived_from": "published_ip_range_url"
+      }
+    },
+    {
+      "id": "oai-searchbot",
+      "name": "OAI-SearchBot",
+      "operator": "OpenAI",
+      "purpose": "search",
+      "ua_substring": "OAI-SearchBot",
+      "robots_token": "OAI-SearchBot",
+      "respects_robots": true,
+      "verify": "published IP ranges (openai.com publishes searchbot ranges)",
+      "notes": "Surfaces and links sites in ChatGPT search. Does not train models.",
+      "canonical_name": "OAI-SearchBot",
+      "user_agent_token": "OAI-SearchBot",
+      "ua_full": {
+        "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.3; +https://openai.com/searchbot",
+        "source": "https://developers.openai.com/api/docs/bots",
+        "last_verified": "2026-06-15"
+      },
+      "bot_type": "search-index",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: OAI-SearchBot)",
+      "published_ip_range_url": "https://openai.com/searchbot.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://openai.com/searchbot.json"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "verification_methods": [
+        "published-IP-range"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://developers.openai.com/api/docs/bots",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "allow — search crawler that surfaces and links your site in ChatGPT search; does not train. Blocking forfeits citation/referral.",
+      "citation_referral_value": "high (links sites in ChatGPT search results)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/oai-searchbot"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "OAI-SearchBot",
+          "operated_by",
+          "OpenAI"
+        ],
+        [
+          "OAI-SearchBot",
+          "has_bot_type",
+          "search-index"
+        ],
+        [
+          "OAI-SearchBot",
+          "verified_via",
+          "published-IP-range"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "ua_full",
+            "user_agent_token",
+            "robots_token",
+            "published_ip_range_url",
+            "documentation_url"
+          ],
+          "source": "https://developers.openai.com/api/docs/bots",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "C — IP-range file published",
+        "tier": "C",
+        "actionable": true,
+        "derived_from": "published_ip_range_url"
+      }
+    },
+    {
+      "id": "chatgpt-user",
+      "name": "ChatGPT-User",
+      "operator": "OpenAI",
+      "purpose": "inference",
+      "ua_substring": "ChatGPT-User",
+      "robots_token": "ChatGPT-User",
+      "respects_robots": true,
+      "verify": "published IP ranges (openai.com/chatgpt-user.json)",
+      "notes": "User-triggered fetch when a ChatGPT user or a GPT action requests a specific URL.",
+      "canonical_name": "ChatGPT-User",
+      "user_agent_token": "ChatGPT-User",
+      "ua_full": {
+        "value": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot",
+        "source": "https://developers.openai.com/api/docs/bots",
+        "last_verified": "2026-06-15"
+      },
+      "bot_type": "user-action-fetcher",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: ChatGPT-User); note OpenAI documents that user-initiated fetches behave as on-demand actions",
+      "published_ip_range_url": "https://openai.com/chatgpt-user.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://openai.com/chatgpt-user.json"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "verification_methods": [
+        "published-IP-range"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://developers.openai.com/api/docs/bots",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "allow (default) — user-initiated fetch on a human's behalf; blocking degrades that user's ChatGPT experience.",
+      "citation_referral_value": "medium (fetches a specific page for a user; can surface it to them)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/chatgpt-user"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "ChatGPT-User",
+          "operated_by",
+          "OpenAI"
+        ],
+        [
+          "ChatGPT-User",
+          "has_bot_type",
+          "user-action-fetcher"
+        ],
+        [
+          "ChatGPT-User",
+          "verified_via",
+          "published-IP-range"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "ua_full",
+            "user_agent_token",
+            "robots_token",
+            "published_ip_range_url",
+            "documentation_url"
+          ],
+          "source": "https://developers.openai.com/api/docs/bots",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "C — IP-range file published",
+        "tier": "C",
+        "actionable": true,
+        "derived_from": "published_ip_range_url"
+      }
+    },
+    {
+      "id": "perplexitybot",
+      "name": "PerplexityBot",
+      "operator": "Perplexity",
+      "purpose": "search",
+      "ua_substring": "PerplexityBot",
+      "robots_token": "PerplexityBot",
+      "respects_robots": true,
+      "verify": "published IP ranges (perplexity.ai publishes perplexitybot ranges)",
+      "notes": "Indexes pages so they can be cited as sources in Perplexity answers.",
+      "canonical_name": "PerplexityBot",
+      "user_agent_token": "PerplexityBot",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.perplexity.ai/guides/bots"
+      },
+      "bot_type": "search-index",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: PerplexityBot); Perplexity recommends ALLOWing it to appear in results",
+      "published_ip_range_url": "https://www.perplexity.com/perplexitybot.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.perplexity.com/perplexitybot.json"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.perplexity.ai/guides/bots",
+        "note": "Perplexity docs publish the IP-range JSON as the canonical check; no PTR suffix specified in the docs"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.perplexity.ai/guides/bots"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.perplexity.ai/guides/bots"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.perplexity.ai/guides/bots"
+      },
+      "verification_methods": [
+        "published-IP-range"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://docs.perplexity.ai/guides/bots",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.perplexity.ai/guides/bots"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "allow — Perplexity explicitly recommends allowing PerplexityBot so your pages can be cited as sources; blocking forfeits citation/referral.",
+      "citation_referral_value": "high (cites sources in Perplexity answers and links them)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/perplexitybot"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "PerplexityBot",
+          "operated_by",
+          "Perplexity"
+        ],
+        [
+          "PerplexityBot",
+          "has_bot_type",
+          "search-index"
+        ],
+        [
+          "PerplexityBot",
+          "verified_via",
+          "published-IP-range"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token",
+            "published_ip_range_url",
+            "documentation_url",
+            "respects_robots",
+            "block_vs_allow_recommendation"
+          ],
+          "source": "https://docs.perplexity.ai/guides/bots",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "C — IP-range file published",
+        "tier": "C",
+        "actionable": true,
+        "derived_from": "published_ip_range_url"
+      }
+    },
+    {
+      "id": "perplexity-user",
+      "name": "Perplexity-User",
+      "operator": "Perplexity",
+      "purpose": "inference",
+      "ua_substring": "Perplexity-User",
+      "robots_token": "Perplexity-User",
+      "respects_robots": false,
+      "verify": "published IP ranges (perplexity.ai)",
+      "notes": "Real-time fetch in response to a user question. Per Perplexity, user-initiated fetches are not treated as automated crawling and may ignore robots.txt — verify and rate-limit at the edge if that matters to you.",
+      "canonical_name": "Perplexity-User",
+      "user_agent_token": "Perplexity-User",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.perplexity.ai/guides/bots"
+      },
+      "bot_type": "user-action-fetcher",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "limited — Perplexity documents that this user-initiated fetcher generally ignores robots.txt; rate-limit / verify at the edge instead",
+      "published_ip_range_url": "https://www.perplexity.com/perplexity-user.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.perplexity.com/perplexity-user.json"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.perplexity.ai/guides/bots"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.perplexity.ai/guides/bots"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.perplexity.ai/guides/bots"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.perplexity.ai/guides/bots"
+      },
+      "verification_methods": [
+        "published-IP-range"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://docs.perplexity.ai/guides/bots",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.perplexity.ai/guides/bots"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — user-initiated fetch that ignores robots.txt; allow for legitimate user requests but rate-limit/verify at the edge if load or abuse is a concern.",
+      "citation_referral_value": "medium (fetches in response to a user question; can surface your page to them)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/perplexity-user"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Perplexity-User",
+          "operated_by",
+          "Perplexity"
+        ],
+        [
+          "Perplexity-User",
+          "has_bot_type",
+          "user-action-fetcher"
+        ],
+        [
+          "Perplexity-User",
+          "verified_via",
+          "published-IP-range"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token",
+            "published_ip_range_url",
+            "documentation_url",
+            "respects_robots",
+            "opt_out_mechanism"
+          ],
+          "source": "https://docs.perplexity.ai/guides/bots",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "C — IP-range file published",
+        "tier": "C",
+        "actionable": true,
+        "derived_from": "published_ip_range_url"
+      }
+    },
+    {
+      "id": "google-extended",
+      "name": "Google-Extended",
+      "operator": "Google",
+      "purpose": "training",
+      "ua_substring": "(none — token only)",
+      "robots_token": "Google-Extended",
+      "respects_robots": true,
+      "verify": "not applicable — makes no HTTP requests",
+      "notes": "A robots.txt policy token, NOT a crawler. It makes no requests and never appears in logs; disallowing it opts your content out of Gemini/Vertex training while leaving Google Search crawling untouched.",
+      "canonical_name": "Google-Extended",
+      "user_agent_token": "Google-Extended",
+      "ua_full": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "policy token only; sends no requests and has no UA string"
+      },
+      "bot_type": "opt-out-token",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: Google-Extended) — opts content out of Gemini/Vertex training",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "no IP range — makes no requests"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "policy token; no traffic"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "policy token; no traffic"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "policy token; nothing to sign"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "not-applicable"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "not-applicable"
+      },
+      "verification_methods": [],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "policy token; generates no crawl traffic"
+      },
+      "targeted_content_type": {
+        "value": null,
+        "verify_status": "not-applicable"
+      },
+      "documentation_url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/google-extended",
+        "note": "Google-Extended announced Sep 2023; confirm exact date at build"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "decision token — disallow to opt out of Gemini/Vertex training without affecting Google Search ranking; there is no traffic to block.",
+      "citation_referral_value": "n/a (policy token, not a fetcher)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "not-applicable"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Google-Extended",
+          "operated_by",
+          "Google"
+        ],
+        [
+          "Google-Extended",
+          "has_bot_type",
+          "opt-out-token"
+        ],
+        [
+          "Google-Extended",
+          "controls_opt_out_for",
+          "Gemini/Vertex training"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "robots_token",
+            "bot_type",
+            "opt_out_mechanism",
+            "respects_robots"
+          ],
+          "source": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "policy token — makes no requests, nothing to verify",
+        "tier": "n/a",
+        "actionable": false,
+        "derived_from": "bot_type"
+      }
+    },
+    {
+      "id": "googleother",
+      "name": "GoogleOther",
+      "operator": "Google",
+      "purpose": "search",
+      "ua_substring": "GoogleOther",
+      "robots_token": "GoogleOther",
+      "respects_robots": true,
+      "verify": "Google IP ranges at gstatic.com/ipranges/goog.json + reverse DNS to googlebot.com / google.com",
+      "notes": "Generic Google crawler used by various teams for research and product development.",
+      "canonical_name": "GoogleOther",
+      "user_agent_token": "GoogleOther",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
+      },
+      "bot_type": "search-index",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: GoogleOther)",
+      "published_ip_range_url": "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.gstatic.com/ipranges/goog.json"
+      },
+      "reverse_dns_suffix": {
+        "value": ".googlebot.com / .google.com",
+        "source": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot",
+        "last_verified": "2026-06-15",
+        "note": "special-case crawlers resolve to rate-limited-proxy-*.google.com; common crawlers to crawl-*.googlebot.com per Google's verification doc"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot"
+      },
+      "verification_methods": [
+        "published-IP-range",
+        "reverse-DNS"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — generic Google fetcher for assorted product/research use; allow unless you specifically want to limit non-Search Google access.",
+      "citation_referral_value": "low (generic fetcher; not a dedicated answer-engine citer)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/googleother"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "GoogleOther",
+          "operated_by",
+          "Google"
+        ],
+        [
+          "GoogleOther",
+          "has_bot_type",
+          "search-index"
+        ],
+        [
+          "GoogleOther",
+          "verified_via",
+          "published-IP-range"
+        ],
+        [
+          "GoogleOther",
+          "verified_via",
+          "reverse-DNS"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "published_ip_range_url",
+            "reverse_dns_suffix"
+          ],
+          "source": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot",
+          "last_verified": "2026-06-15"
+        },
+        {
+          "claims": [
+            "robots_token",
+            "documentation_url"
+          ],
+          "source": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "B — reverse DNS suffix published",
+        "tier": "B",
+        "actionable": true,
+        "derived_from": "reverse_dns_suffix"
+      }
+    },
+    {
+      "id": "gemini-deep-research",
+      "name": "Google-CloudVertexBot / Gemini agents",
+      "operator": "Google",
+      "purpose": "inference",
+      "ua_substring": "Google-CloudVertexBot",
+      "robots_token": "Google-CloudVertexBot",
+      "respects_robots": true,
+      "verify": "Google IP ranges (gstatic.com/ipranges)",
+      "notes": "Fetches site content on behalf of Vertex AI agents built by site owners.",
+      "canonical_name": "Google-CloudVertexBot",
+      "user_agent_token": "Google-CloudVertexBot",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
+      },
+      "bot_type": "user-action-fetcher",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: Google-CloudVertexBot)",
+      "published_ip_range_url": "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.gstatic.com/ipranges/goog.json"
+      },
+      "reverse_dns_suffix": {
+        "value": ".google.com",
+        "source": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot",
+        "last_verified": "2026-06-15",
+        "note": "Google-controlled user-triggered fetchers resolve to a google.com hostname per Google's verification doc; confirm the precise sub-suffix for CloudVertexBot at build"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot"
+      },
+      "verification_methods": [
+        "published-IP-range",
+        "reverse-DNS"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "allow (default) — fetches on behalf of Vertex AI agents that site owners themselves build; blocking can break those agents' access to your content.",
+      "citation_referral_value": "medium (on-behalf-of fetcher for Vertex agents)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/google-cloudvertexbot"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Google-CloudVertexBot",
+          "operated_by",
+          "Google"
+        ],
+        [
+          "Google-CloudVertexBot",
+          "has_bot_type",
+          "user-action-fetcher"
+        ],
+        [
+          "Google-CloudVertexBot",
+          "verified_via",
+          "published-IP-range"
+        ],
+        [
+          "Google-CloudVertexBot",
+          "verified_via",
+          "reverse-DNS"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "published_ip_range_url",
+            "reverse_dns_suffix"
+          ],
+          "source": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot",
+          "last_verified": "2026-06-15"
+        },
+        {
+          "claims": [
+            "robots_token",
+            "documentation_url"
+          ],
+          "source": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "B — reverse DNS suffix published",
+        "tier": "B",
+        "actionable": true,
+        "derived_from": "reverse_dns_suffix"
+      }
+    },
+    {
+      "id": "bingbot",
+      "name": "Bingbot",
+      "operator": "Microsoft",
+      "purpose": "search",
+      "ua_substring": "bingbot",
+      "robots_token": "Bingbot",
+      "respects_robots": true,
+      "verify": "reverse DNS to search.msn.com + forward-confirm; Bing publishes a verification tool and IP list",
+      "notes": "Powers Bing and, by extension, Copilot search grounding.",
+      "canonical_name": "Bingbot",
+      "user_agent_token": "bingbot",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0"
+      },
+      "bot_type": "search-index",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: Bingbot)",
+      "published_ip_range_url": "https://www.bing.com/toolbox/bingbot.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.bing.com/toolbox/bingbot.json"
+      },
+      "reverse_dns_suffix": {
+        "value": ".search.msn.com",
+        "source": "https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26",
+        "last_verified": "2026-06-15",
+        "note": "Bing documents reverse DNS to *.search.msn.com plus forward-confirm"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26"
+      },
+      "verification_methods": [
+        "published-IP-range",
+        "reverse-DNS"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://en.wikipedia.org/wiki/Bingbot"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "allow — primary search-index crawler for Bing and Copilot grounding; blocking forfeits both classic search and AI-answer citation.",
+      "citation_referral_value": "high (powers Bing search and Copilot grounding; cites and refers)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/bingbot"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Bingbot",
+          "operated_by",
+          "Microsoft"
+        ],
+        [
+          "Bingbot",
+          "has_bot_type",
+          "search-index"
+        ],
+        [
+          "Bingbot",
+          "verified_via",
+          "published-IP-range"
+        ],
+        [
+          "Bingbot",
+          "verified_via",
+          "reverse-DNS"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "published_ip_range_url"
+          ],
+          "source": "https://www.bing.com/toolbox/bingbot.json",
+          "last_verified": "2026-06-15"
+        },
+        {
+          "claims": [
+            "reverse_dns_suffix",
+            "documentation_url"
+          ],
+          "source": "https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "B — reverse DNS suffix published",
+        "tier": "B",
+        "actionable": true,
+        "derived_from": "reverse_dns_suffix"
+      }
+    },
+    {
+      "id": "amazonbot",
+      "name": "Amazonbot",
+      "operator": "Amazon",
+      "purpose": "search",
+      "ua_substring": "Amazonbot",
+      "robots_token": "Amazonbot",
+      "respects_robots": true,
+      "verify": "reverse DNS to crawl.amazonbot.amazon + Amazon's published ranges",
+      "notes": "Improves Alexa answers and supports Amazon's AI products.",
+      "canonical_name": "Amazonbot",
+      "user_agent_token": "Amazonbot",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developer.amazon.com/amazonbot"
+      },
+      "bot_type": "search-index",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: Amazonbot)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developer.amazon.com/amazonbot/ip-addresses/",
+        "note": "Amazon documents reverse-DNS verification (.crawl.amazonbot.amazon) AND publishes an IP-range list; verify the exact range-file URL at build."
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developer.amazon.com/amazonbot"
+      },
+      "reverse_dns_suffix": {
+        "value": ".crawl.amazonbot.amazon",
+        "source": "https://developer.amazon.com/amazonbot",
+        "last_verified": "2026-06-15",
+        "note": "Amazon documents PTR records under crawl.amazonbot.amazon plus forward-confirm"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developer.amazon.com/amazonbot"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developer.amazon.com/amazonbot"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developer.amazon.com/amazonbot"
+      },
+      "verification_methods": [
+        "reverse-DNS"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://developer.amazon.com/amazonbot",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developer.amazon.com/amazonbot"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — supports Alexa answers and Amazon AI products; allow if you want representation there, otherwise block via robots.txt.",
+      "citation_referral_value": "medium (improves Alexa answers; limited direct web referral)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/amazonbot"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Amazonbot",
+          "operated_by",
+          "Amazon"
+        ],
+        [
+          "Amazonbot",
+          "has_bot_type",
+          "search-index"
+        ],
+        [
+          "Amazonbot",
+          "verified_via",
+          "reverse-DNS"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "reverse_dns_suffix",
+            "robots_token",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://developer.amazon.com/amazonbot",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "B — reverse DNS suffix published",
+        "tier": "B",
+        "actionable": true,
+        "derived_from": "reverse_dns_suffix"
+      }
+    },
+    {
+      "id": "applebot-extended",
+      "name": "Applebot-Extended",
+      "operator": "Apple",
+      "purpose": "training",
+      "ua_substring": "(none — token only)",
+      "robots_token": "Applebot-Extended",
+      "respects_robots": true,
+      "verify": "not applicable — policy token; the underlying Applebot verifies via reverse DNS to applebot.apple.com",
+      "notes": "Policy token: disallowing it opts content out of Apple Intelligence / foundation-model training without blocking Applebot's search crawling.",
+      "canonical_name": "Applebot-Extended",
+      "user_agent_token": "Applebot-Extended",
+      "ua_full": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "policy token only; the fetching crawler is Applebot, whose IP-CIDR is published separately"
+      },
+      "bot_type": "opt-out-token",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: Applebot-Extended) — opts content out of Apple Intelligence / foundation-model training",
+      "published_ip_range_url": "https://search.developer.apple.com/applebot.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://search.developer.apple.com/applebot.json"
+      },
+      "reverse_dns_suffix": {
+        "value": ".applebot.apple.com",
+        "source": "https://support.apple.com/en-us/119829",
+        "last_verified": "2026-06-15",
+        "note": "Applebot traffic is identified via reverse DNS in the *.applebot.apple.com domain; Applebot-Extended is the training opt-out token for that same crawler"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.apple.com/en-us/119829"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.apple.com/en-us/119829"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.apple.com/en-us/119829"
+      },
+      "verification_methods": [
+        "published-IP-range",
+        "reverse-DNS"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots",
+        "note": "the underlying Applebot is at 7.01% per Cloudflare Radar May 2026; Applebot-Extended itself is a policy token and generates no traffic"
+      },
+      "targeted_content_type": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "policy token; the underlying Applebot fetches HTML/text"
+      },
+      "documentation_url": "https://support.apple.com/en-us/119829",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.apple.com/en-us/119829",
+        "note": "Applebot-Extended introduced around WWDC 2024; confirm exact date at build"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "decision token — disallow Applebot-Extended to opt out of Apple Intelligence training while leaving Applebot's Siri/Spotlight/Safari search crawling intact.",
+      "citation_referral_value": "n/a (policy token; underlying Applebot feeds Siri/Spotlight)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/applebot-extended"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Applebot-Extended",
+          "operated_by",
+          "Apple"
+        ],
+        [
+          "Applebot-Extended",
+          "has_bot_type",
+          "opt-out-token"
+        ],
+        [
+          "Applebot-Extended",
+          "controls_opt_out_for",
+          "Apple Intelligence training"
+        ],
+        [
+          "Applebot-Extended",
+          "extends_policy_of",
+          "Applebot"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "published_ip_range_url",
+            "reverse_dns_suffix",
+            "robots_token",
+            "documentation_url",
+            "opt_out_mechanism"
+          ],
+          "source": "https://support.apple.com/en-us/119829",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "policy token — makes no requests, nothing to verify",
+        "tier": "n/a",
+        "actionable": false,
+        "derived_from": "bot_type"
+      }
+    },
+    {
+      "id": "meta-externalagent",
+      "name": "Meta-ExternalAgent",
+      "operator": "Meta",
+      "purpose": "training",
+      "ua_substring": "meta-externalagent",
+      "robots_token": "meta-externalagent",
+      "respects_robots": true,
+      "verify": "Meta publishes crawler IP ranges; confirm against those",
+      "notes": "Crawls content to train Meta's Llama models and AI products.",
+      "canonical_name": "Meta-ExternalAgent",
+      "user_agent_token": "meta-externalagent",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/crawler",
+        "note": "UA string reported across secondary sources and matching Meta's documented crawler URL; confirm exact version at build"
+      },
+      "bot_type": "training",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: meta-externalagent)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/crawler",
+        "note": "Meta documents the crawler but no dedicated authoritative IP-range JSON file was confirmed at primary source; requests come from Meta/Facebook IP space"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/crawler"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/crawler"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/crawler"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/crawler"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/crawler"
+      },
+      "verification_methods": [
+        "user-agent-match"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://developers.facebook.com/docs/sharing/webmasters/crawler",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/crawler"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — training crawler for Llama/Meta AI; allow to be represented, block via robots.txt to opt out. No authoritative IP file makes strict verification harder; rate-limit at the edge if needed.",
+      "citation_referral_value": "low (training; does not itself cite or refer)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/meta-externalagent"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Meta-ExternalAgent",
+          "operated_by",
+          "Meta"
+        ],
+        [
+          "Meta-ExternalAgent",
+          "has_bot_type",
+          "training"
+        ],
+        [
+          "Meta-ExternalAgent",
+          "verified_via",
+          "user-agent-match"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "robots_token",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://developers.facebook.com/docs/sharing/webmasters/crawler",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "ccbot",
+      "name": "CCBot",
+      "operator": "Common Crawl",
+      "purpose": "training",
+      "ua_substring": "CCBot",
+      "robots_token": "CCBot",
+      "respects_robots": true,
+      "verify": "Common Crawl publishes its crawler IP ranges",
+      "notes": "Builds the open Common Crawl corpus that many model trainers ingest downstream. Blocking CCBot blocks an upstream training-data source for the whole ecosystem.",
+      "canonical_name": "CCBot",
+      "user_agent_token": "CCBot",
+      "ua_full": {
+        "value": "CCBot/2.0 (https://commoncrawl.org/faq/)",
+        "source": "https://commoncrawl.org/ccbot",
+        "last_verified": "2026-06-15"
+      },
+      "bot_type": "training",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: CCBot)",
+      "published_ip_range_url": "https://index.commoncrawl.org/ccbot.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://index.commoncrawl.org/ccbot.json"
+      },
+      "reverse_dns_suffix": {
+        "value": ".crawl.commoncrawl.org",
+        "source": "https://commoncrawl.org/ccbot",
+        "last_verified": "2026-06-15"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://commoncrawl.org/ccbot"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://commoncrawl.org/ccbot"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://commoncrawl.org/ccbot"
+      },
+      "verification_methods": [
+        "published-IP-range",
+        "reverse-DNS"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://commoncrawl.org/ccbot",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://commoncrawl.org/ccbot"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — upstream open-corpus crawler; allowing it feeds many downstream trainers (broad reach), blocking removes you from the Common Crawl corpus. No direct referral.",
+      "citation_referral_value": "low (open training corpus; no direct citation or referral)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/ccbot"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "CCBot",
+          "operated_by",
+          "Common Crawl"
+        ],
+        [
+          "CCBot",
+          "has_bot_type",
+          "training"
+        ],
+        [
+          "CCBot",
+          "verified_via",
+          "published-IP-range"
+        ],
+        [
+          "CCBot",
+          "verified_via",
+          "reverse-DNS"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "ua_full",
+            "user_agent_token",
+            "robots_token",
+            "published_ip_range_url",
+            "reverse_dns_suffix",
+            "documentation_url"
+          ],
+          "source": "https://commoncrawl.org/ccbot",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "B — reverse DNS suffix published",
+        "tier": "B",
+        "actionable": true,
+        "derived_from": "reverse_dns_suffix"
+      }
+    },
+    {
+      "id": "bytespider",
+      "name": "Bytespider",
+      "operator": "ByteDance",
+      "purpose": "training",
+      "ua_substring": "Bytespider",
+      "robots_token": "Bytespider",
+      "respects_robots": false,
+      "verify": "no authoritative published range file; treat unverified Bytespider traffic with suspicion",
+      "notes": "Has a reputation for aggressive crawling and inconsistent robots.txt adherence. Rate-limit at the edge if it causes load.",
+      "canonical_name": "Bytespider",
+      "user_agent_token": "Bytespider",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/bytespider"
+      },
+      "bot_type": "training",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: Bytespider) — but adherence is documented as inconsistent; rate-limit / block at the edge if needed",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/bytespider",
+        "note": "no authoritative ByteDance-published IP-range file confirmed at primary source"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/bytespider"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/bytespider"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/bytespider"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/bytespider"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/bytespider"
+      },
+      "verification_methods": [
+        "user-agent-match"
+      ],
+      "crawl_traffic_share": {
+        "value": "10.25%",
+        "unit": "% of AI crawler requests",
+        "as_of": "2026-05",
+        "source": "https://radar.cloudflare.com/bots",
+        "source_label": "Cloudflare Radar (May 2026), via research/competitive-research-2026-06.md §1",
+        "last_verified": "2026-06-15",
+        "note": "second-largest AI crawler in the Radar May 2026 snapshot"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/bytespider",
+        "note": "no authoritative ByteDance operator documentation page confirmed at primary source"
+      },
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/bytespider"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "block (default) — training crawler with documented aggressive crawling and inconsistent robots.txt adherence and no authoritative IP file to verify; block/rate-limit at the edge.",
+      "citation_referral_value": "low (training; no direct citation or referral)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/bytespider"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Bytespider",
+          "operated_by",
+          "ByteDance"
+        ],
+        [
+          "Bytespider",
+          "has_bot_type",
+          "training"
+        ],
+        [
+          "Bytespider",
+          "has_crawl_share",
+          "10.25% (Radar 2026-05)"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "crawl_traffic_share"
+          ],
+          "source": "https://radar.cloudflare.com/bots",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "duckassistbot",
+      "name": "DuckAssistBot",
+      "operator": "DuckDuckGo",
+      "purpose": "inference",
+      "ua_substring": "DuckAssistBot",
+      "robots_token": "DuckAssistBot",
+      "respects_robots": true,
+      "verify": "DuckDuckGo publishes bot details; confirm against those",
+      "notes": "Fetches content for DuckDuckGo's AI assist answers.",
+      "canonical_name": "DuckAssistBot",
+      "user_agent_token": "DuckAssistBot",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckassistbot.html",
+        "note": "UA pattern reported across secondary sources and matching DuckDuckGo's documented bot URL; confirm exact version at build"
+      },
+      "bot_type": "user-action-fetcher",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: DuckAssistBot)",
+      "published_ip_range_url": "https://duckduckgo.com/duckassistbot.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckassistbot.json"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot"
+      },
+      "verification_methods": [
+        "published-IP-range"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "allow (default) — fetches content for DuckAssist AI answers that can surface and link your page; respects robots.txt.",
+      "citation_referral_value": "medium (powers DuckAssist answers; can surface your content)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/duckassistbot"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "DuckAssistBot",
+          "operated_by",
+          "DuckDuckGo"
+        ],
+        [
+          "DuckAssistBot",
+          "has_bot_type",
+          "user-action-fetcher"
+        ],
+        [
+          "DuckAssistBot",
+          "verified_via",
+          "published-IP-range"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "robots_token",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "C — IP-range file published",
+        "tier": "C",
+        "actionable": true,
+        "derived_from": "published_ip_range_url"
+      }
+    },
+    {
+      "id": "oai-adsbot",
+      "name": "OAI-AdsBot",
+      "operator": "OpenAI",
+      "purpose": "ad-verification",
+      "ua_substring": "OAI-AdsBot",
+      "robots_token": "OAI-AdsBot",
+      "respects_robots": true,
+      "verify": "published IP ranges (OpenAI publishes per-bot range files); confirm against the OpenAI bots documentation",
+      "notes": "Validates ad landing pages for OpenAI's advertising products. Listed alongside GPTBot/OAI-SearchBot/ChatGPT-User in OpenAI's bots documentation.",
+      "canonical_name": "OAI-AdsBot",
+      "user_agent_token": "OAI-AdsBot",
+      "ua_full": {
+        "value": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-AdsBot/1.0; +https://openai.com/adsbot",
+        "source": "https://developers.openai.com/api/docs/bots",
+        "last_verified": "2026-06-15"
+      },
+      "bot_type": "user-action-fetcher",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: OAI-AdsBot)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots",
+        "note": "OpenAI publishes per-bot IP-range JSON files (gptbot.json, searchbot.json, chatgpt-user.json); confirm the exact OAI-AdsBot range-file URL at build"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "verification_methods": [
+        "published-IP-range"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text (ad landing pages)",
+      "documentation_url": "https://developers.openai.com/api/docs/bots",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.openai.com/api/docs/bots"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — validates ad landing pages; allow if you run ads through OpenAI's ad products, otherwise low impact to block.",
+      "citation_referral_value": "low (ad landing-page validation; not an answer-engine citer)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/oai-adsbot"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "OAI-AdsBot",
+          "operated_by",
+          "OpenAI"
+        ],
+        [
+          "OAI-AdsBot",
+          "has_bot_type",
+          "user-action-fetcher"
+        ],
+        [
+          "OAI-AdsBot",
+          "verified_via",
+          "published-IP-range"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "ua_full",
+            "user_agent_token",
+            "robots_token",
+            "documentation_url"
+          ],
+          "source": "https://developers.openai.com/api/docs/bots",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "D — method named, artifact not published",
+        "tier": "D",
+        "actionable": false,
+        "derived_from": "verification_methods"
+      }
+    },
+    {
+      "id": "google-agent",
+      "name": "Google-Agent",
+      "operator": "Google",
+      "purpose": "inference",
+      "ua_substring": "Google-Agent",
+      "robots_token": "Google-Agent",
+      "respects_robots": false,
+      "verify": "Google IP ranges (user-triggered-agents.json) + reverse DNS to google.com / googleusercontent.com",
+      "notes": "User-triggered fetcher used by agents hosted on Google infrastructure to navigate the web and perform actions on a user's request (for example, Project Mariner / Gemini Agent). As a user-triggered fetcher, Google documents that it generally ignores robots.txt rules.",
+      "canonical_name": "Google-Agent",
+      "user_agent_token": "Google-Agent",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers",
+        "note": "Google publishes a templated UA containing 'compatible; Google-Agent'; confirm the exact version-bearing string at build"
+      },
+      "bot_type": "user-action-fetcher",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "limited — Google documents this user-triggered fetcher as generally ignoring robots.txt; rate-limit / verify at the edge instead",
+      "published_ip_range_url": "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.gstatic.com/ipranges/goog.json"
+      },
+      "reverse_dns_suffix": {
+        "value": ".google.com",
+        "source": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot",
+        "last_verified": "2026-06-15",
+        "note": "Google-controlled fetchers resolve to a google.com / googleusercontent.com hostname per Google's verification doc; the user-triggered-fetchers page documents proxy hostnames such as *.gae.googleusercontent.com and google-proxy-*.google.com"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot"
+      },
+      "verification_methods": [
+        "published-IP-range",
+        "reverse-DNS"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — agent fetcher acting on a user's request (Gemini Agent / Project Mariner lineage); allow for legitimate user-driven actions, but it generally ignores robots.txt, so rate-limit / verify at the edge if load or abuse is a concern.",
+      "citation_referral_value": "medium (acts on a user's behalf; can surface your page to that user)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/google-agent"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Google-Agent",
+          "operated_by",
+          "Google"
+        ],
+        [
+          "Google-Agent",
+          "has_bot_type",
+          "user-action-fetcher"
+        ],
+        [
+          "Google-Agent",
+          "verified_via",
+          "published-IP-range"
+        ],
+        [
+          "Google-Agent",
+          "verified_via",
+          "reverse-DNS"
+        ],
+        [
+          "Google-Agent",
+          "succeeds",
+          "Project Mariner"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token",
+            "published_ip_range_url",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers",
+          "last_verified": "2026-06-15"
+        },
+        {
+          "claims": [
+            "reverse_dns_suffix"
+          ],
+          "source": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "B — reverse DNS suffix published",
+        "tier": "B",
+        "actionable": true,
+        "derived_from": "reverse_dns_suffix"
+      }
+    },
+    {
+      "id": "mistralai-user",
+      "name": "MistralAI-User",
+      "operator": "Mistral AI",
+      "purpose": "inference",
+      "ua_substring": "MistralAI-User",
+      "robots_token": "MistralAI-User",
+      "respects_robots": true,
+      "verify": "published IP ranges at mistral.ai/mistralai-user-ips.json",
+      "notes": "Fetches a page in real time when a Mistral (Le Chat) user's request references it. Per Mistral, the MistralAI-User token governs which sites these user-initiated requests can be made to.",
+      "canonical_name": "MistralAI-User",
+      "user_agent_token": "MistralAI-User",
+      "ua_full": {
+        "value": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-User/1.0; +https://docs.mistral.ai/robots)",
+        "source": "https://docs.mistral.ai/robots/",
+        "last_verified": "2026-06-15"
+      },
+      "bot_type": "user-action-fetcher",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: MistralAI-User)",
+      "published_ip_range_url": "https://mistral.ai/mistralai-user-ips.json",
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://mistral.ai/mistralai-user-ips.json"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.mistral.ai/robots/"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.mistral.ai/robots/"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.mistral.ai/robots/"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.mistral.ai/robots/"
+      },
+      "verification_methods": [
+        "published-IP-range"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://docs.mistral.ai/robots/",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.mistral.ai/robots/"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "allow (default) — user-initiated fetch on behalf of a real Le Chat user; respects robots.txt and publishes an IP-range file. Blocking degrades that user's experience.",
+      "citation_referral_value": "medium (fetches in response to a user; can surface your page to them)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/mistralai-user"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "MistralAI-User",
+          "operated_by",
+          "Mistral AI"
+        ],
+        [
+          "MistralAI-User",
+          "has_bot_type",
+          "user-action-fetcher"
+        ],
+        [
+          "MistralAI-User",
+          "verified_via",
+          "published-IP-range"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "ua_full",
+            "user_agent_token",
+            "robots_token",
+            "published_ip_range_url",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://docs.mistral.ai/robots/",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "C — IP-range file published",
+        "tier": "C",
+        "actionable": true,
+        "derived_from": "published_ip_range_url"
+      }
+    },
+    {
+      "id": "diffbot",
+      "name": "Diffbot",
+      "operator": "Diffbot",
+      "purpose": "data-aggregation",
+      "ua_substring": "Diffbot",
+      "robots_token": "Diffbot",
+      "respects_robots": true,
+      "verify": "no operator-published authoritative IP-range file confirmed; verify by user-agent + edge controls. Diffbot documents that Crawlbot adheres to robots.txt by default.",
+      "notes": "Diffbot's Crawlbot extracts and structures web content into a knowledge graph sold to customers (market intelligence, e-commerce, AI training). Registered as a 'data-provider' (Agents Welcome taxonomy extension). Diffbot documents that crawls adhere to robots.txt (disallow + crawl-delay) by default.",
+      "canonical_name": "Diffbot",
+      "user_agent_token": "Diffbot",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt",
+        "note": "secondary sources report 'Mozilla/5.0 (compatible; Diffbot/0.1; +http://www.diffbot.com/our-apis/crawler/)'; confirm exact version-bearing UA against Diffbot docs at build"
+      },
+      "bot_type": "data-provider",
+      "bot_type_extension": "data-provider (Agents Welcome registry extension beyond the cited 6-type set)",
+      "opt_out_mechanism": "robots.txt disallow (User-agent: Diffbot)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt",
+        "note": "no authoritative Diffbot-published IP-range JSON confirmed at primary source"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/"
+      },
+      "verification_methods": [
+        "user-agent-match"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text, structured data",
+      "documentation_url": "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — data-provider crawler that structures content for resale (incl. downstream AI training); allow if you want representation in Diffbot's knowledge graph, block via robots.txt to opt out. No direct referral.",
+      "citation_referral_value": "low (data aggregation for resale; no direct citation or referral)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/diffbot"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Diffbot",
+          "operated_by",
+          "Diffbot"
+        ],
+        [
+          "Diffbot",
+          "has_bot_type",
+          "data-provider"
+        ],
+        [
+          "Diffbot",
+          "verified_via",
+          "user-agent-match"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token",
+            "respects_robots",
+            "documentation_url",
+            "opt_out_mechanism"
+          ],
+          "source": "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt",
+          "last_verified": "2026-06-15"
+        },
+        {
+          "claims": [
+            "operator",
+            "bot_type"
+          ],
+          "source": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "diffbot-user",
+      "name": "Diffbot-User",
+      "operator": "Diffbot",
+      "purpose": "inference",
+      "ua_substring": "Diffbot-User",
+      "robots_token": "Diffbot-User",
+      "respects_robots": true,
+      "verify": "no operator-published authoritative IP-range file confirmed; verify by user-agent + edge controls. Diffbot documents the token for on-behalf-of fetches.",
+      "notes": "Used for requests made on behalf of human users browsing URLs through Diffbot software, as distinct from Diffbot's proactive Crawlbot. Diffbot documents both 'Diffbot' and 'Diffbot-User' as robots.txt user-agents.",
+      "canonical_name": "Diffbot-User",
+      "user_agent_token": "Diffbot-User",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt"
+      },
+      "bot_type": "user-action-fetcher",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: Diffbot-User)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt",
+        "note": "no authoritative Diffbot-published IP-range JSON confirmed at primary source"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/"
+      },
+      "verification_methods": [
+        "user-agent-match"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.diffbot.com/"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "allow (default) — user-initiated fetch on a human's behalf through Diffbot software; respects robots.txt. Blocking degrades that user's task.",
+      "citation_referral_value": "medium (fetches a specific page for a user; can surface it to them)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/diffbot-user"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Diffbot-User",
+          "operated_by",
+          "Diffbot"
+        ],
+        [
+          "Diffbot-User",
+          "has_bot_type",
+          "user-action-fetcher"
+        ],
+        [
+          "Diffbot-User",
+          "verified_via",
+          "user-agent-match"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token",
+            "respects_robots",
+            "documentation_url",
+            "opt_out_mechanism"
+          ],
+          "source": "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "imagesiftbot",
+      "name": "ImagesiftBot",
+      "operator": "ImageSift (Hive)",
+      "purpose": "data-aggregation",
+      "ua_substring": "ImagesiftBot",
+      "robots_token": "ImagesiftBot",
+      "respects_robots": true,
+      "verify": "verify by user-agent + edge controls; ImageSift documents robots.txt adherence (incl. crawl-delay) and Googlebot-directive fallback. No operator-published IP-range file confirmed.",
+      "notes": "Crawls the web for publicly available images, analyzing and indexing them to power ImageSift's web-intelligence products. Operated by ImageSift (a Hive product). Registered as a 'data-provider' (Agents Welcome taxonomy extension).",
+      "canonical_name": "ImagesiftBot",
+      "user_agent_token": "ImagesiftBot",
+      "ua_full": {
+        "value": "Mozilla/5.0 (compatible; ImagesiftBot; +imagesift.com)",
+        "source": "https://imagesift.com/about",
+        "last_verified": "2026-06-15"
+      },
+      "bot_type": "data-provider",
+      "bot_type_extension": "data-provider (Agents Welcome registry extension beyond the cited 6-type set)",
+      "opt_out_mechanism": "robots.txt disallow (User-agent: ImagesiftBot); falls back to Googlebot directives if no ImagesiftBot-specific rule exists",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://imagesift.com/about",
+        "note": "no authoritative ImageSift-published IP-range JSON confirmed at primary source"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://imagesift.com/about"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://imagesift.com/about"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://imagesift.com/about"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://imagesift.com/about"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://imagesift.com/about"
+      },
+      "verification_methods": [
+        "user-agent-match"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "images, HTML, text",
+      "documentation_url": "https://imagesift.com/about",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://imagesift.com/about"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — image-focused data-provider crawler; allow if you want your images in ImageSift's index, block via robots.txt to opt out. No direct referral.",
+      "citation_referral_value": "low (image data aggregation; no direct citation or referral)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/imagesiftbot"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "ImagesiftBot",
+          "operated_by",
+          "ImageSift"
+        ],
+        [
+          "ImagesiftBot",
+          "has_bot_type",
+          "data-provider"
+        ],
+        [
+          "ImagesiftBot",
+          "verified_via",
+          "user-agent-match"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "ua_full",
+            "user_agent_token",
+            "robots_token",
+            "respects_robots",
+            "documentation_url",
+            "opt_out_mechanism"
+          ],
+          "source": "https://imagesift.com/about",
+          "last_verified": "2026-06-15"
+        },
+        {
+          "claims": [
+            "operator"
+          ],
+          "source": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "icc-crawler",
+      "name": "ICC-Crawler",
+      "operator": "NICT (National Institute of Information and Communications Technology)",
+      "purpose": "training",
+      "ua_substring": "ICC-Crawler",
+      "robots_token": "ICC-Crawler",
+      "respects_robots": true,
+      "verify": "verify by user-agent + edge controls; the ai.robots.txt registry records respects-robots = Yes. No operator-published IP-range file confirmed.",
+      "notes": "Crawls data to train and support AI technologies; NICT (Japan) uses the collected data for AI and may provide it to third parties, including commercial companies. Token and operator recorded in the ai.robots.txt machine-readable registry.",
+      "canonical_name": "ICC-Crawler",
+      "user_agent_token": "ICC-Crawler",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "bot_type": "training",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: ICC-Crawler)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json",
+        "note": "no authoritative NICT-published IP-range JSON confirmed at primary source"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "verification_methods": [
+        "user-agent-match"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json",
+        "note": "no dedicated NICT operator documentation page confirmed; token/operator/respects sourced from the ai.robots.txt registry"
+      },
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — research/training crawler that may share collected data with third parties incl. commercial companies; allow to be represented, block via robots.txt to opt out. No direct referral.",
+      "citation_referral_value": "low (training/data collection; no direct citation or referral)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/icc-crawler"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "ICC-Crawler",
+          "operated_by",
+          "NICT"
+        ],
+        [
+          "ICC-Crawler",
+          "has_bot_type",
+          "training"
+        ],
+        [
+          "ICC-Crawler",
+          "verified_via",
+          "user-agent-match"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token",
+            "operator",
+            "respects_robots",
+            "purpose"
+          ],
+          "source": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "cohere-ai",
+      "name": "cohere-ai",
+      "operator": "Cohere",
+      "purpose": "inference",
+      "ua_substring": "cohere-ai",
+      "robots_token": "cohere-ai",
+      "respects_robots": null,
+      "verify": "verify by user-agent + edge controls; no operator-published IP-range file confirmed and robots.txt adherence is unclear per the registry.",
+      "notes": "Retrieves data to provide responses to user-initiated prompts (Cohere products). Token and operator recorded in the ai.robots.txt machine-readable registry; the registry marks robots.txt respect as 'Unclear at this time'.",
+      "canonical_name": "cohere-ai",
+      "user_agent_token": "cohere-ai",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "bot_type": "user-action-fetcher",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: cohere-ai) — but registry marks adherence as unclear; rate-limit / verify at the edge if it matters",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json",
+        "note": "no authoritative Cohere-published IP-range JSON confirmed at primary source"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "verification_methods": [
+        "user-agent-match"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json",
+        "note": "no dedicated Cohere operator documentation page confirmed; token/operator sourced from the ai.robots.txt registry"
+      },
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — fetches on user prompts for Cohere products; robots.txt adherence is unclear per the registry, so allow legitimate user fetches but rate-limit / verify at the edge if abuse or load is a concern.",
+      "citation_referral_value": "medium (fetches in response to a user prompt; can surface your page to them)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/cohere-ai"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "cohere-ai",
+          "operated_by",
+          "Cohere"
+        ],
+        [
+          "cohere-ai",
+          "has_bot_type",
+          "user-action-fetcher"
+        ],
+        [
+          "cohere-ai",
+          "verified_via",
+          "user-agent-match"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token",
+            "operator",
+            "purpose"
+          ],
+          "source": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "respects_robots_meta": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json",
+        "note": "the ai.robots.txt registry records respect = 'Unclear at this time' for cohere-ai; no Cohere operator doc asserts robots.txt adherence — do not assert true or false without a primary source"
+      },
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "meta-webindexer",
+      "name": "Meta-WebIndexer",
+      "operator": "Meta",
+      "purpose": "search",
+      "ua_substring": "Meta-WebIndexer",
+      "robots_token": "Meta-WebIndexer",
+      "respects_robots": null,
+      "verify": "Meta publishes crawler IP ranges; confirm against those. Meta documents that allowing Meta-WebIndexer in robots.txt lets Meta AI cite and link your content.",
+      "notes": "Per Meta's documentation, the Meta-WebIndexer crawler navigates the web to improve Meta AI search result quality; allowing it in robots.txt helps Meta AI cite and link your content in its responses. Token and operator-doc reference recorded in the ai.robots.txt machine-readable registry.",
+      "canonical_name": "Meta-WebIndexer",
+      "user_agent_token": "Meta-WebIndexer",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "bot_type": "search-index",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: Meta-WebIndexer)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+        "note": "Meta documents its crawlers; confirm the exact authoritative IP-range source for Meta-WebIndexer at build"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "verification_methods": [
+        "published-IP-range"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "allow — Meta documents that allowing Meta-WebIndexer lets Meta AI cite and link your content in its answers; blocking forfeits that citation/referral.",
+      "citation_referral_value": "high (powers Meta AI search answers; Meta documents that it cites and links allowed content)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory/meta-webindexer"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Meta-WebIndexer",
+          "operated_by",
+          "Meta"
+        ],
+        [
+          "Meta-WebIndexer",
+          "has_bot_type",
+          "search-index"
+        ],
+        [
+          "Meta-WebIndexer",
+          "verified_via",
+          "published-IP-range"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token",
+            "operator",
+            "documentation_url",
+            "block_vs_allow_recommendation"
+          ],
+          "source": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "respects_robots_meta": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+        "note": "the ai.robots.txt registry records respect = 'Unclear at this time'; Meta's own crawler documentation describes the token but a clear robots.txt-adherence statement was not confirmed at primary source — do not assert true/false without it"
+      },
+      "verifiability": {
+        "value": "D — method named, artifact not published",
+        "tier": "D",
+        "actionable": false,
+        "derived_from": "verification_methods"
+      }
+    },
+    {
+      "id": "chatgpt-atlas",
+      "name": "ChatGPT Atlas (agent mode)",
+      "operator": "OpenAI",
+      "purpose": "agentic-browsing",
+      "ua_substring": "",
+      "robots_token": "(none — agentic browser; no published robots.txt token)",
+      "respects_robots": false,
+      "verify": "no stable user-agent and (per OpenAI enterprise docs) no IP allowlist; an agentic browser is identifiable only by IP/signature/behavior, not by a UA token. Treat as user-driven browser traffic.",
+      "notes": "OpenAI's ChatGPT Atlas browser (launched 2025-10-21) embeds ChatGPT into web navigation; its 'agent mode' takes actions on the user's behalf inside the browser. As a local Chromium-based browser it presents like ordinary browser traffic with no stable AI user-agent token — included here per the agentic-browser taxonomy, verifiable by IP/signature only.",
+      "canonical_name": "ChatGPT Atlas",
+      "user_agent_token": {
+        "value": null,
+        "verify_status": "no-stable-ua",
+        "note": "no stable AI user-agent token; agentic browser"
+      },
+      "ua_full": {
+        "value": null,
+        "verify_status": "no-stable-ua",
+        "source_hint": "https://openai.com/index/introducing-chatgpt-atlas/",
+        "note": "presents as a Chromium-based browser UA; no distinctive AI token"
+      },
+      "bot_type": "agentic-browser",
+      "bot_type_extension": null,
+      "opt_out_mechanism": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "no robots.txt token to target; an agentic browser acting in the user's session is not controlled by robots.txt. Use edge/bot-management controls if needed."
+      },
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://help.openai.com/en/articles/12603091-chatgpt-atlas-for-enterprise",
+        "note": "OpenAI's enterprise docs note 'No IP allowlist' for Atlas; no authoritative AI-bot IP-range file is published for the agentic browser"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://help.openai.com/en/articles/12603091-chatgpt-atlas-for-enterprise"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "runs from the user's network; no operator-controlled rDNS suffix"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://openai.com/index/introducing-chatgpt-atlas/"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://openai.com/index/introducing-chatgpt-atlas/"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://openai.com/index/introducing-chatgpt-atlas/"
+      },
+      "verification_methods": [
+        "IP-signature"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "agentic browser; not tracked as a distinct AI crawler share"
+      },
+      "targeted_content_type": "HTML, text (interactive browsing)",
+      "documentation_url": "https://openai.com/index/introducing-chatgpt-atlas/",
+      "first_seen_date": {
+        "value": "2025-10-21",
+        "source": "https://openai.com/index/introducing-chatgpt-atlas/",
+        "last_verified": "2026-06-15",
+        "note": "ChatGPT Atlas launch date (macOS)"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — acts inside a real user's browser session; it is not a bulk crawler and cannot be reliably blocked by robots.txt or UA. Manage via session-level / bot-management controls if agent actions are a concern.",
+      "citation_referral_value": "medium (acts on a user's behalf in-browser; can surface and act on your page for that user)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "ChatGPT Atlas",
+          "operated_by",
+          "OpenAI"
+        ],
+        [
+          "ChatGPT Atlas",
+          "has_bot_type",
+          "agentic-browser"
+        ],
+        [
+          "ChatGPT Atlas",
+          "verified_via",
+          "IP-signature"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "operator",
+            "first_seen_date",
+            "documentation_url",
+            "bot_type"
+          ],
+          "source": "https://openai.com/index/introducing-chatgpt-atlas/",
+          "last_verified": "2026-06-15"
+        },
+        {
+          "claims": [
+            "published_ip_range_url"
+          ],
+          "source": "https://help.openai.com/en/articles/12603091-chatgpt-atlas-for-enterprise",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "ua_substring_meta": {
+        "value": null,
+        "verify_status": "no-stable-ua",
+        "note": "agentic browser: a Chromium-based browser running on the user's machine with an agent mode; no stable, distinctive AI user-agent token is published. Identify by IP/signature, not UA."
+      },
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "perplexity-comet",
+      "name": "Perplexity Comet (assistant/agent)",
+      "operator": "Perplexity",
+      "purpose": "agentic-browsing",
+      "ua_substring": "",
+      "robots_token": "(none — agentic browser; no published robots.txt token)",
+      "respects_robots": false,
+      "verify": "no stable user-agent and no verifiable identity layer; Comet runs inside the user's browser session and presents like ordinary Chromium traffic. Distinct from PerplexityBot/Perplexity-User (which are cloud bots verifiable by IP range + perplexity.ai in the UA).",
+      "notes": "Perplexity's Comet is a Chromium-based browser fork that runs locally and performs multi-tab agentic actions inside the user's session. Unlike Perplexity's cloud crawlers, it has no verifiable identity layer at the network level — included here per the agentic-browser taxonomy, verifiable by IP/signature only.",
+      "canonical_name": "Comet",
+      "user_agent_token": {
+        "value": null,
+        "verify_status": "no-stable-ua",
+        "note": "no stable AI user-agent token; agentic browser"
+      },
+      "ua_full": {
+        "value": null,
+        "verify_status": "no-stable-ua",
+        "source_hint": "https://www.perplexity.ai/comet",
+        "note": "presents as a Chromium browser UA; no distinctive AI token"
+      },
+      "bot_type": "agentic-browser",
+      "bot_type_extension": null,
+      "opt_out_mechanism": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "no robots.txt token to target; an agentic browser acting in the user's session is not controlled by robots.txt. Use edge/bot-management controls if needed."
+      },
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "runs from the user's network; no operator-published IP-range file applies to the local browser (cf. Perplexity's separate perplexitybot.json / perplexity-user.json for its cloud bots)"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "runs from the user's network"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "runs from the user's network; no operator-controlled rDNS suffix"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.perplexity.ai/comet"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.perplexity.ai/comet"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.perplexity.ai/comet"
+      },
+      "verification_methods": [
+        "IP-signature"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "agentic browser; not tracked as a distinct AI crawler share"
+      },
+      "targeted_content_type": "HTML, text (interactive browsing)",
+      "documentation_url": "https://www.perplexity.ai/comet",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.perplexity.ai/comet"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "conditional — acts inside a real user's browser session with no verifiable identity layer; it is not a bulk crawler and cannot be reliably blocked by robots.txt or UA. Manage via session-level / bot-management controls if agent actions are a concern.",
+      "citation_referral_value": "medium (acts on a user's behalf in-browser; can surface and act on your page for that user)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots/directory"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Comet",
+          "operated_by",
+          "Perplexity"
+        ],
+        [
+          "Comet",
+          "has_bot_type",
+          "agentic-browser"
+        ],
+        [
+          "Comet",
+          "verified_via",
+          "IP-signature"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "operator",
+            "bot_type",
+            "documentation_url"
+          ],
+          "source": "https://www.perplexity.ai/comet",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "ua_substring_meta": {
+        "value": null,
+        "verify_status": "no-stable-ua",
+        "note": "agentic browser: a Chromium-based browser fork running locally on the user's machine; it appears indistinguishable from a standard Chromium browser and lacks a verifiable identity layer. Identify by IP/signature/behavior, not UA."
+      },
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "openai-operator",
+      "name": "OpenAI Operator (Computer-Using Agent)",
+      "operator": "OpenAI",
+      "purpose": "agentic-browsing",
+      "ua_substring": "",
+      "robots_token": "(none — agentic browser/agent; no published robots.txt token)",
+      "respects_robots": false,
+      "verify": "no stable user-agent token; an agentic browser is identifiable only by IP/signature/behavior, not by a UA token.",
+      "notes": "OpenAI's Operator (released 2025-01-23) was a browsing agent powered by the Computer-Using Agent (CUA) model that performed online tasks in a browser on the user's behalf. It was deprecated after the release of ChatGPT agent and shut down on 2025-08-31. Retained here as a deprecated agentic-browser record for history/freshness.",
+      "canonical_name": "Operator",
+      "user_agent_token": {
+        "value": null,
+        "verify_status": "no-stable-ua",
+        "note": "no stable AI user-agent token; agentic browser/agent"
+      },
+      "ua_full": {
+        "value": null,
+        "verify_status": "no-stable-ua",
+        "source_hint": "https://openai.com/index/introducing-operator/"
+      },
+      "bot_type": "agentic-browser",
+      "bot_type_extension": null,
+      "opt_out_mechanism": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "no robots.txt token to target; agent acted in a browser session"
+      },
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://openai.com/index/introducing-operator/"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://openai.com/index/introducing-operator/"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://openai.com/index/introducing-operator/"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "deprecated product"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "not-applicable"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "not-applicable"
+      },
+      "verification_methods": [
+        "IP-signature"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "deprecated; not tracked as a distinct AI crawler share"
+      },
+      "targeted_content_type": "HTML, text (interactive browsing)",
+      "documentation_url": "https://openai.com/index/introducing-operator/",
+      "first_seen_date": {
+        "value": "2025-01-23",
+        "source": "https://openai.com/index/introducing-operator/",
+        "last_verified": "2026-06-15",
+        "note": "Operator release date"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "n/a — product deprecated and shut down on 2025-08-31; superseded by ChatGPT agent. No active traffic to manage.",
+      "citation_referral_value": "n/a (deprecated)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "not-applicable"
+      },
+      "status": "deprecated",
+      "triples": [
+        [
+          "Operator",
+          "operated_by",
+          "OpenAI"
+        ],
+        [
+          "Operator",
+          "has_bot_type",
+          "agentic-browser"
+        ],
+        [
+          "Operator",
+          "succeeded_by",
+          "ChatGPT agent"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "operator",
+            "first_seen_date",
+            "documentation_url",
+            "bot_type",
+            "status"
+          ],
+          "source": "https://openai.com/index/introducing-operator/",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "ua_substring_meta": {
+        "value": null,
+        "verify_status": "no-stable-ua",
+        "note": "agentic browser/agent: ran in a cloud browser performing GUI actions on the user's behalf; no stable, distinctive AI user-agent token was published. Identify by IP/signature, not UA."
+      },
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "project-mariner",
+      "name": "Project Mariner",
+      "operator": "Google",
+      "purpose": "agentic-browsing",
+      "ua_substring": "",
+      "robots_token": "(none — agentic browser; no published robots.txt token; successor Google-Agent carries a token)",
+      "respects_robots": false,
+      "verify": "no stable user-agent token for the standalone product; identifiable only by IP/signature/behavior. Its functionality moved into the Google-Agent fetcher, which is verifiable via user-triggered-agents.json + reverse DNS to google.com.",
+      "notes": "Google's Project Mariner (introduced Dec 2024 with Gemini 2.0) was an experimental web-browsing agent that navigated pages and took actions on a user's behalf via a Chrome extension. Google shut it down as a standalone product on 2026-05-04; its features moved into the Gemini API and Gemini Agent (see the Google-Agent record). Retained here as a deprecated agentic-browser record for history/freshness.",
+      "canonical_name": "Project Mariner",
+      "user_agent_token": {
+        "value": null,
+        "verify_status": "no-stable-ua",
+        "note": "no stable AI user-agent token for the standalone product; agentic browser"
+      },
+      "ua_full": {
+        "value": null,
+        "verify_status": "no-stable-ua",
+        "source_hint": "https://deepmind.google/technologies/project-mariner/"
+      },
+      "bot_type": "agentic-browser",
+      "bot_type_extension": null,
+      "opt_out_mechanism": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "no robots.txt token to target; agent acted in a browser session via a Chrome extension"
+      },
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers",
+        "note": "the successor Google-Agent fetcher verifies against user-triggered-agents.json; the standalone Mariner product had no published AI-bot IP-range file"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://www.gstatic.com/ipranges/goog.json"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "deprecated standalone product"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "not-applicable"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "not-applicable"
+      },
+      "verification_methods": [
+        "IP-signature"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "not-applicable",
+        "note": "deprecated; not tracked as a distinct AI crawler share"
+      },
+      "targeted_content_type": "HTML, text (interactive browsing)",
+      "documentation_url": "https://deepmind.google/technologies/project-mariner/",
+      "first_seen_date": {
+        "value": "2024-12",
+        "source": "https://deepmind.google/technologies/project-mariner/",
+        "last_verified": "2026-06-15",
+        "note": "introduced December 2024 with Gemini 2.0; confirm exact day at build"
+      },
+      "last_verified_date": "2026-06-15",
+      "block_vs_allow_recommendation": "n/a — standalone product shut down on 2026-05-04; functionality moved into Gemini Agent / the Google-Agent fetcher. Manage the successor via that record.",
+      "citation_referral_value": "n/a (deprecated standalone; see Google-Agent successor)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "not-applicable"
+      },
+      "status": "deprecated",
+      "triples": [
+        [
+          "Project Mariner",
+          "operated_by",
+          "Google"
+        ],
+        [
+          "Project Mariner",
+          "has_bot_type",
+          "agentic-browser"
+        ],
+        [
+          "Project Mariner",
+          "succeeded_by",
+          "Google-Agent"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "operator",
+            "bot_type",
+            "documentation_url",
+            "status",
+            "first_seen_date"
+          ],
+          "source": "https://deepmind.google/technologies/project-mariner/",
+          "last_verified": "2026-06-15"
+        }
+      ],
+      "ua_substring_meta": {
+        "value": null,
+        "verify_status": "no-stable-ua",
+        "note": "agentic browser: an experimental Gemini-powered web-browsing agent; no stable, distinctive AI user-agent token was published for the standalone product. Its successor, the Google-Agent user-triggered fetcher, carries a token."
+      },
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "applebot",
+      "name": "Applebot",
+      "operator": "Apple",
+      "purpose": "search",
+      "ua_substring": "Applebot",
+      "robots_token": "Applebot",
+      "respects_robots": true,
+      "verify": "Apple publishes Applebot IP ranges and documents reverse-DNS verification; confirm the source IP resolves to an Apple-controlled host (see documentation_url).",
+      "notes": "Apple's crawler for Siri and Spotlight Suggestions. The separate token Applebot-Extended is used only to opt out of Apple-Intelligence training without losing search visibility.",
+      "canonical_name": "Applebot",
+      "user_agent_token": "Applebot",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.apple.com/en-us/119829",
+        "note": "exact full UA string not quoted verbatim in the source"
+      },
+      "bot_type": "search-index",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: Applebot); use Applebot-Extended to opt out of AI training only",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.apple.com/en-us/119829",
+        "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.apple.com/en-us/119829"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.apple.com/en-us/119829"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.apple.com/en-us/119829"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.apple.com/en-us/119829"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.apple.com/en-us/119829"
+      },
+      "verification_methods": [
+        "published-IP-range",
+        "reverse-DNS"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots",
+        "note": "not among the figures supplied in research"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://support.apple.com/en-us/119829",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.apple.com/en-us/119829"
+      },
+      "last_verified_date": "2026-07-06",
+      "block_vs_allow_recommendation": "conditional — powers Siri and Spotlight search; allow to be discoverable there, or use Applebot-Extended to opt out of training while keeping search.",
+      "citation_referral_value": "medium (feeds Siri and Spotlight surfaces)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Applebot",
+          "operated_by",
+          "Apple"
+        ],
+        [
+          "Applebot",
+          "has_bot_type",
+          "search-index"
+        ],
+        [
+          "Applebot",
+          "verified_via",
+          "published-IP-range"
+        ],
+        [
+          "Applebot",
+          "verified_via",
+          "reverse-DNS"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token"
+          ],
+          "source": "https://github.com/ai-robots-txt/ai.robots.txt",
+          "last_verified": "2026-07-06"
+        },
+        {
+          "claims": [
+            "operator",
+            "purpose",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://support.apple.com/en-us/119829",
+          "last_verified": "2026-07-06"
+        }
+      ],
+      "verifiability": {
+        "value": "D — method named, artifact not published",
+        "tier": "D",
+        "actionable": false,
+        "derived_from": "verification_methods"
+      }
+    },
+    {
+      "id": "meta-externalfetcher",
+      "name": "meta-externalfetcher",
+      "operator": "Meta",
+      "purpose": "inference",
+      "ua_substring": "meta-externalfetcher",
+      "robots_token": "meta-externalfetcher",
+      "respects_robots": true,
+      "verify": "Meta documents its crawlers and honors robots.txt; match the UA and a Meta-owned IP (see documentation_url).",
+      "notes": "Fetches individual links at a user's request to support Meta AI task completion. It is user-triggered, not bulk crawling.",
+      "canonical_name": "meta-externalfetcher",
+      "user_agent_token": "meta-externalfetcher",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+        "note": "exact full UA string not quoted verbatim in the source"
+      },
+      "bot_type": "user-action-fetcher",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: meta-externalfetcher)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+        "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "verification_methods": [
+        "user-agent-string"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots",
+        "note": "not among the figures supplied in research"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "last_verified_date": "2026-07-06",
+      "block_vs_allow_recommendation": "conditional — user-triggered fetch for Meta AI; allow so Meta AI users can reach your pages.",
+      "citation_referral_value": "medium (surfaces in user-facing Meta AI answers)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "meta-externalfetcher",
+          "operated_by",
+          "Meta"
+        ],
+        [
+          "meta-externalfetcher",
+          "has_bot_type",
+          "user-action-fetcher"
+        ],
+        [
+          "meta-externalfetcher",
+          "verified_via",
+          "user-agent-string"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token"
+          ],
+          "source": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+          "last_verified": "2026-07-06"
+        },
+        {
+          "claims": [
+            "operator",
+            "purpose",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+          "last_verified": "2026-07-06"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "meta-externalads",
+      "name": "meta-externalads",
+      "operator": "Meta",
+      "purpose": "ad-verification",
+      "ua_substring": "meta-externalads",
+      "robots_token": "meta-externalads",
+      "respects_robots": true,
+      "verify": "Meta-documented crawler; match the UA and a Meta-owned IP (see documentation_url).",
+      "notes": "Crawls the web to improve Meta's advertising and other business products.",
+      "canonical_name": "meta-externalads",
+      "user_agent_token": "meta-externalads",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+        "note": "exact full UA string not quoted verbatim in the source"
+      },
+      "bot_type": "data-provider",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: meta-externalads)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+        "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "verification_methods": [
+        "user-agent-string"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots",
+        "note": "not among the figures supplied in research"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      },
+      "last_verified_date": "2026-07-06",
+      "block_vs_allow_recommendation": "conditional — advertising and business use; block if you do not want your content used for Meta ad products.",
+      "citation_referral_value": "none (advertising data, not referral)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "meta-externalads",
+          "operated_by",
+          "Meta"
+        ],
+        [
+          "meta-externalads",
+          "has_bot_type",
+          "data-provider"
+        ],
+        [
+          "meta-externalads",
+          "verified_via",
+          "user-agent-string"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token"
+          ],
+          "source": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+          "last_verified": "2026-07-06"
+        },
+        {
+          "claims": [
+            "operator",
+            "purpose",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+          "last_verified": "2026-07-06"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "ai2bot",
+      "name": "AI2Bot",
+      "operator": "Allen Institute for AI (Ai2)",
+      "purpose": "training",
+      "ua_substring": "AI2Bot",
+      "robots_token": "AI2Bot",
+      "respects_robots": true,
+      "verify": "Ai2 documents the crawler and states its UA string may be used to filter or reject traffic; there is no published IP file, so match the UA (see documentation_url).",
+      "notes": "Collects web content to train Ai2's open language models.",
+      "canonical_name": "AI2Bot",
+      "user_agent_token": "AI2Bot",
+      "ua_full": {
+        "value": "Mozilla/5.0 (compatible) AI2Bot (+https://www.allenai.org/crawler)",
+        "source": "https://allenai.org/crawler",
+        "note": "full UA string as documented by the operator"
+      },
+      "bot_type": "training",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: AI2Bot); the related tokens Ai2Bot-Dolma and AI2Bot-DeepResearchEval cover other Ai2 uses",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://allenai.org/crawler",
+        "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://allenai.org/crawler"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://allenai.org/crawler"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://allenai.org/crawler"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://allenai.org/crawler"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://allenai.org/crawler"
+      },
+      "verification_methods": [
+        "user-agent-string"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots",
+        "note": "not among the figures supplied in research"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://allenai.org/crawler",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://allenai.org/crawler"
+      },
+      "last_verified_date": "2026-07-06",
+      "block_vs_allow_recommendation": "conditional — trains open models; block via robots.txt to opt out.",
+      "citation_referral_value": "low (training; does not itself cite or refer)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "AI2Bot",
+          "operated_by",
+          "Allen Institute for AI (Ai2)"
+        ],
+        [
+          "AI2Bot",
+          "has_bot_type",
+          "training"
+        ],
+        [
+          "AI2Bot",
+          "verified_via",
+          "user-agent-string"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token"
+          ],
+          "source": "https://allenai.org/crawler",
+          "last_verified": "2026-07-06"
+        },
+        {
+          "claims": [
+            "operator",
+            "purpose",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://allenai.org/crawler",
+          "last_verified": "2026-07-06"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "anthropic-ai",
+      "name": "anthropic-ai",
+      "operator": "Anthropic",
+      "purpose": "training",
+      "ua_substring": "anthropic-ai",
+      "robots_token": "anthropic-ai",
+      "respects_robots": true,
+      "verify": "Legacy token; Anthropic's current crawler is ClaudeBot. Anthropic honors robots.txt and documents its crawlers (see documentation_url).",
+      "notes": "Anthropic's earlier training user-agent, widely blocked in AI robots.txt files. Anthropic's current, documented training crawler is ClaudeBot — prefer targeting ClaudeBot in new rules.",
+      "canonical_name": "anthropic-ai",
+      "user_agent_token": "anthropic-ai",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+        "note": "exact full UA string not quoted verbatim in the source"
+      },
+      "bot_type": "training",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: anthropic-ai); also block ClaudeBot for current Anthropic training",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+        "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "verification_methods": [
+        "user-agent-string"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots",
+        "note": "not among the figures supplied in research"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      },
+      "last_verified_date": "2026-07-06",
+      "block_vs_allow_recommendation": "conditional — legacy training token; block via robots.txt. Also target ClaudeBot, the current Anthropic crawler.",
+      "citation_referral_value": "low (training)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "status": "deprecated",
+      "triples": [
+        [
+          "anthropic-ai",
+          "operated_by",
+          "Anthropic"
+        ],
+        [
+          "anthropic-ai",
+          "has_bot_type",
+          "training"
+        ],
+        [
+          "anthropic-ai",
+          "verified_via",
+          "user-agent-string"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token"
+          ],
+          "source": "https://github.com/ai-robots-txt/ai.robots.txt",
+          "last_verified": "2026-07-06"
+        },
+        {
+          "claims": [
+            "operator",
+            "purpose",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+          "last_verified": "2026-07-06"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "bravebot",
+      "name": "Bravebot",
+      "operator": "Brave",
+      "purpose": "search",
+      "ua_substring": "Bravebot",
+      "robots_token": "Bravebot",
+      "respects_robots": true,
+      "verify": "Brave documents its crawler and honors robots.txt; match the UA and a Brave-owned IP (see documentation_url).",
+      "notes": "Crawls to build the independent Brave Search index, which also grounds Brave's AI answers.",
+      "canonical_name": "Bravebot",
+      "user_agent_token": "Bravebot",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://search.brave.com/help/brave-search-crawler",
+        "note": "exact full UA string not quoted verbatim in the source"
+      },
+      "bot_type": "search-index",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: Bravebot)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://search.brave.com/help/brave-search-crawler",
+        "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://search.brave.com/help/brave-search-crawler"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://search.brave.com/help/brave-search-crawler"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://search.brave.com/help/brave-search-crawler"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://search.brave.com/help/brave-search-crawler"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://search.brave.com/help/brave-search-crawler"
+      },
+      "verification_methods": [
+        "user-agent-string"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots",
+        "note": "not among the figures supplied in research"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://search.brave.com/help/brave-search-crawler",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://search.brave.com/help/brave-search-crawler"
+      },
+      "last_verified_date": "2026-07-06",
+      "block_vs_allow_recommendation": "conditional — feeds an independent search index and AI answers; allow to be discoverable in Brave.",
+      "citation_referral_value": "medium (Brave Search results and AI answers)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "Bravebot",
+          "operated_by",
+          "Brave"
+        ],
+        [
+          "Bravebot",
+          "has_bot_type",
+          "search-index"
+        ],
+        [
+          "Bravebot",
+          "verified_via",
+          "user-agent-string"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token"
+          ],
+          "source": "https://github.com/ai-robots-txt/ai.robots.txt",
+          "last_verified": "2026-07-06"
+        },
+        {
+          "claims": [
+            "operator",
+            "purpose",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://search.brave.com/help/brave-search-crawler",
+          "last_verified": "2026-07-06"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "kagi-fetcher",
+      "name": "kagi-fetcher",
+      "operator": "Kagi",
+      "purpose": "inference",
+      "ua_substring": "kagi-fetcher",
+      "robots_token": "kagi-fetcher",
+      "respects_robots": true,
+      "verify": "Kagi honors robots.txt and documents its bots; match the UA (see documentation_url).",
+      "notes": "Fetches pages on demand for Kagi's assistant and summarizer at a user's request; not bulk crawling.",
+      "canonical_name": "kagi-fetcher",
+      "user_agent_token": "kagi-fetcher",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://kagi.com/bot",
+        "note": "exact full UA string not quoted verbatim in the source"
+      },
+      "bot_type": "user-action-fetcher",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: kagi-fetcher)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://kagi.com/bot",
+        "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://kagi.com/bot"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://kagi.com/bot"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://kagi.com/bot"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://kagi.com/bot"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://kagi.com/bot"
+      },
+      "verification_methods": [
+        "user-agent-string"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots",
+        "note": "not among the figures supplied in research"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://kagi.com/bot",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://kagi.com/bot"
+      },
+      "last_verified_date": "2026-07-06",
+      "block_vs_allow_recommendation": "conditional — user-triggered fetch for Kagi's paid assistant; allow so Kagi users can reach your pages.",
+      "citation_referral_value": "medium (user-facing Kagi assistant answers)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "kagi-fetcher",
+          "operated_by",
+          "Kagi"
+        ],
+        [
+          "kagi-fetcher",
+          "has_bot_type",
+          "user-action-fetcher"
+        ],
+        [
+          "kagi-fetcher",
+          "verified_via",
+          "user-agent-string"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token"
+          ],
+          "source": "https://github.com/ai-robots-txt/ai.robots.txt",
+          "last_verified": "2026-07-06"
+        },
+        {
+          "claims": [
+            "operator",
+            "purpose",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://kagi.com/bot",
+          "last_verified": "2026-07-06"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "bedrockbot",
+      "name": "bedrockbot",
+      "operator": "Amazon",
+      "purpose": "inference",
+      "ua_substring": "bedrockbot",
+      "robots_token": "bedrockbot",
+      "respects_robots": true,
+      "verify": "Amazon honors robots.txt and documents Bedrock's web crawling; match the UA and an AWS-owned IP (see documentation_url).",
+      "notes": "Fetches web pages for Amazon Bedrock knowledge bases and web-data connectors at a customer's request; retrieval, not bulk training.",
+      "canonical_name": "bedrockbot",
+      "user_agent_token": "bedrockbot",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.aws.amazon.com/bedrock/",
+        "note": "exact full UA string not quoted verbatim in the source"
+      },
+      "bot_type": "user-action-fetcher",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: bedrockbot)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.aws.amazon.com/bedrock/",
+        "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.aws.amazon.com/bedrock/"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.aws.amazon.com/bedrock/"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.aws.amazon.com/bedrock/"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.aws.amazon.com/bedrock/"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.aws.amazon.com/bedrock/"
+      },
+      "verification_methods": [
+        "user-agent-string"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots",
+        "note": "not among the figures supplied in research"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://docs.aws.amazon.com/bedrock/",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://docs.aws.amazon.com/bedrock/"
+      },
+      "last_verified_date": "2026-07-06",
+      "block_vs_allow_recommendation": "conditional — retrieval for Bedrock knowledge bases a customer configures; allow if your content should be reachable there.",
+      "citation_referral_value": "low (retrieval for a customer's knowledge base)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "bedrockbot",
+          "operated_by",
+          "Amazon"
+        ],
+        [
+          "bedrockbot",
+          "has_bot_type",
+          "user-action-fetcher"
+        ],
+        [
+          "bedrockbot",
+          "verified_via",
+          "user-agent-string"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token"
+          ],
+          "source": "https://github.com/ai-robots-txt/ai.robots.txt",
+          "last_verified": "2026-07-06"
+        },
+        {
+          "claims": [
+            "operator",
+            "purpose",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://docs.aws.amazon.com/bedrock/",
+          "last_verified": "2026-07-06"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "cohere-training-data-crawler",
+      "name": "cohere-training-data-crawler",
+      "operator": "Cohere",
+      "purpose": "training",
+      "ua_substring": "cohere-training-data-crawler",
+      "robots_token": "cohere-training-data-crawler",
+      "respects_robots": true,
+      "verify": "Cohere honors robots.txt and documents its crawlers; match the UA (see documentation_url). Companion to the cohere-ai token.",
+      "notes": "Cohere's crawler for gathering web content used to train and improve its models.",
+      "canonical_name": "cohere-training-data-crawler",
+      "user_agent_token": "cohere-training-data-crawler",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://cohere.com/",
+        "note": "exact full UA string not quoted verbatim in the source"
+      },
+      "bot_type": "training",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: cohere-training-data-crawler)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://cohere.com/",
+        "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://cohere.com/"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://cohere.com/"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://cohere.com/"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://cohere.com/"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://cohere.com/"
+      },
+      "verification_methods": [
+        "user-agent-string"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots",
+        "note": "not among the figures supplied in research"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://cohere.com/",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://cohere.com/"
+      },
+      "last_verified_date": "2026-07-06",
+      "block_vs_allow_recommendation": "conditional — model-training crawler; block via robots.txt to opt out.",
+      "citation_referral_value": "low (training)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "cohere-training-data-crawler",
+          "operated_by",
+          "Cohere"
+        ],
+        [
+          "cohere-training-data-crawler",
+          "has_bot_type",
+          "training"
+        ],
+        [
+          "cohere-training-data-crawler",
+          "verified_via",
+          "user-agent-string"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token"
+          ],
+          "source": "https://github.com/ai-robots-txt/ai.robots.txt",
+          "last_verified": "2026-07-06"
+        },
+        {
+          "claims": [
+            "operator",
+            "purpose",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://cohere.com/",
+          "last_verified": "2026-07-06"
+        }
+      ],
+      "verifiability": {
+        "value": "E — nothing to check against",
+        "tier": "E",
+        "actionable": false,
+        "derived_from": null
+      }
+    },
+    {
+      "id": "duckduckbot",
+      "name": "DuckDuckBot",
+      "operator": "DuckDuckGo",
+      "purpose": "search",
+      "ua_substring": "DuckDuckBot",
+      "robots_token": "DuckDuckBot",
+      "respects_robots": true,
+      "verify": "DuckDuckGo publishes DuckDuckBot IP addresses and documents the crawler; verify against the published list (see documentation_url). Companion to DuckAssistBot.",
+      "notes": "DuckDuckGo's traditional search crawler. The separate DuckAssistBot token serves its AI-assist features.",
+      "canonical_name": "DuckDuckBot",
+      "user_agent_token": "DuckDuckBot",
+      "ua_full": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/",
+        "note": "exact full UA string not quoted verbatim in the source"
+      },
+      "bot_type": "search-index",
+      "bot_type_extension": null,
+      "opt_out_mechanism": "robots.txt disallow (User-agent: DuckDuckBot)",
+      "published_ip_range_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/",
+        "note": "no standalone IP-range file confirmed; operator doc is the authoritative reference"
+      },
+      "asn": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/"
+      },
+      "reverse_dns_suffix": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/"
+      },
+      "supports_web_bot_auth": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/"
+      },
+      "signature_agent_domain": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/"
+      },
+      "jwks_url": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/"
+      },
+      "verification_methods": [
+        "published-IP-range",
+        "user-agent-string"
+      ],
+      "crawl_traffic_share": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots",
+        "note": "not among the figures supplied in research"
+      },
+      "targeted_content_type": "HTML, text",
+      "documentation_url": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/",
+      "first_seen_date": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/"
+      },
+      "last_verified_date": "2026-07-06",
+      "block_vs_allow_recommendation": "conditional — feeds DuckDuckGo search (and, via DuckAssistBot, its AI assist); allow to be discoverable there.",
+      "citation_referral_value": "medium (DuckDuckGo search results)",
+      "cloudflare_verified_category": {
+        "value": null,
+        "verify_status": "verify-against-primary-at-build",
+        "source_hint": "https://radar.cloudflare.com/bots"
+      },
+      "status": "active",
+      "triples": [
+        [
+          "DuckDuckBot",
+          "operated_by",
+          "DuckDuckGo"
+        ],
+        [
+          "DuckDuckBot",
+          "has_bot_type",
+          "search-index"
+        ],
+        [
+          "DuckDuckBot",
+          "verified_via",
+          "published-IP-range"
+        ],
+        [
+          "DuckDuckBot",
+          "verified_via",
+          "user-agent-string"
+        ]
+      ],
+      "attribute_sources": [
+        {
+          "claims": [
+            "user_agent_token",
+            "robots_token"
+          ],
+          "source": "https://github.com/ai-robots-txt/ai.robots.txt",
+          "last_verified": "2026-07-06"
+        },
+        {
+          "claims": [
+            "operator",
+            "purpose",
+            "documentation_url",
+            "respects_robots"
+          ],
+          "source": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/",
+          "last_verified": "2026-07-06"
+        }
+      ],
+      "verifiability": {
+        "value": "D — method named, artifact not published",
+        "tier": "D",
+        "actionable": false,
+        "derived_from": "verification_methods"
+      }
+    }
+  ]
+}

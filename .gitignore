@@ -1,0 +1,16 @@
+# runtime data — never commit
+garden/events.ndjson
+fieldkit/sightings.json
+fieldkit/.salt
+
+# operator privacy — never public
+fieldkit/ignore_ips.txt
+fieldkit/data/rdns_cache.json
+docs/raw/
+
+# scratch/deploy secrets — never public
+deploy/
+.claude/
+*.pem
+*.key
+.env
