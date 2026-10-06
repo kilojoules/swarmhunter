@@ -57,6 +57,16 @@ MANUAL_IPS = {
                      "caddy access.log 19:01:54+19:02:07-14 UTC"),
 }
 
+# Fingerprints proven to be the OPERATOR via Caddy-log recovery —
+# dropped entirely, never a sighting. (The ignore-list missed these
+# because the app logged docker-bridge pre-XFF-fix.)
+MANUAL_OPERATOR_FINGERPRINTS = {
+    # was SHADOW-PLUM-1: curl/8.7.1, 3 reqs 19:01:06-07 UTC (robots.txt
+    # HEAD, /, /notes/ferns-field-log/). Caddy shows 67.169.127.10 =
+    # operator home IP. Self-contamination; removed.
+    "af716a5c6b54": "operator curl probe, caddy 19:01:06-07 UTC",
+}
+
 
 def load_ignore_ips():
     """Operator/verification IPs — our own traffic is never a finding
@@ -576,7 +586,9 @@ def main():
         last = parse_ts(s["last"])
         sighting = analyze_session(s, agents, ranges, now)
         if apply_ignore and (ip_ignored(sighting["ip"], ignore_nets)
-                             or ua_probe(sighting["ua"])):
+                             or ua_probe(sighting["ua"])
+                             or sighting["fingerprint"]
+                             in MANUAL_OPERATOR_FINGERPRINTS):
             continue  # operator/known traffic — never a finding
         # First-batch events (pre-XFF fix) logged Docker's bridge as the
         # client IP: behavior is real wild traffic, network attribution is

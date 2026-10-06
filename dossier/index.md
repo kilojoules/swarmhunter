@@ -1,15 +1,14 @@
 # Swarmhunter Dossier
 
-Generated 2026-10-06T22:24:21+00:00 from 140 events (25 sessions).
+Generated 2026-10-06T22:36:10+00:00 from 140 events (24 sessions).
 
 Agents tracked, by class:
 
-## shadow-crawler (2)
+## shadow-crawler (1)
 *Undeclared automated visitor that tripped canaries invisible to humans (S1)*
 
 | callsign | claimed | reqs | canaries | first seen | confidence |
 |---|---|---|---|---|---|
-| SHADOW-PLUM-1 | — | 3 | t1-home-fern | 2026-10-06T19:01 | 0.7 |
 | SHADOW-FERN-1 | — | 10 | t1-home-fern, t1-notes-compost, t1-notes-pruning | 2026-10-06T19:02 | 0.9 |
 
 ## scripted-bot (1)
