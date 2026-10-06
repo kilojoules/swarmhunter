@@ -1,6 +1,6 @@
 # Swarmhunter Dossier
 
-Generated 2026-10-06T21:12:50+00:00 from 140 events (25 sessions).
+Generated 2026-10-06T22:23:05+00:00 from 140 events (25 sessions).
 
 Agents tracked, by class:
 
