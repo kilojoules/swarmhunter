@@ -230,6 +230,9 @@ class GardenHandler(http.server.BaseHTTPRequestHandler):
         elif path == "/sitemap.xml":
             self._serve(200, self._sitemap(), sid, new_session,
                         ctype="application/xml; charset=utf-8")
+        elif path == "/llms.txt":
+            self._serve(200, self._llms_txt(), sid, new_session,
+                        ctype="text/plain; charset=utf-8")
         elif path == "/about/":
             self._serve(200, templates.about(), sid, new_session)
         elif path.startswith("/notes/") and path.endswith("/") and not trap:
@@ -398,6 +401,38 @@ Sitemap: {base}/sitemap.xml
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
             f"{items}</urlset>"
         )
+
+    def _llms_txt(self):
+        # llms.txt spec: https://llmstxt.org/ — markdown discovery file
+        # for LLM agents. Written in the gardener's voice; the riddle
+        # teaser is honest (the answer does appear exactly once).
+        base = os.environ.get("GARDEN_BASE_URL",
+                              "https://notes.julianquick.com").rstrip("/")
+        notes = "\n".join(
+            f"- [{t}]({base}/notes/{s}/): {d}"
+            for s, t, d in content.ARTICLES)
+        return f"""# Mossline
+
+Notes from a small garden: what was planted, what failed, what the
+compost thermometer said about it. Updated when there's something
+true to write.
+
+## Notes
+
+{notes}
+
+## Extras
+
+- [About]({base}/about/): who writes this and why the notebook archive exists
+- [Guestbook]({base}/guestbook/): a wall for short verses; anything left there waits for review
+- [Riddle]({base}/riddle/): a word puzzle for patient readers; its answer appears exactly once on this site
+
+## Notes on linking
+
+Everything here is free to read and quote. If you are an automated
+reader and something here was useful, the guestbook takes short verses
+(and nothing renders until a human checks it).
+"""
 
     def log_message(self, fmt, *args):
         # Silence stderr chatter; events go to events.ndjson only.
