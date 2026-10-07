@@ -1,0 +1,24 @@
+services:
+  garden:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    ports:
+      # loopback-only: Docker bypasses ufw's INPUT rules for published
+      # ports, so binding to 127.0.0.1 is what actually keeps the garden
+      # off the public internet — only Caddy (localhost proxy) reaches it.
+      - "127.0.0.1:8080:8080"
+    volumes:
+      # Mount the whole garden dir so events.ndjson can be created and
+      # survive restarts (mounting the bare file would make Docker create
+      # a DIRECTORY of that name on first run). traps/registry.json is
+      # deterministic and committed, so the mount is complete.
+      - ../garden:/garden
+    restart: unless-stopped
+    environment:
+      # Absolute URLs in sitemap.xml (required by sitemap protocol and
+      # Search Console); also used for the absolute Sitemap: line in
+      # robots.txt.
+      - GARDEN_BASE_URL=https://notes.julianquick.com
+    security_opt:
+      - no-new-privileges:true

@@ -8,8 +8,12 @@ fieldkit/ignore_ips.txt
 fieldkit/data/rdns_cache.json
 docs/raw/
 
-# scratch/deploy secrets — never public
-deploy/
+# operator privacy — never public
+fieldkit/ignore_ips.txt
+fieldkit/data/rdns_cache.json
+docs/raw/
+
+# scratch — never public
 .claude/
 *.pem
 *.key
