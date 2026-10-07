@@ -101,7 +101,15 @@ Full incidents with URLs and dates: [TAXONOMY.md](TAXONOMY.md).
 ## Defaults chosen (say the word to change)
 
 - **Deployment:** docker-compose, host-agnostic — point it at any VPS.
-- **Dossier visibility:** private until the first confirmed non-benign
-  sighting, then published from the repo.
-- **No git yet:** repo isn't under version control; initializing and the
-  first commit happen when you say so.
+- **Dossier visibility:** methods/instrument published immediately
+  (2026-10-06); sightings data stays private until the first
+  comprehension-class event (T7 solve / T2 actuation from a wild IP),
+  then published from the repo. Rationale: firsts in this field are won
+  by publication speed, but a T1-only trip never earns a finding label
+  (range-verified ClaudeBot tripped the same canary — T1 proves
+  automation, never agency).
+- **Repo:** public at github.com/kilojoules/swarmhunter since
+  2026-10-06; git history from first deploy onward is the
+  timestamp of record.
+- **Git:** initialized 2026-10-06 (evidence-lock commits start at
+  first deploy); pushed public on beacon day.
