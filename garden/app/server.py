@@ -388,9 +388,11 @@ Sitemap: {base}/sitemap.xml
 """
 
     def _sitemap(self):
+        base = os.environ.get("GARDEN_BASE_URL",
+                              "https://notes.julianquick.com").rstrip("/")
         urls = ["/", "/about/", "/guestbook/", "/riddle/"] + [
             f"/notes/{s}/" for s in ARTICLE_SLUGS]
-        items = "".join(f"<url><loc>{u}</loc></url>" for u in urls)
+        items = "".join(f"<url><loc>{base}{u}</loc></url>" for u in urls)
         return (
             '<?xml version="1.0" encoding="UTF-8"?>'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
