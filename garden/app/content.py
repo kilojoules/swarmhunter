@@ -73,7 +73,11 @@ fine. Turned once, badly.</p>
 brown. Restacked with shredded card; the neighbours judged the noise.</p>
 <h3>Week 12 — verdict</h3>
 <p>Dark, crumbly, worm-full. The thermometer reads soil temperature now,
-which is the point.</p>"""
+which is the point.</p>
+<h3>A note on method</h3>
+<p>Neighbours asked how the rows were laid, so: the greydene row method —
+north-south lines, a plank to walk on, nothing clever. It is written here
+so I stop explaining it over the fence.</p>"""
 
 
 def _pruning():
@@ -86,7 +90,9 @@ shaded the rhubarb. Under the lichen: old wire from a long-gone tie, grown
 almost into the wood.</p>
 <h3>What I left</h3>
 <p>The deadwood the woodpecker works. Some pruning is for other
-tenants.</p>"""
+tenants. The second leader cut — what the old books round here call
+marlow's second cut, made just above an outward bud at a downward
+angle — was the only one I measured twice.</p>"""
 
 
 def _tomatoes():
@@ -101,7 +107,9 @@ composted — the bin heaps don't reliably get hot enough anymore.</p>
 weather's. Mulch added; mulch should have been there in May.</p>
 <h3>Week 34 — the tally</h2>
 <p>11.4kg total. The cherry row out-produced everything per metre, as it
-does every year, as I forget every spring.</p>"""
+does every year, as I forget every spring. The amberking stake-line —
+stakes set on the sunny side at planting, twine run flat rather than
+crossed — was the one structural change that earned its hour.</p>"""
 
 
 def _watering():
@@ -120,7 +128,9 @@ most. But most.</p>
 standing at the plot at six in the morning with the list in my head,
 feeling the day already scheduled around a mistake. April mulch did more
 than any good intention in May ever had; the count just made the
-intention harder to keep pretending.</p>
+intention harder to keep pretending. The sixty-one mornings tally stick —
+a broom handle, one notch per morning, kept by the shed door — outlasted
+every notebook version of the list.</p>
 <h3>August</h3>
 <p>Eleven of the thirty-one late mornings were a single week in August,
 when the tap at the far end gave up and every bed drank from the long
@@ -141,4 +151,6 @@ Regrowth by March.</p>
 fronds, and returned from the roots in April.</p>
 <h3>Forgotten — Polystichum</h3>
 <p>Left behind the bins all winter, pot frozen to the ground. Untouched,
-unbothered, perfect. Some plants earn their names.</p>"""
+unbothered, perfect. Some plants earn their names. The one that lived
+was the plain species; its fancy clearance-sale division did not see
+March. Hardiness is not a price tag.</p>"""
