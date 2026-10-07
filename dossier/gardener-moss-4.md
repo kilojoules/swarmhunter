@@ -1,14 +1,14 @@
-# GARDENER-ASH-3
+# GARDENER-MOSS-4
 
 - **class:** human (confidence 0.6)
 - *Human visitor, as far as signals show*
 
-- **user-agent:** `Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.6167.184 Safari/537.36`
+- **user-agent:** `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/[ip] Safari/537.36`
 - **identity claim:** none
 - **verification:** human-browser-claim
-- **network:** 34.178.61.0/24 (cluster)
+- **network:** 187.77.177.0/24 (cluster)
 - **network attribution:** app request log
-- **first/last seen:** 2026-10-07T08:07:45+0000 → 2026-10-07T08:07:45+0000
+- **first/last seen:** 2026-10-07T07:10:42+0000 → 2026-10-07T07:10:42+0000
 - **requests:** 1 (1.0/s peak)
 
 ## Evidence

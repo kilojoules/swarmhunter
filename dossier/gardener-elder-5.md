@@ -1,14 +1,14 @@
-# GARDENER-ASH-3
+# GARDENER-ELDER-5
 
 - **class:** human (confidence 0.6)
 - *Human visitor, as far as signals show*
 
-- **user-agent:** `Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.6167.184 Safari/537.36`
+- **user-agent:** `Mozilla/5.0 (compatible; CMS-Checker/1.0; +https://example.com)`
 - **identity claim:** none
 - **verification:** human-browser-claim
-- **network:** 34.178.61.0/24 (cluster)
+- **network:** 8.235.73.0/24 (cluster)
 - **network attribution:** app request log
-- **first/last seen:** 2026-10-07T08:07:45+0000 → 2026-10-07T08:07:45+0000
+- **first/last seen:** 2026-10-07T13:20:23+0000 → 2026-10-07T13:20:23+0000
 - **requests:** 1 (1.0/s peak)
 
 ## Evidence

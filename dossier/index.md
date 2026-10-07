@@ -1,6 +1,6 @@
 # Swarmhunter Dossier
 
-Generated 2026-10-07T04:55:03+00:00 from 194 events (46 sessions).
+Generated 2026-10-07T14:58:51+00:00 from 208 events (55 sessions).
 
 Agents tracked, by class:
 
@@ -33,7 +33,7 @@ Agents tracked, by class:
 | CLAIMED-THYME-1 | Bingbot | 1 | — | 2026-10-06T20:16 | 0.5 |
 | CLAIMED-BRAMBLE-1 | Bingbot | 1 | — | 2026-10-06T20:16 | 0.5 |
 
-## declared-verified (8)
+## declared-verified (14)
 *Verified declared crawler (IP within published ranges)*
 
 | callsign | claimed | reqs | canaries | first seen | confidence |
@@ -46,8 +46,14 @@ Agents tracked, by class:
 | DECLARED-SAGE-1 | ClaudeBot | 2 | — | 2026-10-07T03:48 | 0.98 |
 | DECLARED-ELDER-2 | ClaudeBot | 1 | — | 2026-10-07T04:47 | 0.98 |
 | DECLARED-BRAMBLE-2 | ClaudeBot | 2 | — | 2026-10-07T04:48 | 0.98 |
+| DECLARED-ELDER-3 | ClaudeBot | 1 | — | 2026-10-07T05:44 | 0.98 |
+| DECLARED-BRAMBLE-3 | ClaudeBot | 2 | — | 2026-10-07T06:33 | 0.98 |
+| DECLARED-BRAMBLE-4 | ClaudeBot | 2 | — | 2026-10-07T08:24 | 0.98 |
+| DECLARED-BRAMBLE-5 | ClaudeBot | 2 | — | 2026-10-07T10:44 | 0.98 |
+| DECLARED-BRAMBLE-6 | ClaudeBot | 2 | — | 2026-10-07T12:46 | 0.98 |
+| DECLARED-BRAMBLE-7 | ClaudeBot | 2 | — | 2026-10-07T14:47 | 0.98 |
 
-## human (27)
+## human (30)
 *Human visitor, as far as signals show*
 
 | callsign | claimed | reqs | canaries | first seen | confidence |
@@ -63,7 +69,7 @@ Agents tracked, by class:
 | GARDENER-NETTLE-1 | — | 1 | — | 2026-10-06T19:11 | 0.6 |
 | GARDENER-FERN-2 | — | 2 | — | 2026-10-06T19:16 | 0.6 |
 | GARDENER-SAGE-1 | — | 1 | — | 2026-10-06T19:16 | 0.6 |
-| GARDENER-ASH-3 | — | 1 | — | 2026-10-06T20:43 | 0.6 |
+| GARDENER-ASH-4 | — | 1 | — | 2026-10-06T20:43 | 0.6 |
 | GARDENER-PLUM-2 | — | 2 | — | 2026-10-06T20:54 | 0.6 |
 | GARDENER-MOSS-3 | — | 1 | — | 2026-10-06T21:04 | 0.6 |
 | GARDENER-PLUM-3 | — | 1 | — | 2026-10-06T21:15 | 0.6 |
@@ -79,6 +85,9 @@ Agents tracked, by class:
 | GARDENER-LOAM-4 | — | 3 | — | 2026-10-07T01:00 | 0.6 |
 | GARDENER-SORREL-2 | — | 1 | — | 2026-10-07T02:46 | 0.6 |
 | GARDENER-ELDER-2 | — | 1 | — | 2026-10-07T02:49 | 0.6 |
+| GARDENER-MOSS-4 | — | 1 | — | 2026-10-07T07:10 | 0.6 |
+| GARDENER-ASH-3 | — | 1 | — | 2026-10-07T08:07 | 0.6 |
+| GARDENER-ELDER-5 | — | 1 | — | 2026-10-07T13:20 | 0.6 |
 
 ---
 
