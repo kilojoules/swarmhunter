@@ -1,15 +1,15 @@
-# GARDENER-LOAM-4
+# GARDENER-LOAM-5
 
 - **class:** human (confidence 0.6)
 - *Human visitor, as far as signals show*
 
-- **user-agent:** `Mozilla/5.0 (compatible; ForestEngine/1.0; +https://forestengine.net/)`
+- **user-agent:** `Mozilla/5.0 (compatible; Google-Site-Verification/1.0)`
 - **identity claim:** none
 - **verification:** human-browser-claim
-- **network:** unknown(docker-bridge).0/24 (cluster)
+- **network:** 74.125.209.0/24 (cluster)
 - **network attribution:** app request log
-- **first/last seen:** 2026-10-06T19:01:02+0000 → 2026-10-06T19:01:02+0000
-- **requests:** 2 (2.0/s peak)
+- **first/last seen:** 2026-10-07T01:00:31+0000 → 2026-10-07T01:00:31+0000
+- **requests:** 3 (3.0/s peak)
 
 ## Evidence
 

@@ -1,6 +1,6 @@
 # Swarmhunter Dossier
 
-Generated 2026-10-07T14:58:51+00:00 from 208 events (55 sessions).
+Generated 2026-10-07T20:51:39+00:00 from 221 events (64 sessions).
 
 Agents tracked, by class:
 
@@ -11,6 +11,20 @@ Agents tracked, by class:
 |---|---|---|---|---|---|
 | SHADOW-FERN-1 | — | 10 | t1-home-fern, t1-notes-compost, t1-notes-pruning | 2026-10-06T19:02 | 0.9 |
 | SHADOW-THYME-1 | — | 7 | t1-home-fern | 2026-10-07T00:29 | 0.9 |
+
+## cryptid (1)
+*Unclassified — escalated for manual review (X)*
+
+| callsign | claimed | reqs | canaries | first seen | confidence |
+|---|---|---|---|---|---|
+| CRYPTID-ELDER-1 | — | 1 | — | 2026-10-07T19:58 | 0.4 |
+
+## scanner-bot (1)
+*Probed nonexistent paths or POSTed to a site with no forms (S2-adjacent)*
+
+| callsign | claimed | reqs | canaries | first seen | confidence |
+|---|---|---|---|---|---|
+| PROBE-FERN-1 | — | 3 | — | 2026-10-07T19:58 | 0.8 |
 
 ## scripted-bot (3)
 *Conventional scripted tooling, no LLM claim*
@@ -33,7 +47,7 @@ Agents tracked, by class:
 | CLAIMED-THYME-1 | Bingbot | 1 | — | 2026-10-06T20:16 | 0.5 |
 | CLAIMED-BRAMBLE-1 | Bingbot | 1 | — | 2026-10-06T20:16 | 0.5 |
 
-## declared-verified (14)
+## declared-verified (16)
 *Verified declared crawler (IP within published ranges)*
 
 | callsign | claimed | reqs | canaries | first seen | confidence |
@@ -52,13 +66,15 @@ Agents tracked, by class:
 | DECLARED-BRAMBLE-5 | ClaudeBot | 2 | — | 2026-10-07T10:44 | 0.98 |
 | DECLARED-BRAMBLE-6 | ClaudeBot | 2 | — | 2026-10-07T12:46 | 0.98 |
 | DECLARED-BRAMBLE-7 | ClaudeBot | 2 | — | 2026-10-07T14:47 | 0.98 |
+| DECLARED-BRAMBLE-8 | ClaudeBot | 2 | — | 2026-10-07T17:01 | 0.98 |
+| DECLARED-BRAMBLE-9 | ClaudeBot | 2 | — | 2026-10-07T20:00 | 0.98 |
 
-## human (30)
+## human (35)
 *Human visitor, as far as signals show*
 
 | callsign | claimed | reqs | canaries | first seen | confidence |
 |---|---|---|---|---|---|
-| GARDENER-LOAM-3 | — | 2 | — | 2026-10-06T19:01 | 0.6 |
+| GARDENER-LOAM-4 | — | 2 | — | 2026-10-06T19:01 | 0.6 |
 | GARDENER-ELDER-1 | — | 1 | — | 2026-10-06T19:01 | 0.6 |
 | GARDENER-SORREL-1 | — | 1 | — | 2026-10-06T19:01 | 0.6 |
 | GARDENER-THYME-1 | — | 1 | — | 2026-10-06T19:01 | 0.6 |
@@ -66,13 +82,13 @@ Agents tracked, by class:
 | GARDENER-PLUM-1 | — | 2 | — | 2026-10-06T19:02 | 0.6 |
 | GARDENER-LOAM-1 | — | 2 | — | 2026-10-06T19:03 | 0.6 |
 | GARDENER-LOAM-2 | — | 2 | — | 2026-10-06T19:03 | 0.6 |
-| GARDENER-NETTLE-1 | — | 1 | — | 2026-10-06T19:11 | 0.6 |
+| GARDENER-NETTLE-2 | — | 1 | — | 2026-10-06T19:11 | 0.6 |
 | GARDENER-FERN-2 | — | 2 | — | 2026-10-06T19:16 | 0.6 |
 | GARDENER-SAGE-1 | — | 1 | — | 2026-10-06T19:16 | 0.6 |
 | GARDENER-ASH-4 | — | 1 | — | 2026-10-06T20:43 | 0.6 |
 | GARDENER-PLUM-2 | — | 2 | — | 2026-10-06T20:54 | 0.6 |
 | GARDENER-MOSS-3 | — | 1 | — | 2026-10-06T21:04 | 0.6 |
-| GARDENER-PLUM-3 | — | 1 | — | 2026-10-06T21:15 | 0.6 |
+| GARDENER-PLUM-4 | — | 1 | — | 2026-10-06T21:15 | 0.6 |
 | GARDENER-ELDER-4 | — | 1 | — | 2026-10-06T21:15 | 0.6 |
 | GARDENER-FERN-1 | — | 2 | — | 2026-10-06T22:19 | 0.6 |
 | GARDENER-MOSS-1 | — | 2 | — | 2026-10-06T22:20 | 0.6 |
@@ -80,14 +96,19 @@ Agents tracked, by class:
 | GARDENER-ASH-1 | — | 2 | — | 2026-10-07T00:27 | 0.6 |
 | GARDENER-ASH-2 | — | 2 | — | 2026-10-07T00:27 | 0.6 |
 | GARDENER-ELDER-3 | — | 1 | — | 2026-10-07T00:28 | 0.6 |
-| GARDENER-SAGE-2 | — | 1 | — | 2026-10-07T01:00 | 0.6 |
+| GARDENER-SAGE-3 | — | 1 | — | 2026-10-07T01:00 | 0.6 |
 | GARDENER-THYME-2 | — | 2 | — | 2026-10-07T01:00 | 0.6 |
-| GARDENER-LOAM-4 | — | 3 | — | 2026-10-07T01:00 | 0.6 |
+| GARDENER-LOAM-5 | — | 3 | — | 2026-10-07T01:00 | 0.6 |
 | GARDENER-SORREL-2 | — | 1 | — | 2026-10-07T02:46 | 0.6 |
 | GARDENER-ELDER-2 | — | 1 | — | 2026-10-07T02:49 | 0.6 |
 | GARDENER-MOSS-4 | — | 1 | — | 2026-10-07T07:10 | 0.6 |
 | GARDENER-ASH-3 | — | 1 | — | 2026-10-07T08:07 | 0.6 |
 | GARDENER-ELDER-5 | — | 1 | — | 2026-10-07T13:20 | 0.6 |
+| GARDENER-PLUM-3 | — | 1 | — | 2026-10-07T15:07 | 0.6 |
+| GARDENER-LOAM-3 | — | 1 | — | 2026-10-07T15:25 | 0.6 |
+| GARDENER-FERN-3 | — | 1 | — | 2026-10-07T17:38 | 0.6 |
+| GARDENER-NETTLE-1 | — | 1 | — | 2026-10-07T19:19 | 0.6 |
+| GARDENER-SAGE-2 | — | 1 | — | 2026-10-07T19:24 | 0.6 |
 
 ---
 

@@ -1,14 +1,14 @@
-# GARDENER-LOAM-3
+# GARDENER-NETTLE-2
 
 - **class:** human (confidence 0.6)
 - *Human visitor, as far as signals show*
 
-- **user-agent:** `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/[ip] Safari/537.36`
+- **user-agent:** `Mozilla/5.0 (compatible; Databot)`
 - **identity claim:** none
 - **verification:** human-browser-claim
-- **network:** 100.63.151.0/24 (cluster)
+- **network:** 159.69.72.0/24 (cluster)
 - **network attribution:** app request log
-- **first/last seen:** 2026-10-07T15:25:44+0000 → 2026-10-07T15:25:44+0000
+- **first/last seen:** 2026-10-06T19:11:21+0000 → 2026-10-06T19:11:21+0000
 - **requests:** 1 (1.0/s peak)
 
 ## Evidence

@@ -3,12 +3,12 @@
 - **class:** human (confidence 0.6)
 - *Human visitor, as far as signals show*
 
-- **user-agent:** `Mozilla/5.0 (compatible; Google-Site-Verification/1.0)`
+- **user-agent:** `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/[ip] Safari/537.36`
 - **identity claim:** none
 - **verification:** human-browser-claim
-- **network:** 74.125.209.0/24 (cluster)
+- **network:** 185.133.119.0/24 (cluster)
 - **network attribution:** app request log
-- **first/last seen:** 2026-10-07T01:00:30+0000 → 2026-10-07T01:00:30+0000
+- **first/last seen:** 2026-10-07T19:24:29+0000 → 2026-10-07T19:24:29+0000
 - **requests:** 1 (1.0/s peak)
 
 ## Evidence
