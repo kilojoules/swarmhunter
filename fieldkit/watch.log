@@ -1,0 +1,8 @@
+=== 2026-10-07T00:27:13Z watch run ===
+analyzed 166 events -> 32 sightings
+  human                19  e.g. GARDENER-CLAY-1 (Mozilla/5.0 (Linux; Android 16; SM-S921U)
+  declared-unverified   6  e.g. CLAIMED-THYME-1 (Mozilla/5.0 AppleWebKit/537.36 (KHTML, l)
+  declared-verified     5  e.g. DECLARED-BRAMBLE-1 (Mozilla/5.0 AppleWebKit/537.36 (KHTML, l)
+  shadow-crawler        1  e.g. SHADOW-FERN-1 (Mozilla/5.0 (X11; Linux x86_64) AppleWeb)
+  scripted-bot          1  e.g. COG-PLUM-1 (axios/1.16.1)
+no finding-class events
