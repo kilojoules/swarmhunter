@@ -3,12 +3,12 @@
 - **class:** human (confidence 0.6)
 - *Human visitor, as far as signals show*
 
-- **user-agent:** `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/[ip] Safari/537.36`
+- **user-agent:** `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.8037.97 Safari/537.36`
 - **identity claim:** none
 - **verification:** human-browser-claim
-- **network:** 137.184.199.0/24 (cluster)
+- **network:** 35.165.26.0/24 (cluster)
 - **network attribution:** app request log
-- **first/last seen:** 2026-10-06T19:16:49+0000 → 2026-10-06T19:16:49+0000
+- **first/last seen:** 2026-10-06T22:19:53+0000 → 2026-10-06T22:19:54+0000
 - **requests:** 2 (2.0/s peak)
 
 ## Evidence

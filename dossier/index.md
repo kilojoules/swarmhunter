@@ -1,6 +1,6 @@
 # Swarmhunter Dossier
 
-Generated 2026-10-06T22:36:10+00:00 from 140 events (24 sessions).
+Generated 2026-10-07T00:16:11+00:00 from 163 events (32 sessions).
 
 Agents tracked, by class:
 
@@ -30,15 +30,18 @@ Agents tracked, by class:
 | CLAIMED-THYME-1 | Bingbot | 1 | — | 2026-10-06T20:16 | 0.5 |
 | CLAIMED-BRAMBLE-1 | Bingbot | 1 | — | 2026-10-06T20:16 | 0.5 |
 
-## declared-verified (2)
+## declared-verified (5)
 *Verified declared crawler (IP within published ranges)*
 
 | callsign | claimed | reqs | canaries | first seen | confidence |
 |---|---|---|---|---|---|
 | DECLARED-BRAMBLE-1 | ClaudeBot | 2 | — | 2026-10-06T20:08 | 0.98 |
 | DECLARED-SORREL-1 | ClaudeBot | 7 | t1-home-fern | 2026-10-06T20:58 | 0.98 |
+| DECLARED-CLAY-1 | ClaudeBot | 2 | t1-notes-compost | 2026-10-06T21:51 | 0.98 |
+| DECLARED-FERN-1 | ClaudeBot | 1 | t1-notes-pruning | 2026-10-06T21:52 | 0.98 |
+| DECLARED-ELDER-1 | ClaudeBot | 1 | — | 2026-10-06T22:38 | 0.98 |
 
-## human (14)
+## human (19)
 *Human visitor, as far as signals show*
 
 | callsign | claimed | reqs | canaries | first seen | confidence |
@@ -52,11 +55,16 @@ Agents tracked, by class:
 | GARDENER-LOAM-1 | — | 2 | — | 2026-10-06T19:03 | 0.6 |
 | GARDENER-LOAM-2 | — | 2 | — | 2026-10-06T19:03 | 0.6 |
 | GARDENER-NETTLE-1 | — | 1 | — | 2026-10-06T19:11 | 0.6 |
-| GARDENER-FERN-1 | — | 2 | — | 2026-10-06T19:16 | 0.6 |
+| GARDENER-FERN-2 | — | 2 | — | 2026-10-06T19:16 | 0.6 |
 | GARDENER-SAGE-1 | — | 1 | — | 2026-10-06T19:16 | 0.6 |
 | GARDENER-ASH-1 | — | 1 | — | 2026-10-06T20:43 | 0.6 |
 | GARDENER-PLUM-2 | — | 2 | — | 2026-10-06T20:54 | 0.6 |
-| GARDENER-MOSS-1 | — | 1 | — | 2026-10-06T21:04 | 0.6 |
+| GARDENER-MOSS-3 | — | 1 | — | 2026-10-06T21:04 | 0.6 |
+| GARDENER-PLUM-3 | — | 1 | — | 2026-10-06T21:15 | 0.6 |
+| GARDENER-ELDER-2 | — | 1 | — | 2026-10-06T21:15 | 0.6 |
+| GARDENER-FERN-1 | — | 2 | — | 2026-10-06T22:19 | 0.6 |
+| GARDENER-MOSS-1 | — | 2 | — | 2026-10-06T22:20 | 0.6 |
+| GARDENER-MOSS-2 | — | 2 | — | 2026-10-06T22:48 | 0.6 |
 
 ---
 

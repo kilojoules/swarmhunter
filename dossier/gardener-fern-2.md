@@ -1,14 +1,14 @@
-# GARDENER-MOSS-1
+# GARDENER-FERN-2
 
 - **class:** human (confidence 0.6)
 - *Human visitor, as far as signals show*
 
-- **user-agent:** `Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1`
+- **user-agent:** `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/[ip] Safari/537.36`
 - **identity claim:** none
 - **verification:** human-browser-claim
-- **network:** 35.165.26.0/24 (cluster)
+- **network:** 137.184.199.0/24 (cluster)
 - **network attribution:** app request log
-- **first/last seen:** 2026-10-06T22:20:00+0000 → 2026-10-06T22:20:00+0000
+- **first/last seen:** 2026-10-06T19:16:49+0000 → 2026-10-06T19:16:49+0000
 - **requests:** 2 (2.0/s peak)
 
 ## Evidence
