@@ -224,6 +224,15 @@ class GardenHandler(http.server.BaseHTTPRequestHandler):
 
         if path in ("/", "/index.html"):
             self._serve(200, templates.home(), sid, new_session)
+        elif path == "/googlee5016813eb7ff412.html":
+            # Search Console verification file (plain text, exact body
+            # Google requires). Served without session/trap logging —
+            # verification fetches are operator action, never sightings.
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(b"google-site-verification: "
+                             b"googlee5016813eb7ff412.html\n")
         elif path == "/robots.txt":
             self._serve(200, self._robots_txt(), sid, new_session,
                         ctype="text/plain; charset=utf-8", robots=True)
