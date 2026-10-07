@@ -1,4 +1,4 @@
-# GARDENER-ASH-1
+# GARDENER-ASH-2
 
 - **class:** human (confidence 0.6)
 - *Human visitor, as far as signals show*
@@ -8,7 +8,7 @@
 - **verification:** human-browser-claim
 - **network:** 207.241.226.0/24 (cluster)
 - **network attribution:** app request log
-- **first/last seen:** 2026-10-07T00:27:37+0000 → 2026-10-07T00:27:38+0000
+- **first/last seen:** 2026-10-07T00:27:55+0000 → 2026-10-07T00:27:56+0000
 - **requests:** 2 (2.0/s peak)
 
 ## Evidence

@@ -6,3 +6,35 @@ analyzed 166 events -> 32 sightings
   shadow-crawler        1  e.g. SHADOW-FERN-1 (Mozilla/5.0 (X11; Linux x86_64) AppleWeb)
   scripted-bot          1  e.g. COG-PLUM-1 (axios/1.16.1)
 no finding-class events
+=== 2026-10-07T01:17:00Z watch run ===
+analyzed 186 events -> 40 sightings
+  human                25  e.g. GARDENER-CLAY-1 (Mozilla/5.0 (Linux; Android 16; SM-S921U)
+  declared-unverified   6  e.g. CLAIMED-THYME-1 (Mozilla/5.0 AppleWebKit/537.36 (KHTML, l)
+  declared-verified     5  e.g. DECLARED-BRAMBLE-1 (Mozilla/5.0 AppleWebKit/537.36 (KHTML, l)
+  shadow-crawler        2  e.g. SHADOW-FERN-1 (Mozilla/5.0 (X11; Linux x86_64) AppleWeb)
+  scripted-bot          2  e.g. COG-LOAM-1 (curl/8.7.1)
+no finding-class events
+=== 2026-10-07T02:17:00Z watch run ===
+analyzed 186 events -> 40 sightings
+  human                25  e.g. GARDENER-CLAY-1 (Mozilla/5.0 (Linux; Android 16; SM-S921U)
+  declared-unverified   6  e.g. CLAIMED-THYME-1 (Mozilla/5.0 AppleWebKit/537.36 (KHTML, l)
+  declared-verified     5  e.g. DECLARED-BRAMBLE-1 (Mozilla/5.0 AppleWebKit/537.36 (KHTML, l)
+  shadow-crawler        2  e.g. SHADOW-FERN-1 (Mozilla/5.0 (X11; Linux x86_64) AppleWeb)
+  scripted-bot          2  e.g. COG-LOAM-1 (curl/8.7.1)
+no finding-class events
+=== 2026-10-07T03:17:00Z watch run ===
+analyzed 188 events -> 42 sightings
+  human                27  e.g. GARDENER-CLAY-1 (Mozilla/5.0 (Linux; Android 16; SM-S921U)
+  declared-unverified   6  e.g. CLAIMED-THYME-1 (Mozilla/5.0 AppleWebKit/537.36 (KHTML, l)
+  declared-verified     5  e.g. DECLARED-BRAMBLE-1 (Mozilla/5.0 AppleWebKit/537.36 (KHTML, l)
+  shadow-crawler        2  e.g. SHADOW-FERN-1 (Mozilla/5.0 (X11; Linux x86_64) AppleWeb)
+  scripted-bot          2  e.g. COG-LOAM-1 (curl/8.7.1)
+no finding-class events
+=== 2026-10-07T04:17:00Z watch run ===
+analyzed 191 events -> 44 sightings
+  human                27  e.g. GARDENER-CLAY-1 (Mozilla/5.0 (Linux; Android 16; SM-S921U)
+  declared-verified     6  e.g. DECLARED-BRAMBLE-1 (Mozilla/5.0 AppleWebKit/537.36 (KHTML, l)
+  declared-unverified   6  e.g. CLAIMED-THYME-1 (Mozilla/5.0 AppleWebKit/537.36 (KHTML, l)
+  scripted-bot          3  e.g. COG-LOAM-1 (curl/8.7.1)
+  shadow-crawler        2  e.g. SHADOW-FERN-1 (Mozilla/5.0 (X11; Linux x86_64) AppleWeb)
+no finding-class events

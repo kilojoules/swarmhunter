@@ -1,14 +1,14 @@
-# GARDENER-ELDER-2
+# GARDENER-ELDER-3
 
 - **class:** human (confidence 0.6)
 - *Human visitor, as far as signals show*
 
-- **user-agent:** `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3.1 Safari/605.1.1`
+- **user-agent:** `Mozilla/5.0 (compatible; archive.org_bot +http://archive.org/details/archive.org_bot) Zeno/7d76126 warc/v0.8.102`
 - **identity claim:** none
 - **verification:** human-browser-claim
-- **network:** 193.235.141.0/24 (cluster)
+- **network:** 204.62.249.0/24 (cluster)
 - **network attribution:** app request log
-- **first/last seen:** 2026-10-07T02:49:52+0000 → 2026-10-07T02:49:52+0000
+- **first/last seen:** 2026-10-07T00:28:05+0000 → 2026-10-07T00:28:05+0000
 - **requests:** 1 (1.0/s peak)
 
 ## Evidence

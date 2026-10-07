@@ -1,14 +1,14 @@
-# GARDENER-ASH-1
+# GARDENER-THYME-2
 
 - **class:** human (confidence 0.6)
 - *Human visitor, as far as signals show*
 
-- **user-agent:** `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/[ip] Safari/537.36`
+- **user-agent:** `Mozilla/5.0 (compatible; Google-Site-Verification/1.0)`
 - **identity claim:** none
 - **verification:** human-browser-claim
-- **network:** 207.241.226.0/24 (cluster)
+- **network:** 74.125.209.0/24 (cluster)
 - **network attribution:** app request log
-- **first/last seen:** 2026-10-07T00:27:37+0000 → 2026-10-07T00:27:38+0000
+- **first/last seen:** 2026-10-07T01:00:30+0000 → 2026-10-07T01:00:30+0000
 - **requests:** 2 (2.0/s peak)
 
 ## Evidence

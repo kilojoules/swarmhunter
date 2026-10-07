@@ -1,14 +1,14 @@
-# GARDENER-ELDER-2
+# GARDENER-SORREL-2
 
 - **class:** human (confidence 0.6)
 - *Human visitor, as far as signals show*
 
-- **user-agent:** `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3.1 Safari/605.1.1`
+- **user-agent:** `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/[ip] Safari/537.36`
 - **identity claim:** none
 - **verification:** human-browser-claim
-- **network:** 193.235.141.0/24 (cluster)
+- **network:** 194.163.147.0/24 (cluster)
 - **network attribution:** app request log
-- **first/last seen:** 2026-10-07T02:49:52+0000 → 2026-10-07T02:49:52+0000
+- **first/last seen:** 2026-10-07T02:46:53+0000 → 2026-10-07T02:46:53+0000
 - **requests:** 1 (1.0/s peak)
 
 ## Evidence
